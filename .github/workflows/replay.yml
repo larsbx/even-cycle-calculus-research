@@ -1,0 +1,17 @@
+name: Pinned bootstrap replay
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  finite-replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Fetch pinned source mathematics
+        run: |
+          mkdir -p .deps
+          git clone https://github.com/larsbx/graph-product-ring-research.git .deps/graph-product-ring-research
+          git -C .deps/graph-product-ring-research checkout --detach 28d022402037274a9fe85c1fd64ecda2532dceb9
+      - name: Validate exact receipt and inherited claim states
+        run: python3 tools/validate.py

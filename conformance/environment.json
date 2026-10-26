@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-26",
+  "python": "3.12.14",
+  "platform": "Linux",
+  "source_commit": "28d022402037274a9fe85c1fd64ecda2532dceb9",
+  "g++": null,
+  "lean_replayed": false,
+  "authority": "finite experiment only"
+}

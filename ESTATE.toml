@@ -1,0 +1,9 @@
+schema = "estate-repository-v2"
+name = "even-cycle-calculus-research"
+default_branch = "main"
+[authority]
+acceptance_authority = false
+canonical_claim_registry = "proof/claims.toml"
+[source]
+repository = "larsbx/graph-product-ring-research"
+commit = "28d022402037274a9fe85c1fd64ecda2532dceb9"
