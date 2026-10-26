@@ -1,0 +1,13 @@
+{
+  "repository": "larsbx/graph-product-ring-research",
+  "commit": "28d022402037274a9fe85c1fd64ecda2532dceb9",
+  "files": {
+    "proof/claims.toml": "540b954c46121535fb0263c2833af4553647e9379db7919444cf66bedcb53e4c",
+    "proof/even-cycle-order-symbol.md": "cc36b91b015b335d2fe49fff66e5ce18915cba73cb6a8c331123cfa419339b91",
+    "docs/research/c2k-chord-symbol-all-k-proof-2026-10-22.md": "aad9cf560b999ef3331608d463467a5f232389d01af1fd64dd25142789bcd8f9",
+    "proof/finite-maximal-support-lean.md": "9a91340c1efce44968a0b18b908b437ab6f6688003bce87adfc7b18e744e0c77",
+    "proof/graph-ring-lean-bridge.md": "91635ad48f656a49649c77a596e9e83b8a64fa5bb04dd8967c418cd19f5ddf16",
+    "formal/README.md": "7a88ea750dfad0ed0c334597cc10b28d14b10e86711ec0d58e908c30e8a31bd8",
+    "oracles/graph_ring_support.py": "8e34568b5acf2f69fbc09737c8b9dd800d0f734c2f53df6f5a5861234873ebea"
+  }
+}

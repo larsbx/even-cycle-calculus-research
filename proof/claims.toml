@@ -1,0 +1,41 @@
+[meta]
+namespace = "ECC"
+status_values = ["source_reference", "open", "working", "computed", "conjectural", "retracted", "accepted"]
+acceptance_authority = false
+
+[[claim]]
+id = "SOURCE-SUPPORT-ORDER"
+status = "source_reference"
+source_id = "GPR-SUPPORT-ORDER"
+source_status = "working"
+source_commit = "28d022402037274a9fe85c1fd64ecda2532dceb9"
+authority = "https://github.com/larsbx/graph-product-ring-research/blob/28d022402037274a9fe85c1fd64ecda2532dceb9/proof/claims.toml"
+formal_verification = "No new formal verification; see source component boundaries"
+independent_acceptance = "not established by bootstrap"
+
+[[claim]]
+id = "SOURCE-EVEN-CYCLE-SYMBOL"
+status = "source_reference"
+source_id = "GPR-C2K"
+source_status = "working"
+source_commit = "28d022402037274a9fe85c1fd64ecda2532dceb9"
+authority = "https://github.com/larsbx/graph-product-ring-research/blob/28d022402037274a9fe85c1fd64ecda2532dceb9/proof/claims.toml"
+formal_verification = "Do not substitute cyclic nonbacktracking Lean results for ordinary cycles"
+independent_acceptance = "pending source acceptance gates"
+
+[[claim]]
+id = "BOOTSTRAP-FINITE-REPLAY"
+status = "computed"
+statement = "Only the explicit finite domain and results in conformance/first.json"
+authority = "experiments/first.py"
+evidence = "conformance/first.json"
+formal_verification = "none added"
+independent_acceptance = "not claimed"
+
+[[claim]]
+id = "NEXT-OBLIGATION"
+status = "open"
+statement = "Derive all lower-support c8 terms. Classify four-step projections (including backtracking/collision patterns) and paired triangle projections; compare a proposed formula with the independent vertex-cycle inventory. The bootstrap inventory is diagnostic data, not the completed formula."
+authority = "docs/roadmap.md"
+formal_verification = "open"
+independent_acceptance = "open"
