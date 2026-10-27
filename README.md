@@ -41,7 +41,7 @@ The shared graph-ring foundations retain a single authority in
 Lean kernel verification of a specified component, bounded computational evidence,
 and independent mathematical acceptance are distinct fields. The bootstrap added
 no Lean proof. The subsequent [finite Lean certificates](formal/README.md)
-cover three coefficient tables, not the general graph theorem. No
+cover all five raw coefficient tables, not the general graph theorem. No
 independent-acceptance or novelty claim is made.
 
 Non-goals: changing publication/manuscript bytes; silently upgrading inherited

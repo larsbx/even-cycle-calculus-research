@@ -55,7 +55,7 @@ status = "computed"
 statement = "Complete equality-pattern/shuffle sums for the five profiles, and finite product enumerations specified in the receipt."
 authority = "kernels/eight_cycles.py"
 evidence = "conformance/lower-support.json"
-formal_verification = "formal/Shuffle.lean covers (4,2,2),(2,3,3),(4,4) only; length-five/six classification and general graph theorem are not formalized."
+formal_verification = "formal/Shuffle.lean kernel-checks all five raw coefficient tables (axioms: propext only); motif-isomorphism classification and general graph theorem are not formalized."
 independent_acceptance = "exact CI replay; no external mathematical acceptance claimed"
 
 [[claim]]

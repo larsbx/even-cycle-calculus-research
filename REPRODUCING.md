@@ -23,7 +23,7 @@ Replay rejects another source HEAD or changed pinned input bytes.
 and recomputes both receipts byte-for-byte, including all symbolic coefficients
 and 144 small graph pairs, then runs the exact regression suite. The finite
 Lean step needs the version in `formal/lean-toolchain`; it uses Std only and
-prints the axioms of its three named declarations. See `formal/README.md`.
+prints the axioms of its five named declarations. See `formal/README.md`.
 The printed JSON is deterministic;
 tool versions and execution date are recorded separately in `conformance/environment.json`.
 Use a clean checkout for independent reproduction. Passing this finite replay

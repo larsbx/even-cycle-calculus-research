@@ -15,11 +15,11 @@ def words : Nat → List Nat → List (List Nat)
 
 def vertices (patterns : List (List Nat)) : List Nat → List Nat → List (List Nat)
   | [], _ => []
-  | a :: rest, at =>
+  | a :: rest, pos =>
       let v := (List.range patterns.length).map fun b =>
         let p := patterns[b]!
-        p[at[b]! % p.length]!
-      v :: vertices patterns rest (at.modify a (· + 1))
+        p[pos[b]! % p.length]!
+      v :: vertices patterns rest (pos.modify a (· + 1))
 
 def distinct : List (List Nat) → Bool
   | [] => true
@@ -46,8 +46,25 @@ theorem two_four_step_coefficients :
       [A, B, C, D].map fun q => kernel [4, 4] [p, q]) =
     [[0, 0, 0, 2], [0, 2, 5, 15], [0, 5, 8, 25], [2, 15, 25, 62]] := by decide
 
+def growPatterns : Nat → List Nat → List (List Nat)
+  | 0, p => if p.head! != p.getLast! then [p] else []
+  | n+1, p => (List.range (p.foldl Nat.max 0 + 2)).flatMap fun a =>
+      if a == p.getLast! then [] else growPatterns n (p ++ [a])
+
+def patterns (n : Nat) : List (List Nat) := growPatterns (n-1) [0]
+
+theorem six_two_coefficients :
+    ((patterns 6).map fun p => kernel [6, 2] [p, E]) =
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 1, 0, 0, 0, 1, 4, 0, 0, 1, 0, 0, 0, 0, 4, 0, 0, 0, 3, 2, 0, 6, 2, 0, 4, 6, 6, 4, 20] := by decide
+
+theorem three_five_coefficients :
+    ((patterns 5).map fun p => kernel [3, 5] [T, p]) =
+    [1, 2, 11, 2, 1, 11, 2, 15, 20, 15, 48] := by decide
+
 #print axioms paired_triangle_coefficient
 #print axioms four_step_coefficients
 #print axioms two_four_step_coefficients
+#print axioms six_two_coefficients
+#print axioms three_five_coefficients
 
 end ECC

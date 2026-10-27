@@ -176,7 +176,7 @@ exhaustive certificates, rather than relying on sampled graph inputs.
 its K, together with aggregate coefficients. Zero terms are recomputed by
 `derive`; all 41/11 patterns participate. Independent brute-force generation
 checks pattern and shuffle completeness. `formal/Shuffle.lean` certifies the
-three smaller coefficient tables by kernel evaluation; it does not formalize
+five finite coefficient tables by kernel evaluation; it does not formalize
 the general graph bijection or the length-five/six classification.
 
 ## Evaluations and falsified shortcuts

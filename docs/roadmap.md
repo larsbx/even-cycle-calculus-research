@@ -19,7 +19,8 @@ enumeration corpus. The pinned source owns the four-coordinate term.
 Independently review the general bijection and finite coefficient completeness;
 reconcile prior literature; formalize the graph-level extraction/decoding
 bijection and five-/six-step quotient classification. Existing Lean certificates
-cover the (4,4), (4,2,2), and (2,3,3) finite tables only. No conjectured
+cover all five raw coefficient tables; they do not certify the motif
+isomorphism classification or the graph-level bijection. No conjectured
 lower-support term remains in the displayed working decomposition.
 
 ## Subsequent gates
