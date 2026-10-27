@@ -13,12 +13,18 @@ git -C .deps/graph-product-ring-research checkout --detach 28d022402037274a9fe85
 python3 experiments/first.py > /tmp/first.json
 diff -u conformance/first.json /tmp/first.json
 python3 tools/validate.py
+cd formal
+lean Shuffle.lean
 ```
 
 For an existing checkout, set `GPR_SOURCE=/absolute/path/to/pinned/source`.
 Replay rejects another source HEAD or changed pinned input bytes.
 `tools/validate.py` parses the registry, checks preserved source statuses,
-and recomputes the receipt byte-for-byte. The printed JSON is deterministic;
+and recomputes both receipts byte-for-byte, including all symbolic coefficients
+and 144 small graph pairs, then runs the exact regression suite. The finite
+Lean step needs the version in `formal/lean-toolchain`; it uses Std only and
+prints the axioms of its five named declarations. See `formal/README.md`.
+The printed JSON is deterministic;
 tool versions and execution date are recorded separately in `conformance/environment.json`.
 Use a clean checkout for independent reproduction. Passing this finite replay
 does not close an all-graph proof or external literature/acceptance obligation.

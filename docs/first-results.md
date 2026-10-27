@@ -1,5 +1,10 @@
 # First c8 inventory
 
+Historical bootstrap record. The subsequent working derivation is
+[proof/c8-lower-support.md](../proof/c8-lower-support.md); its separate receipt
+is `conformance/lower-support.json`. The original receipt and its historical
+open-formula status are preserved byte-for-byte.
+
 The new vertex DFS uses pinned generic graph constructors but imports no cycle
 count formula. It visits each ordinary cycle once by requiring its smallest
 vertex as root and choosing one of the two traversal directions. Selected edges,

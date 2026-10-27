@@ -1,0 +1,2221 @@
+{
+  "scope": "exact symbolic shuffle coefficients and finite DFS checks",
+  "derivations": [
+    {
+      "profile": [
+        6,
+        2
+      ],
+      "pattern_counts": [
+        41,
+        1
+      ],
+      "shuffle_count": 28,
+      "nonzero_patterns": [
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              0,
+              2,
+              3,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "path3",
+            "edge"
+          ],
+          "valid_shuffles": 1
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              0,
+              2,
+              3,
+              4
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "square_leaf",
+            "edge"
+          ],
+          "valid_shuffles": 3
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              0,
+              1,
+              3
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "diamond",
+            "edge"
+          ],
+          "valid_shuffles": 1
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              0,
+              3,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "diamond",
+            "edge"
+          ],
+          "valid_shuffles": 1
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              0,
+              3,
+              4
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "bowtie",
+            "edge"
+          ],
+          "valid_shuffles": 4
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              1,
+              0,
+              3
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "path3",
+            "edge"
+          ],
+          "valid_shuffles": 1
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              1,
+              3,
+              4
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "square_leaf",
+            "edge"
+          ],
+          "valid_shuffles": 4
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              3,
+              0,
+              4
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "square_leaf",
+            "edge"
+          ],
+          "valid_shuffles": 3
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              3,
+              1,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "diamond",
+            "edge"
+          ],
+          "valid_shuffles": 2
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              3,
+              1,
+              4
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "bowtie",
+            "edge"
+          ],
+          "valid_shuffles": 6
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              3,
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "path3",
+            "edge"
+          ],
+          "valid_shuffles": 2
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              3,
+              2,
+              4
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "square_leaf",
+            "edge"
+          ],
+          "valid_shuffles": 4
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "square_leaf",
+            "edge"
+          ],
+          "valid_shuffles": 6
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "bowtie",
+            "edge"
+          ],
+          "valid_shuffles": 6
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              3
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "square_leaf",
+            "edge"
+          ],
+          "valid_shuffles": 4
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "hexagon",
+            "edge"
+          ],
+          "valid_shuffles": 20
+        }
+      ],
+      "grouped_injection_coefficients": [
+        {
+          "motifs": [
+            "bowtie",
+            "edge"
+          ],
+          "numerator": 16,
+          "denominator": 16
+        },
+        {
+          "motifs": [
+            "diamond",
+            "edge"
+          ],
+          "numerator": 4,
+          "denominator": 16
+        },
+        {
+          "motifs": [
+            "hexagon",
+            "edge"
+          ],
+          "numerator": 20,
+          "denominator": 16
+        },
+        {
+          "motifs": [
+            "path3",
+            "edge"
+          ],
+          "numerator": 4,
+          "denominator": 16
+        },
+        {
+          "motifs": [
+            "square_leaf",
+            "edge"
+          ],
+          "numerator": 24,
+          "denominator": 16
+        }
+      ]
+    },
+    {
+      "profile": [
+        3,
+        5
+      ],
+      "pattern_counts": [
+        1,
+        11
+      ],
+      "shuffle_count": 56,
+      "nonzero_patterns": [
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              0,
+              1,
+              2
+            ]
+          ],
+          "motifs": [
+            "triangle",
+            "triangle"
+          ],
+          "valid_shuffles": 1
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              0,
+              2,
+              1
+            ]
+          ],
+          "motifs": [
+            "triangle",
+            "triangle"
+          ],
+          "valid_shuffles": 2
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              0,
+              2,
+              3
+            ]
+          ],
+          "motifs": [
+            "triangle",
+            "paw"
+          ],
+          "valid_shuffles": 11
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2,
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "triangle",
+            "triangle"
+          ],
+          "valid_shuffles": 2
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2,
+              0,
+              2
+            ]
+          ],
+          "motifs": [
+            "triangle",
+            "triangle"
+          ],
+          "valid_shuffles": 1
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2,
+              0,
+              3
+            ]
+          ],
+          "motifs": [
+            "triangle",
+            "paw"
+          ],
+          "valid_shuffles": 11
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2,
+              1,
+              2
+            ]
+          ],
+          "motifs": [
+            "triangle",
+            "triangle"
+          ],
+          "valid_shuffles": 2
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2,
+              1,
+              3
+            ]
+          ],
+          "motifs": [
+            "triangle",
+            "paw"
+          ],
+          "valid_shuffles": 15
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              1
+            ]
+          ],
+          "motifs": [
+            "triangle",
+            "paw"
+          ],
+          "valid_shuffles": 20
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              2
+            ]
+          ],
+          "motifs": [
+            "triangle",
+            "paw"
+          ],
+          "valid_shuffles": 15
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "motifs": [
+            "triangle",
+            "pentagon"
+          ],
+          "valid_shuffles": 48
+        }
+      ],
+      "grouped_injection_coefficients": [
+        {
+          "motifs": [
+            "triangle",
+            "paw"
+          ],
+          "numerator": 72,
+          "denominator": 16
+        },
+        {
+          "motifs": [
+            "triangle",
+            "pentagon"
+          ],
+          "numerator": 48,
+          "denominator": 16
+        },
+        {
+          "motifs": [
+            "triangle",
+            "triangle"
+          ],
+          "numerator": 8,
+          "denominator": 16
+        }
+      ]
+    },
+    {
+      "profile": [
+        4,
+        4
+      ],
+      "pattern_counts": [
+        4,
+        4
+      ],
+      "shuffle_count": 70,
+      "nonzero_patterns": [
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "motifs": [
+            "edge",
+            "square"
+          ],
+          "valid_shuffles": 2
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              0,
+              2
+            ]
+          ],
+          "motifs": [
+            "wedge",
+            "wedge"
+          ],
+          "valid_shuffles": 2
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              2,
+              1
+            ]
+          ],
+          "motifs": [
+            "wedge",
+            "wedge"
+          ],
+          "valid_shuffles": 5
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "motifs": [
+            "wedge",
+            "square"
+          ],
+          "valid_shuffles": 15
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              2
+            ]
+          ],
+          "motifs": [
+            "wedge",
+            "wedge"
+          ],
+          "valid_shuffles": 5
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              1
+            ],
+            [
+              0,
+              1,
+              2,
+              1
+            ]
+          ],
+          "motifs": [
+            "wedge",
+            "wedge"
+          ],
+          "valid_shuffles": 8
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              1
+            ],
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "motifs": [
+            "wedge",
+            "square"
+          ],
+          "valid_shuffles": 25
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              1,
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "square",
+            "edge"
+          ],
+          "valid_shuffles": 2
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              1,
+              0,
+              2
+            ]
+          ],
+          "motifs": [
+            "square",
+            "wedge"
+          ],
+          "valid_shuffles": 15
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              1,
+              2,
+              1
+            ]
+          ],
+          "motifs": [
+            "square",
+            "wedge"
+          ],
+          "valid_shuffles": 25
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "motifs": [
+            "square",
+            "square"
+          ],
+          "valid_shuffles": 62
+        }
+      ],
+      "grouped_injection_coefficients": [
+        {
+          "motifs": [
+            "edge",
+            "square"
+          ],
+          "numerator": 2,
+          "denominator": 16
+        },
+        {
+          "motifs": [
+            "square",
+            "edge"
+          ],
+          "numerator": 2,
+          "denominator": 16
+        },
+        {
+          "motifs": [
+            "square",
+            "square"
+          ],
+          "numerator": 62,
+          "denominator": 16
+        },
+        {
+          "motifs": [
+            "square",
+            "wedge"
+          ],
+          "numerator": 40,
+          "denominator": 16
+        },
+        {
+          "motifs": [
+            "wedge",
+            "square"
+          ],
+          "numerator": 40,
+          "denominator": 16
+        },
+        {
+          "motifs": [
+            "wedge",
+            "wedge"
+          ],
+          "numerator": 20,
+          "denominator": 16
+        }
+      ]
+    },
+    {
+      "profile": [
+        4,
+        2,
+        2
+      ],
+      "pattern_counts": [
+        4,
+        1,
+        1
+      ],
+      "shuffle_count": 420,
+      "nonzero_patterns": [
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "edge",
+            "edge",
+            "edge"
+          ],
+          "valid_shuffles": 4
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "wedge",
+            "edge",
+            "edge"
+          ],
+          "valid_shuffles": 44
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "wedge",
+            "edge",
+            "edge"
+          ],
+          "valid_shuffles": 76
+        },
+        {
+          "patterns": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "motifs": [
+            "square",
+            "edge",
+            "edge"
+          ],
+          "valid_shuffles": 204
+        }
+      ],
+      "grouped_injection_coefficients": [
+        {
+          "motifs": [
+            "edge",
+            "edge",
+            "edge"
+          ],
+          "numerator": 4,
+          "denominator": 16
+        },
+        {
+          "motifs": [
+            "square",
+            "edge",
+            "edge"
+          ],
+          "numerator": 204,
+          "denominator": 16
+        },
+        {
+          "motifs": [
+            "wedge",
+            "edge",
+            "edge"
+          ],
+          "numerator": 120,
+          "denominator": 16
+        }
+      ]
+    },
+    {
+      "profile": [
+        2,
+        3,
+        3
+      ],
+      "pattern_counts": [
+        1,
+        1,
+        1
+      ],
+      "shuffle_count": 560,
+      "nonzero_patterns": [
+        {
+          "patterns": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "motifs": [
+            "edge",
+            "triangle",
+            "triangle"
+          ],
+          "valid_shuffles": 312
+        }
+      ],
+      "grouped_injection_coefficients": [
+        {
+          "motifs": [
+            "edge",
+            "triangle",
+            "triangle"
+          ],
+          "numerator": 312,
+          "denominator": 16
+        }
+      ]
+    }
+  ],
+  "original_corpus": [
+    {
+      "case": "C4 square K2",
+      "total": 6,
+      "profiles": [
+        {
+          "steps": [
+            4,
+            4
+          ],
+          "count": 2
+        },
+        {
+          "steps": [
+            6,
+            2
+          ],
+          "count": 4
+        }
+      ]
+    },
+    {
+      "case": "K3 square K3",
+      "total": 81,
+      "profiles": [
+        {
+          "steps": [
+            3,
+            5
+          ],
+          "count": 18
+        },
+        {
+          "steps": [
+            4,
+            4
+          ],
+          "count": 45
+        },
+        {
+          "steps": [
+            5,
+            3
+          ],
+          "count": 18
+        }
+      ]
+    },
+    {
+      "case": "P3 square K3",
+      "total": 15,
+      "profiles": [
+        {
+          "steps": [
+            4,
+            4
+          ],
+          "count": 15
+        }
+      ]
+    },
+    {
+      "case": "K2 square K3 square K3",
+      "total": 2700,
+      "profiles": [
+        {
+          "steps": [
+            0,
+            3,
+            5
+          ],
+          "count": 36
+        },
+        {
+          "steps": [
+            0,
+            4,
+            4
+          ],
+          "count": 90
+        },
+        {
+          "steps": [
+            0,
+            5,
+            3
+          ],
+          "count": 36
+        },
+        {
+          "steps": [
+            2,
+            2,
+            4
+          ],
+          "count": 558
+        },
+        {
+          "steps": [
+            2,
+            3,
+            3
+          ],
+          "count": 1404
+        },
+        {
+          "steps": [
+            2,
+            4,
+            2
+          ],
+          "count": 558
+        },
+        {
+          "steps": [
+            4,
+            2,
+            2
+          ],
+          "count": 18
+        }
+      ]
+    },
+    {
+      "case": "Q4",
+      "total": 696,
+      "profiles": [
+        {
+          "steps": [
+            0,
+            2,
+            2,
+            4
+          ],
+          "count": 4
+        },
+        {
+          "steps": [
+            0,
+            2,
+            4,
+            2
+          ],
+          "count": 4
+        },
+        {
+          "steps": [
+            0,
+            4,
+            2,
+            2
+          ],
+          "count": 4
+        },
+        {
+          "steps": [
+            2,
+            0,
+            2,
+            4
+          ],
+          "count": 4
+        },
+        {
+          "steps": [
+            2,
+            0,
+            4,
+            2
+          ],
+          "count": 4
+        },
+        {
+          "steps": [
+            2,
+            2,
+            0,
+            4
+          ],
+          "count": 4
+        },
+        {
+          "steps": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "count": 648
+        },
+        {
+          "steps": [
+            2,
+            2,
+            4,
+            0
+          ],
+          "count": 4
+        },
+        {
+          "steps": [
+            2,
+            4,
+            0,
+            2
+          ],
+          "count": 4
+        },
+        {
+          "steps": [
+            2,
+            4,
+            2,
+            0
+          ],
+          "count": 4
+        },
+        {
+          "steps": [
+            4,
+            0,
+            2,
+            2
+          ],
+          "count": 4
+        },
+        {
+          "steps": [
+            4,
+            2,
+            0,
+            2
+          ],
+          "count": 4
+        },
+        {
+          "steps": [
+            4,
+            2,
+            2,
+            0
+          ],
+          "count": 4
+        }
+      ]
+    }
+  ],
+  "additional_cases": [
+    {
+      "case": "path3 square edge",
+      "total": 1,
+      "profiles": [
+        {
+          "steps": [
+            6,
+            2
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "case": "path3 square triangle",
+      "total": 33,
+      "profiles": [
+        {
+          "steps": [
+            4,
+            4
+          ],
+          "count": 30
+        },
+        {
+          "steps": [
+            6,
+            2
+          ],
+          "count": 3
+        }
+      ]
+    },
+    {
+      "case": "square_leaf square edge",
+      "total": 14,
+      "profiles": [
+        {
+          "steps": [
+            4,
+            4
+          ],
+          "count": 2
+        },
+        {
+          "steps": [
+            6,
+            2
+          ],
+          "count": 12
+        }
+      ]
+    },
+    {
+      "case": "square_leaf square triangle",
+      "total": 252,
+      "profiles": [
+        {
+          "steps": [
+            4,
+            4
+          ],
+          "count": 216
+        },
+        {
+          "steps": [
+            6,
+            2
+          ],
+          "count": 36
+        }
+      ]
+    },
+    {
+      "case": "diamond square edge",
+      "total": 10,
+      "profiles": [
+        {
+          "steps": [
+            4,
+            4
+          ],
+          "count": 2
+        },
+        {
+          "steps": [
+            6,
+            2
+          ],
+          "count": 8
+        }
+      ]
+    },
+    {
+      "case": "diamond square triangle",
+      "total": 558,
+      "profiles": [
+        {
+          "steps": [
+            3,
+            5
+          ],
+          "count": 36
+        },
+        {
+          "steps": [
+            4,
+            4
+          ],
+          "count": 246
+        },
+        {
+          "steps": [
+            5,
+            3
+          ],
+          "count": 252
+        },
+        {
+          "steps": [
+            6,
+            2
+          ],
+          "count": 24
+        }
+      ]
+    },
+    {
+      "case": "bowtie square edge",
+      "total": 24,
+      "profiles": [
+        {
+          "steps": [
+            6,
+            2
+          ],
+          "count": 24
+        }
+      ]
+    },
+    {
+      "case": "bowtie square triangle",
+      "total": 510,
+      "profiles": [
+        {
+          "steps": [
+            3,
+            5
+          ],
+          "count": 36
+        },
+        {
+          "steps": [
+            4,
+            4
+          ],
+          "count": 150
+        },
+        {
+          "steps": [
+            5,
+            3
+          ],
+          "count": 252
+        },
+        {
+          "steps": [
+            6,
+            2
+          ],
+          "count": 72
+        }
+      ]
+    },
+    {
+      "case": "hexagon square edge",
+      "total": 36,
+      "profiles": [
+        {
+          "steps": [
+            6,
+            2
+          ],
+          "count": 36
+        }
+      ]
+    },
+    {
+      "case": "hexagon square triangle",
+      "total": 198,
+      "profiles": [
+        {
+          "steps": [
+            4,
+            4
+          ],
+          "count": 90
+        },
+        {
+          "steps": [
+            6,
+            2
+          ],
+          "count": 108
+        }
+      ]
+    },
+    {
+      "case": "paw square edge",
+      "total": 2,
+      "profiles": [
+        {
+          "steps": [
+            6,
+            2
+          ],
+          "count": 2
+        }
+      ]
+    },
+    {
+      "case": "paw square triangle",
+      "total": 171,
+      "profiles": [
+        {
+          "steps": [
+            3,
+            5
+          ],
+          "count": 18
+        },
+        {
+          "steps": [
+            4,
+            4
+          ],
+          "count": 75
+        },
+        {
+          "steps": [
+            5,
+            3
+          ],
+          "count": 72
+        },
+        {
+          "steps": [
+            6,
+            2
+          ],
+          "count": 6
+        }
+      ]
+    },
+    {
+      "case": "pentagon square edge",
+      "total": 5,
+      "profiles": [
+        {
+          "steps": [
+            6,
+            2
+          ],
+          "count": 5
+        }
+      ]
+    },
+    {
+      "case": "pentagon square triangle",
+      "total": 270,
+      "profiles": [
+        {
+          "steps": [
+            4,
+            4
+          ],
+          "count": 75
+        },
+        {
+          "steps": [
+            5,
+            3
+          ],
+          "count": 180
+        },
+        {
+          "steps": [
+            6,
+            2
+          ],
+          "count": 15
+        }
+      ]
+    },
+    {
+      "case": "wedge square wedge square wedge",
+      "total": 813,
+      "profiles": [
+        {
+          "steps": [
+            0,
+            4,
+            4
+          ],
+          "count": 15
+        },
+        {
+          "steps": [
+            2,
+            2,
+            4
+          ],
+          "count": 256
+        },
+        {
+          "steps": [
+            2,
+            4,
+            2
+          ],
+          "count": 256
+        },
+        {
+          "steps": [
+            4,
+            0,
+            4
+          ],
+          "count": 15
+        },
+        {
+          "steps": [
+            4,
+            2,
+            2
+          ],
+          "count": 256
+        },
+        {
+          "steps": [
+            4,
+            4,
+            0
+          ],
+          "count": 15
+        }
+      ]
+    },
+    {
+      "case": "square square edge square triangle",
+      "total": 3150,
+      "profiles": [
+        {
+          "steps": [
+            2,
+            2,
+            4
+          ],
+          "count": 744
+        },
+        {
+          "steps": [
+            2,
+            4,
+            2
+          ],
+          "count": 24
+        },
+        {
+          "steps": [
+            4,
+            0,
+            4
+          ],
+          "count": 372
+        },
+        {
+          "steps": [
+            4,
+            2,
+            2
+          ],
+          "count": 1968
+        },
+        {
+          "steps": [
+            4,
+            4,
+            0
+          ],
+          "count": 6
+        },
+        {
+          "steps": [
+            6,
+            0,
+            2
+          ],
+          "count": 24
+        },
+        {
+          "steps": [
+            6,
+            2,
+            0
+          ],
+          "count": 12
+        }
+      ]
+    },
+    {
+      "case": "edge square edge square edge square edge square edge",
+      "total": 6720,
+      "profiles": [
+        {
+          "steps": [
+            0,
+            0,
+            2,
+            2,
+            4
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            0,
+            0,
+            2,
+            4,
+            2
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            0,
+            0,
+            4,
+            2,
+            2
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            0,
+            2,
+            0,
+            2,
+            4
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            0,
+            2,
+            0,
+            4,
+            2
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            0,
+            2,
+            2,
+            0,
+            4
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            0,
+            2,
+            2,
+            2,
+            2
+          ],
+          "count": 1296
+        },
+        {
+          "steps": [
+            0,
+            2,
+            2,
+            4,
+            0
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            0,
+            2,
+            4,
+            0,
+            2
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            0,
+            2,
+            4,
+            2,
+            0
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            0,
+            4,
+            0,
+            2,
+            2
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            0,
+            4,
+            2,
+            0,
+            2
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            0,
+            4,
+            2,
+            2,
+            0
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            2,
+            0,
+            0,
+            2,
+            4
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            2,
+            0,
+            0,
+            4,
+            2
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            2,
+            0,
+            2,
+            0,
+            4
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            2,
+            0,
+            2,
+            2,
+            2
+          ],
+          "count": 1296
+        },
+        {
+          "steps": [
+            2,
+            0,
+            2,
+            4,
+            0
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            2,
+            0,
+            4,
+            0,
+            2
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            2,
+            0,
+            4,
+            2,
+            0
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            2,
+            2,
+            0,
+            0,
+            4
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            2,
+            2,
+            0,
+            2,
+            2
+          ],
+          "count": 1296
+        },
+        {
+          "steps": [
+            2,
+            2,
+            0,
+            4,
+            0
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            2,
+            2,
+            2,
+            0,
+            2
+          ],
+          "count": 1296
+        },
+        {
+          "steps": [
+            2,
+            2,
+            2,
+            2,
+            0
+          ],
+          "count": 1296
+        },
+        {
+          "steps": [
+            2,
+            2,
+            4,
+            0,
+            0
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            2,
+            4,
+            0,
+            0,
+            2
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            2,
+            4,
+            0,
+            2,
+            0
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            2,
+            4,
+            2,
+            0,
+            0
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            4,
+            0,
+            0,
+            2,
+            2
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            4,
+            0,
+            2,
+            0,
+            2
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            4,
+            0,
+            2,
+            2,
+            0
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            4,
+            2,
+            0,
+            0,
+            2
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            4,
+            2,
+            0,
+            2,
+            0
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            4,
+            2,
+            2,
+            0,
+            0
+          ],
+          "count": 8
+        }
+      ]
+    },
+    {
+      "case": "octagon",
+      "total": 1,
+      "profiles": [
+        {
+          "steps": [
+            8
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "case": "octagon square edge",
+      "total": 10,
+      "profiles": [
+        {
+          "steps": [
+            6,
+            2
+          ],
+          "count": 8
+        },
+        {
+          "steps": [
+            8,
+            0
+          ],
+          "count": 2
+        }
+      ]
+    }
+  ],
+  "exhaustive_small_pairs": 144,
+  "negative_controls": {
+    "Q4_full_support_only": {
+      "naive": 648,
+      "ordinary": 696,
+      "missing": 48
+    },
+    "K2_K3_K3_profile_233_closed_walks": {
+      "rooted_closed": 40320,
+      "rooted_injective": 22464,
+      "rooted_with_collision": 17856,
+      "ordinary": 1404,
+      "naive_closed_div_16": 2520
+    },
+    "four_steps_need_not_be_a_square": {
+      "K2_K3_K3_profile_422": 18,
+      "K2_square_count": 0
+    },
+    "odd_projections": {
+      "K3_K3_profile_35": 18,
+      "K2_K3_K3_profile_233": 1404
+    }
+  },
+  "status": "working general proof; finite checks are not external acceptance"
+}
