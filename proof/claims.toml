@@ -35,7 +35,34 @@ independent_acceptance = "not claimed"
 [[claim]]
 id = "NEXT-OBLIGATION"
 status = "open"
-statement = "Derive all lower-support c8 terms. Classify four-step projections (including backtracking/collision patterns) and paired triangle projections; compare a proposed formula with the independent vertex-cycle inventory. The bootstrap inventory is diagnostic data, not the completed formula."
+statement = "Independently review the complete working lower-support derivation, reconcile literature, and formalize the general graph/projection bijection. Finite certificates do not establish these gates."
 authority = "docs/roadmap.md"
 formal_verification = "open"
 independent_acceptance = "open"
+
+[[claim]]
+id = "C8-LOWER-SUPPORT"
+status = "working"
+statement = "The exact ordinary c8 profiles (6,2),(3,5),(4,4),(4,2,2),(2,3,3) and coordinate permutations have the motif formulas in proof/c8-lower-support.md, for every finite simple undirected factor family."
+authority = "proof/c8-lower-support.md"
+evidence = "conformance/lower-support.json"
+formal_verification = "General projection/shuffle bijection is prose only; specific finite coefficient tables are separate."
+independent_acceptance = "not established; hosted acceptance validates artifacts, not external mathematical acceptance"
+
+[[claim]]
+id = "C8-SHUFFLE-COEFFICIENTS"
+status = "computed"
+statement = "Complete equality-pattern/shuffle sums for the five profiles, and finite product enumerations specified in the receipt."
+authority = "kernels/eight_cycles.py"
+evidence = "conformance/lower-support.json"
+formal_verification = "formal/Shuffle.lean covers (4,2,2),(2,3,3),(4,4) only; length-five/six classification and general graph theorem are not formalized."
+independent_acceptance = "exact CI replay; no external mathematical acceptance claimed"
+
+[[claim]]
+id = "C8-NAIVE-SHORTCUTS"
+status = "retracted"
+statement = "Full-support-only, even-coordinate-only, simple-projection-only, and unrestricted-closed-walk-divided-by-16 shortcuts fail on the explicit negative controls."
+authority = "proof/c8-lower-support.md"
+evidence = "conformance/lower-support.json"
+formal_verification = "none for these graph counterexamples"
+independent_acceptance = "finite exact counterexamples, not a conjectured general correction"

@@ -1,4 +1,4 @@
-name: Pinned bootstrap replay
+name: Exact c8 acceptance
 on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
@@ -15,3 +15,20 @@ jobs:
           git -C .deps/graph-product-ring-research checkout --detach 28d022402037274a9fe85c1fd64ecda2532dceb9
       - name: Validate exact receipt and inherited claim states
         run: python3 tools/validate.py
+  finite-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Fetch exact Lean release
+        run: |
+          curl --fail --location --retry 3 -o /tmp/lean.tar.zst https://github.com/leanprover/lean4/releases/download/v4.34.0-rc2/lean-4.34.0-rc2-linux.tar.zst
+          echo '3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8  /tmp/lean.tar.zst' | sha256sum --check --strict
+          tar --zstd -xf /tmp/lean.tar.zst -C /tmp
+      - name: Check finite coefficients and axiom audit
+        run: |
+          set -o pipefail
+          cd formal
+          /tmp/lean-4.34.0-rc2-linux/bin/lean Shuffle.lean | tee /tmp/axioms.txt
+          test "$(grep -c 'does not depend on any axioms' /tmp/axioms.txt)" = 3
+          ! grep -E 'sorryAx|ofReduceBool' /tmp/axioms.txt

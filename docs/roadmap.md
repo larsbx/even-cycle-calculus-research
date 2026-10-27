@@ -5,9 +5,22 @@
 Pinned source references, separate claim authority, exact first experiment,
 deterministic receipt, and independent replay instructions.
 
+## Delivered lower-support increment
+
+Working complete lower-support formulas, with an explicit projection/shuffle
+bijection and finite coefficient derivation, are in
+`proof/c8-lower-support.md`. Two- and three-coordinate terms distinguish
+repeated edges, wedges, squares, paired triangles, and the five six-step
+quotient motifs. Regressions compare the formulas to the unchanged independent
+enumeration corpus. The pinned source owns the four-coordinate term.
+
 ## Next mathematical obligation
 
-Derive all lower-support c8 terms. Classify four-step projections (including backtracking/collision patterns) and paired triangle projections; compare a proposed formula with the independent vertex-cycle inventory. The bootstrap inventory is diagnostic data, not the completed formula.
+Independently review the general bijection and finite coefficient completeness;
+reconcile prior literature; formalize the graph-level extraction/decoding
+bijection and five-/six-step quotient classification. Existing Lean certificates
+cover the (4,4), (4,2,2), and (2,3,3) finite tables only. No conjectured
+lower-support term remains in the displayed working decomposition.
 
 ## Subsequent gates
 

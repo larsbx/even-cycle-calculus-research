@@ -13,4 +13,7 @@ for c in registry['claim']:
         assert c['source_commit'] == json.loads((root/'sources.lock.json').read_text())['commit']
 actual = subprocess.check_output([sys.executable, str(root/'experiments/first.py')], cwd=root)
 assert actual == (root/'conformance/first.json').read_bytes(), 'Receipt differs from replay'
-print('PASS: source pins, preserved claim statuses, and exact finite receipt')
+lower = subprocess.check_output([sys.executable, str(root/'experiments/lower_support.py')], cwd=root)
+assert lower == (root/'conformance/lower-support.json').read_bytes(), 'Lower-support receipt differs'
+subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-v'], cwd=root, check=True)
+print('PASS: source pins, preserved statuses, both exact receipts, and coefficient/graph regressions')
