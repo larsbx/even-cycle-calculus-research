@@ -29,3 +29,13 @@ compatibility shim described in PR #2; hosted CI uses the unmodified official
 digest-pinned compiler. New PR-head hosted evidence is recorded on that PR.
 Full extraction/counting formalization and external mathematical acceptance
 remain open.
+
+## Canonical coordinate extraction continuation
+
+The extension of PR #3 adds 15 general bounded first-occurrence theorems and
+three finite representation controls. `formal/check.py` now checks 37 exact
+declaration axiom sets across five source files, rebuilding both local imports
+in a temporary directory. Existing coefficient and collision-bridge audits
+are retained. Source pin and both arithmetic receipts are unchanged. Final-head
+hosted acceptance is still required by PR #3; earlier-head results do not
+validate this extension.

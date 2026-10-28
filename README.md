@@ -16,7 +16,11 @@ The [formal collision bridge](proof/coordinate-collision-bridge.md) now proves
 eight general finite coordinate-decoding lemmas, including collision/support
 reflection and recovery of factor assignments for a fully visited fixed shape.
 Six formal control declarations certify the required injectivity and label-use
-assumptions. Run `python3 formal/check.py` for all 19 declaration audits.
+assumptions. The [canonical extraction component](proof/canonical-coordinate-extraction.md)
+adds 15 general first-occurrence lemmas and three finite controls. It recovers
+coordinate equality classes by a bounded scan; compressed shuffle encoding
+and the full counting bijection remain open. Run `python3 formal/check.py`
+for all 37 declaration audits.
 
 Run `python3 experiments/lower_support.py` for exact symbolic coefficients,
 reproduction of all five original cases, 19 additional products, and 144 small

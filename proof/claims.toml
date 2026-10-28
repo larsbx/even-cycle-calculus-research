@@ -46,7 +46,7 @@ status = "working"
 statement = "The exact ordinary c8 profiles (6,2),(3,5),(4,4),(4,2,2),(2,3,3) and coordinate permutations have the motif formulas in proof/c8-lower-support.md, for every finite simple undirected factor family."
 authority = "proof/c8-lower-support.md"
 evidence = "conformance/lower-support.json"
-formal_verification = "Five coefficient tables and eight specified coordinate-decoding lemmas are kernel-checked. Canonical extraction across shapes, encoding correspondence, motif classification and the 16-to-1 counting quotient remain prose/open."
+formal_verification = "Five coefficient tables, eight coordinate-decoding lemmas and 15 canonical first-occurrence lemmas are kernel-checked. Ordinal rank compression, compressed-walk/shuffle encoding correspondence, motif classification and the 16-to-1 counting quotient remain prose/open."
 independent_acceptance = "not established; hosted acceptance validates artifacts, not external mathematical acceptance"
 
 [[claim]]
@@ -84,3 +84,21 @@ authority = "proof/coordinate-collision-bridge.md"
 evidence = "formal/CollisionControls.lean"
 formal_verification = "Six finite declarations checked by Lean/Std 4.34.0-rc2; standard propext/Quot.sound only, or no axioms."
 independent_acceptance = "formal counterexamples under explicit hypotheses, not full formula acceptance"
+
+[[claim]]
+id = "CANONICAL-COORDINATE-EXTRACTION"
+status = "working"
+statement = "A bounded scan of a finite nonempty coordinate trace yields canonical first-occurrence representatives with exact equality classes, reconstruction, injective realization, label surjectivity and invariance under injective relabeling. Normalized first-position shapes with the same coordinate equality relation are unique."
+authority = "proof/canonical-coordinate-extraction.md"
+evidence = "formal/CanonicalTrace.lean"
+formal_verification = "15 general Lean/Std declarations, exact standard propext/Quot.sound axioms. This does not identify representative-position labels with contiguous ordinal labels or prove the full product-cycle/shuffle bijection."
+independent_acceptance = "kernel-checked specified coordinate component; full formula and external mathematical acceptance remain separate"
+
+[[claim]]
+id = "CANONICAL-ENCODING-CONTROLS"
+status = "computed"
+statement = "The finite trace (0,1,0,2,1) has first-position labels (0,1,0,3,1), distinct from ordinal labels. Noninjective relabeling changes its first-position encoding."
+authority = "proof/canonical-coordinate-extraction.md"
+evidence = "formal/CanonicalControls.lean"
+formal_verification = "Three finite Lean/Std declarations, exact standard propext/Quot.sound axioms."
+independent_acceptance = "formal finite controls, not full formula acceptance"

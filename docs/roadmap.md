@@ -22,9 +22,12 @@ bijective count and five-/six-step quotient classification. Lean certificates
 cover all five raw coefficient tables and now eight general coordinate-decoding
 lemmas (collision/support reflection, edge preservation, cycle decoding and
 fixed-shape assignment recovery). Six formal controls certify essential
-assumptions. They do not certify canonical extraction across shapes, the
-executable-encoding correspondence, motif isomorphism classification, or the
-16-to-1 counting quotient. No conjectured
+assumptions. A further 15 general first-occurrence lemmas prove canonical
+coordinate extraction and uniqueness in a first-position representation;
+three controls delimit its encoding and injectivity assumptions. Remaining
+formal work includes rank compression to ordinal labels, stationary-step
+deletion and coordinate-word recovery, executable-encoding correspondence,
+motif isomorphism classification and the 16-to-1 counting quotient. No conjectured
 lower-support term remains in the displayed working decomposition.
 
 ## Subsequent gates

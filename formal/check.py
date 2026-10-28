@@ -19,6 +19,14 @@ EXPECTED = {
     **{'ECC.CollisionControls.'+n: {'propext', 'Quot.sound'} for n in (
         'square_is_cycle', 'folded_trace_not_injective', 'unseen_assignments_injective',
         'unseen_assignments_same_trace', 'unseen_assignments_differ')},
+    **{'ECC.CanonicalTrace.'+n: {'propext', 'Quot.sound'} for n in (
+        'scan_spec', 'first_le', 'first_value', 'first_minimal',
+        'first_eq_of_value_eq', 'first_eq_iff', 'first_idempotent',
+        'realize_extract', 'extract_representative', 'realize_injective',
+        'first_injective_relabeling', 'first_equality_relation',
+        'normalized_shape_recovered', 'canonical_shape_unique', 'extract_surjective')},
+    **{'ECC.CanonicalControls.'+n: {'propext', 'Quot.sound'} for n in (
+        'first_positions', 'positions_are_not_ordinals', 'noninjective_relabel_changes_first')},
 }
 
 
@@ -33,7 +41,9 @@ def main():
     with tempfile.TemporaryDirectory(prefix='ecc-lean-') as build:
         env = dict(os.environ, LEAN_PATH=build)
         for args in [('Shuffle.lean',), ('-o', str(Path(build)/'CollisionBridge.olean'), 'CollisionBridge.lean'),
-                     ('CollisionControls.lean',)]:
+                     ('CollisionControls.lean',),
+                     ('-o', str(Path(build)/'CanonicalTrace.olean'), 'CanonicalTrace.lean'),
+                     ('CanonicalControls.lean',)]:
             run = subprocess.run([LEAN, *args], cwd=ROOT, env=env, text=True,
                                  stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             print(run.stdout, end='', flush=True)
@@ -48,7 +58,7 @@ def main():
                 actual[name] = {a.strip() for a in axioms.split(',')} if axioms else set()
     if actual != EXPECTED:
         raise RuntimeError('Axiom audit differs: '+repr(actual))
-    print('PASS: 19 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
+    print('PASS: 37 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
 
 
 if __name__ == '__main__':
