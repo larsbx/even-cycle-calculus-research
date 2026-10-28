@@ -71,6 +71,19 @@ EXPECTED = {
         'prism_is_cycle', 'paired_is_cycle', 'colliding_is_not_cycle',
         'invalid_closed_trace_not_cycle', 'open_endpoint_same_trace',
         'closure_assumption_needed', 'length_bound_needed')},
+    'ECC.ExecutableTrace.events_axes': set(),
+    **{'ECC.ExecutableTrace.'+n: {'propext'} for n in ('get_modify_safe', 'events_length')},
+    **{'ECC.ExecutableTrace.'+n: {'propext', 'Quot.sound'} for n in (
+        'encode_injective', 'read_update', 'raw_tick', 'raw_read',
+        'vertices_eq_encoded_departures', 'finish_events', 'endPos_coordinate',
+        'closure_if_periods_divide_steps', 'distinct_iff_nodup', 'encoded_nodup_iff',
+        'executable_collision_iff', 'executable_injectivity_iff', 'executable_cycle_iff')},
+    **{'ECC.ExecutableControls.'+n: {'propext'} for n in (
+        'prism_literal_inputs', 'prism_events_match', 'colliding_shuffle_fails',
+        'paired_literal_inputs_and_events')},
+    **{'ECC.ExecutableControls.'+n: {'propext', 'Quot.sound'} for n in (
+        'prism_collision_passes', 'paired_collision_passes',
+        'profile_counts_give_closure', 'malformed_default_controls')},
 }
 
 
@@ -84,7 +97,8 @@ def main():
     pattern = re.compile(r"^'([^']+)' (?:depends on axioms: \[([^]]*)\]|does not depend on any axioms)$")
     with tempfile.TemporaryDirectory(prefix='ecc-lean-') as build:
         env = dict(os.environ, LEAN_PATH=build)
-        for args in [('Shuffle.lean',), ('-o', str(Path(build)/'CollisionBridge.olean'), 'CollisionBridge.lean'),
+        for args in [('-o', str(Path(build)/'Shuffle.olean'), 'Shuffle.lean'),
+                     ('-o', str(Path(build)/'CollisionBridge.olean'), 'CollisionBridge.lean'),
                      ('CollisionControls.lean',),
                      ('-o', str(Path(build)/'CanonicalTrace.olean'), 'CanonicalTrace.lean'),
                      ('-o', str(Path(build)/'CanonicalControls.olean'), 'CanonicalControls.lean'),
@@ -95,7 +109,9 @@ def main():
                      ('-o', str(Path(build)/'ClosedWalk.olean'), 'ClosedWalk.lean'),
                      ('-o', str(Path(build)/'ClosedControls.olean'), 'ClosedControls.lean'),
                      ('-o', str(Path(build)/'CycleTrace.olean'), 'CycleTrace.lean'),
-                     ('CycleControls.lean',)]:
+                     ('-o', str(Path(build)/'CycleControls.olean'), 'CycleControls.lean'),
+                     ('-o', str(Path(build)/'ExecutableTrace.olean'), 'ExecutableTrace.lean'),
+                     ('ExecutableControls.lean',)]:
             run = subprocess.run([LEAN, *args], cwd=ROOT, env=env, text=True,
                                  stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             print(run.stdout, end='', flush=True)
@@ -110,7 +126,7 @@ def main():
                 actual[name] = {a.strip() for a in axioms.split(',')} if axioms else set()
     if actual != EXPECTED:
         raise RuntimeError('Axiom audit differs: '+repr(actual))
-    print('PASS: 127 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
+    print('PASS: 151 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
 
 
 if __name__ == '__main__':

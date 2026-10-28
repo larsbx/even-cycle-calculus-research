@@ -25,8 +25,8 @@ fixed-shape assignment recovery). Six formal controls certify essential
 assumptions. A further 15 general first-occurrence lemmas prove canonical
 coordinate extraction and uniqueness in a first-position representation;
 three controls delimit its encoding and injectivity assumptions. Remaining
-formal work includes typed-pattern/executable-encoding correspondence,
-motif isomorphism classification and the 16-to-1 counting quotient. No conjectured
+formal work includes canonical-extraction/template assembly, generator
+completeness, motif isomorphism classification and the 16-to-1 counting quotient. No conjectured
 lower-support term remains in the displayed working decomposition.
 
 Ordinal rank compression is now checked by 20 general lemmas and three finite
@@ -56,6 +56,15 @@ its factor steps are valid. A self-contained criterion includes coordinate
 closure on both sides. Changing just the final destination demonstrates why
 closure cannot be inferred from the departure trace. See
 `proof/modular-cycle-trace.md`.
+
+The literal prefix-index trace and collision test are now connected to the
+typed departure trace by 16 general lemmas and eight controls, for finite
+bounded positive-period templates. Period-divisible coordinate step counts
+give endpoint closure, including zero steps. Prism, colliding and paired-triangle
+inputs match exactly; malformed default inputs isolate the required bounds.
+See `proof/executable-coordinate-trace.md`. Canonical extraction still needs
+to be assembled with all generated templates and the generator/cardinality
+proofs remain open.
 
 ## Subsequent gates
 

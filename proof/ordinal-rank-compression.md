@@ -83,16 +83,18 @@ Three kernel-checked controls establish:
 The new 23 declarations use exactly standard `propext` and `Quot.sound`.
 The constructive equality-equivalence instance is selected explicitly for
 the finite index bound, avoiding an order-derived instance that imports
-choice. `formal/check.py` compiles all 13 source files with fresh local
-imports and enforces all **127 exact named axiom sets**, rejecting any extra
+choice. `formal/check.py` compiles all 15 source files with fresh local
+imports and enforces all **151 exact named axiom sets**, rejecting any extra
 axiom or missing declaration. No choice, placeholders or native-evaluation
 axioms are permitted.
 
 The [event extension](coordinate-event-shuffle.md) now proves projection,
 interleaving and vertex-path replay for coherent transition records. Remaining
-formal obligations include the typed ordinal-pattern/executable collision-test
-correspondence and completeness of cyclic-pattern
-generation, motif classification and the free 16-to-1 ordinary-cycle count.
+formal obligations include assembly of canonical extraction into all generated
+bounded templates and completeness of cyclic-pattern and axis-word generation,
+motif classification and the free 16-to-1 ordinary-cycle count. The
+[executable bridge](executable-coordinate-trace.md) now proves prefix-index
+trace and collision-test correspondence for bounded positive-period templates.
 The [closed-walk extension](closed-coordinate-walks.md) supplies factor-edge
 and closure conditions and the departure/endpoint normalization.
 The general c8 formula stays working, with unchanged shared source pin and

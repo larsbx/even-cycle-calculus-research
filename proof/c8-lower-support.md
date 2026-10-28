@@ -104,17 +104,21 @@ zero, including all fixed-coordinate multiplicities.
    [closed-walk component](closed-coordinate-walks.md) proves projected factor-edge
    and closing conditions, exact closed-walk realization and endpoint
    normalization. The [modular cycle criterion](modular-cycle-trace.md)
-   connects this departure trace to CycleEmbedding in both directions. Full
-   typed-pattern/executable correspondence remains open.
+   connects this departure trace to CycleEmbedding in both directions. The
+   [executable trace bridge](executable-coordinate-trace.md) now identifies
+   the literal prefix-index trace and collision test for bounded positive-period
+   templates. Assembly with canonical extraction and generator completeness
+   remain open.
 3. The coordinate word w is a shuffle with ra copies of a. Before step u,
    let qa(u) be the number of a's in the preceding u positions. The product
    vertex at u has labels
    `(pi_a[qa(u) mod ra])_a`. Because each quotient map is injective, two
    product vertices at u,v coincide **if and only if** all these labels
    agree. The general typed-coordinate statement is now kernel-checked as
-   `ECC.CollisionBridge.decode_equal_iff` and `trace_injective_iff`; the
-   connection from the executable shuffle encoding to the typed shape remains
-   a separate formal obligation. Let K(pi_1,...,pi_q) be the number of shuffles for which the eight
+   `ECC.CollisionBridge.decode_equal_iff` and `trace_injective_iff`. The
+   executable correspondence for bounded templates is checked as
+   `ECC.ExecutableTrace.vertices_eq_encoded_departures` and
+   `executable_injectivity_iff`. Let K(pi_1,...,pi_q) be the number of shuffles for which the eight
    label tuples at times 0,...,7 are pairwise distinct. The final vertex
    at time 8 equals the root by coordinate closure.
 4. Therefore decoding the patterns, their injections, and a K-admissible

@@ -20,7 +20,7 @@ assumptions. The [canonical extraction component](proof/canonical-coordinate-ext
 adds 15 general first-occurrence lemmas and three finite controls. It recovers
 coordinate equality classes by a bounded scan; compressed shuffle encoding
 and the full counting bijection remain open. Run `python3 formal/check.py`
-for all 127 declaration audits. The [ordinal compression component](proof/ordinal-rank-compression.md)
+for all 151 declaration audits. The [ordinal compression component](proof/ordinal-rank-compression.md)
 adds 20 general lemmas and three controls: representative labels are now
 bijective with `Fin r`, reconstruction is exact, and zero-first/append bounds
 match the enumerator. The [coordinate-event component](proof/coordinate-event-shuffle.md)
@@ -32,8 +32,11 @@ realize a unique closed product walk; endpoint normalization identifies exactly
 the departure vertices for collision testing. The [modular cycle criterion](proof/modular-cycle-trace.md)
 adds ten general lemmas and seven controls: closed event replays yield exactly
 the existing simple-cycle predicate when their departures are distinct and
-they follow valid factor steps. The full ordinary-cycle counting bijection
-remains open.
+they follow valid factor steps. The [executable trace bridge](proof/executable-coordinate-trace.md)
+adds 16 general lemmas and eight controls: for bounded positive-period templates,
+the literal prefix-index vertex list equals encoded departures, and its
+Boolean collision test is exactly trace injectivity. Full generator completeness
+and the ordinary-cycle counting bijection remain open.
 
 Run `python3 experiments/lower_support.py` for exact symbolic coefficients,
 reproduction of all five original cases, 19 additional products, and 144 small

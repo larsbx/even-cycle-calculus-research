@@ -22,7 +22,7 @@ Replay rejects another source HEAD or changed pinned input bytes.
 and recomputes both receipts byte-for-byte, including all symbolic coefficients
 and 144 small graph pairs, then runs the exact regression suite. The finite
 Lean step needs the version in `formal/lean-toolchain`; it uses Std only and
-compiles all 13 Lean sources and enforces 127 exact named axiom sets. Set
+compiles all 15 Lean sources and enforces 151 exact named axiom sets. Set
 `LEAN_BINARY` if the compiler is not on PATH. See `formal/README.md`.
 The printed JSON is deterministic;
 tool versions and execution date are recorded separately in `conformance/environment.json`.

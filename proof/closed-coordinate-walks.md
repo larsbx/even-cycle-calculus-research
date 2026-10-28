@@ -74,8 +74,9 @@ For a closed eight-step replay, the departure list has eight vertices and the
 full replay has nine. Checking distinctness of all nine would reject every
 ordinary eight-cycle. Checking closure and edges alone would accept colliding
 walks. `trace_injective_iff_nodup` connects the correct departure-list condition
-to the existing `TraceInjective` predicate. It does not yet prove its exact
-correspondence with the untyped modular-prefix implementation in Shuffle.lean.
+to the existing `TraceInjective` predicate. The
+[executable bridge](executable-coordinate-trace.md) now proves its exact
+correspondence with Shuffle.lean for bounded positive-period templates.
 The [modular cycle extension](modular-cycle-trace.md) now proves the
 modular-adjacency part of `CycleEmbedding` for this list-derived trace.
 
@@ -117,11 +118,12 @@ The 19 general declarations and nine controls are audited with exact standard
 `propext` or `propext/Quot.sound` dependencies. Finite vertex-function equality
 in the controls is decided by a bounded universal quantifier and function
 extensionality, with no classical choice. The complete audit now checks
-127 declarations in 13 freshly compiled sources: 89 general lemmas,
-33 finite controls and five coefficient certificates.
+151 declarations in 15 freshly compiled sources: 105 general lemmas,
+41 finite controls and five coefficient certificates.
 
-Remaining formal obligations include the typed ordinal-pattern/modular-prefix
-encoding correspondence, whole cyclic-pattern generator completeness,
+Remaining formal obligations include assembling canonical extraction into
+all generated bounded templates, whole cyclic-pattern and axis-word generator
+completeness,
 quotient-motif classification and the free 16-to-1 ordinary-cycle count.
 The full c8 formula remains a working prose
 derivation with finite exact checks. Source pin and theorem ownership are

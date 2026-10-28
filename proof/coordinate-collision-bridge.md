@@ -65,18 +65,20 @@ The eight general declarations use either no axioms or Lean's standard
 use either no axioms or standard `propext` and `Quot.sound`. They use no
 choice, placeholders, added axioms or native-evaluation axioms. Together with
 the five existing coefficient declarations and the canonical coordinate
-extraction and event components, `formal/check.py` compares **127 exact named
+extraction and event components, `formal/check.py` compares **151 exact named
 axiom sets**; imports are built afresh in a temporary
 directory. Hosted CI uses the unchanged, digest-pinned official compiler.
 
 The general c8 formula remains **working**, not externally accepted. Open
 formal obligations remain:
 
-- Construct the typed shape from the executable shuffle/prefix-index encoding
-  and connect its collision predicate to the checked finite tables.
+- Assemble canonical extraction with every generated bounded template. The
+  [executable bridge](executable-coordinate-trace.md) now constructs the typed
+  event trace for bounded positive-period templates and proves its exact
+  correspondence with the literal prefix-index and collision functions.
 - Connect the now-checked [ordinal rank compression](ordinal-rank-compression.md)
-  and [event projection/replay](coordinate-event-shuffle.md) to the executable
-  pattern encoding. The [closed-walk extension](closed-coordinate-walks.md)
+  and [event projection/replay](coordinate-event-shuffle.md) into the complete
+  pattern-generation/counting bijection. The [closed-walk extension](closed-coordinate-walks.md)
   supplies factor-edge and closure conditions and endpoint normalization.
   The [coordinate-level extraction and recovery lemmas](canonical-coordinate-extraction.md)
   do not yet establish the full cycle/shuffle bijection.

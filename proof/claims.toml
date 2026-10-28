@@ -145,7 +145,7 @@ status = "working"
 statement = "For finite coordinate vertex sets, an axis word and destination queues realize a unique closed Cartesian walk from a fixed root iff their lengths are compatible and every queue follows changing factor edges and closes at that root coordinate. The m departures are exactly the m+1 replay vertices with their final endpoint removed, and their distinctness is equivalent to trace injectivity."
 authority = "proof/closed-coordinate-walks.md"
 evidence = "formal/ClosedWalk.lean"
-formal_verification = "19 general Lean/Std declarations with exact propext or propext/Quot.sound audits. Arbitrary edge relations are permitted with changes required explicitly. The separate CycleTrace component supplies modular cycle adjacency; executable pattern correspondence and ordinary-cycle cardinality remain open."
+formal_verification = "19 general Lean/Std declarations with exact propext or propext/Quot.sound audits. Arbitrary edge relations are permitted with changes required explicitly. CycleTrace supplies modular cycle adjacency and ExecutableTrace supplies bounded-template executable correspondence; complete extraction/template assembly and ordinary-cycle cardinality remain open."
 independent_acceptance = "kernel-checked specified closed-walk component; full c8 formula and external mathematical acceptance remain separate"
 
 [[claim]]
@@ -174,3 +174,21 @@ authority = "proof/modular-cycle-trace.md"
 evidence = "formal/CycleControls.lean"
 formal_verification = "Seven finite Lean/Std declarations with exact propext/Quot.sound audits."
 independent_acceptance = "formal finite controls, not full counting-formula acceptance"
+
+[[claim]]
+id = "EXECUTABLE-PREFIX-TRACE-COLLISION-BRIDGE"
+status = "working"
+statement = "For finite bounded coordinate templates with positive periods, valid finite coordinate axes and a complete counter vector, the literal Shuffle.vertices output equals the encoded typed departures. Its distinct test is exactly trace injectivity. Final coordinate counters equal their initial values plus step counts, and period-divisible step counts give closure."
+authority = "proof/executable-coordinate-trace.md"
+evidence = "formal/ExecutableTrace.lean"
+formal_verification = "16 general Lean/Std declarations: one without axioms, two with propext, 13 with propext/Quot.sound. A structural list-modification proof avoids the choice dependency of the pinned Std lookup lemma. Full generator completeness, canonical extraction/template assembly and cardinality remain separate."
+independent_acceptance = "kernel-checked specified executable/typed component; full c8 formula and external mathematical acceptance remain separate"
+
+[[claim]]
+id = "EXECUTABLE-PREFIX-TRACE-CONTROLS"
+status = "computed"
+statement = "The prism and paired-triangle raw templates and axis words reproduce the prior typed witnesses and pass the literal collision test; the colliding interleaving fails. Profile step counts yield closure through the general period theorem. Empty templates and invalid raw axes demonstrate default behavior excluded by the theorem's hypotheses."
+authority = "proof/executable-coordinate-trace.md"
+evidence = "formal/ExecutableControls.lean"
+formal_verification = "Eight finite Lean/Std declarations: four with propext and four with propext/Quot.sound."
+independent_acceptance = "formal finite controls, not a fresh enumeration or full formula acceptance"

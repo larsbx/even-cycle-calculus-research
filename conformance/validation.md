@@ -88,3 +88,20 @@ pin/status checks, both receipts and seven regressions. Final-head hosted
 acceptance is still required by PR #3 before merge. Executable pattern
 correspondence, enumeration completeness and the cardinality quotient remain
 separate from this structural criterion.
+
+## Literal executable trace continuation
+
+The next extension adds 16 general lemmas and eight controls. For finite
+bounded positive-period templates, the literal Shuffle.vertices output equals
+encoded typed departures and its distinct test is equivalent to trace
+injectivity. Final counters equal initial counters plus coordinate step
+counts; period-divisible counts give closure. The prism, colliding and paired
+triangle inputs match exactly; malformed default inputs isolate the bounds.
+The exact audit passes 151 named declarations across 15 freshly compiled
+sources, with no choice, placeholders or native-evaluation axioms. A direct
+structural list-modification proof avoids a choice-dependent Std lookup lemma.
+Both arithmetic receipts, Shuffle.lean, the source pin and source statuses
+are unchanged; all seven regressions pass. Local Lean uses the same documented
+executable-path compatibility shim. Final-head hosted acceptance remains
+required by PR #3. Canonical extraction/template assembly, whole generator
+completeness, motif classification and the cardinality quotient remain open.
