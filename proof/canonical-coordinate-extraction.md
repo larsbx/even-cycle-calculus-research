@@ -76,7 +76,7 @@ five-position example above.
 
 All 18 new declaration audits list only standard `propext` and `Quot.sound`;
 there is no choice, placeholder, added axiom or native-evaluation axiom.
-`formal/check.py` now checks the complete exact set of 82 named declarations,
+`formal/check.py` now checks the complete exact set of 110 named declarations,
 rebuilding imported local modules in a temporary directory.
 
 This component's representation is a subtype of traversal positions. The
@@ -84,8 +84,9 @@ This component's representation is a subtype of traversal positions. The
 bijection with a contiguous `Fin r` label set and the enumerator's candidate
 append bound. [Event projection and replay](coordinate-event-shuffle.md) now
 check stationary-step deletion and coordinate-word recovery for coherent
-transition records. Closed-walk endpoint conventions and full correspondence
-with `Shuffle.lean` remain open. So do quotient-motif
+transition records. The [closed-walk extension](closed-coordinate-walks.md)
+supplies factor-edge and closure conditions and endpoint normalization. Full
+correspondence with `Shuffle.lean` remains open. So do quotient-motif
 classification and the free 16-to-1 cardinality quotient. In particular this
 does not yet prove the full product-cycle/shuffle counting bijection.
 

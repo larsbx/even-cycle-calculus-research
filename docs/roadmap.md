@@ -25,8 +25,8 @@ fixed-shape assignment recovery). Six formal controls certify essential
 assumptions. A further 15 general first-occurrence lemmas prove canonical
 coordinate extraction and uniqueness in a first-position representation;
 three controls delimit its encoding and injectivity assumptions. Remaining
-formal work includes closing/edge conditions and endpoint alignment for
-compressed coordinate walks, executable-encoding correspondence,
+formal work includes typed-pattern/executable-encoding correspondence,
+modular cycle adjacency for the list-derived trace,
 motif isomorphism classification and the 16-to-1 counting quotient. No conjectured
 lower-support term remains in the displayed working decomposition.
 
@@ -41,6 +41,14 @@ finite controls. Compatible coordinate words and destination queues have a
 unique event realization; projection and replay recover coherent vertex paths
 after stationary-step deletion. This does not automatically establish closed
 coordinate-walk conditions or injectivity of the product path.
+
+Closed coordinate-walk validity and closure are now checked by 19 general
+lemmas and nine controls. Exact compatible word/queue data realize a unique
+closed Cartesian walk iff every queue follows factor edges and closes. The
+endpoint is removed exactly once; departure-list distinctness is equivalent
+to trace injectivity. A colliding interleaving with the same prism queues and
+a simple paired-triangle witness isolate the remaining cycle condition.
+See `proof/closed-coordinate-walks.md`.
 
 ## Subsequent gates
 

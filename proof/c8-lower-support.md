@@ -100,8 +100,10 @@ zero, including all fixed-coordinate multiplicities.
    equality classes. [Ordinal compression](ordinal-rank-compression.md) also
    checks the contiguous label bijection and enumerator append bound;
    [event projection and replay](coordinate-event-shuffle.md) check deletion
-   of stationary-coordinate steps for coherent transitions. Closing/edge and
-   endpoint conventions and full executable correspondence remain open.
+   of stationary-coordinate steps for coherent transitions. The
+   [closed-walk component](closed-coordinate-walks.md) proves projected factor-edge
+   and closing conditions, exact closed-walk realization and endpoint
+   normalization. Full typed-pattern/executable correspondence remains open.
 3. The coordinate word w is a shuffle with ra copies of a. Before step u,
    let qa(u) be the number of a's in the preceding u positions. The product
    vertex at u has labels

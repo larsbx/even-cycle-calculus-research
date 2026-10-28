@@ -58,3 +58,17 @@ checks 82 declarations across nine sources with fresh imports. It rejects
 choice, placeholders and native-evaluation axioms. Both original arithmetic
 receipts and the source pin remain unchanged. Final-head hosted acceptance is
 still required by PR #3; no earlier run substitutes for it.
+
+## Closed-coordinate-walk continuation
+
+The next extension adds 19 general lemmas and nine controls, proving exact
+factor-walk and closure conditions, a closed-walk realization equivalence,
+endpoint normalization and departure-list injectivity. Controls cover the
+prism, a colliding interleaving of the same queues, a missing factor edge and
+paired odd triangle projections. `formal/check.py` passes 110 exact declaration
+audits across 11 sources with fresh imports; no choice, placeholders or
+native-evaluation axioms are allowed. `tools/validate.py` passes both unchanged
+receipts, preserved source pin/status checks and seven regressions. Local
+execution uses the same documented executable-path compatibility shim.
+Final-head hosted acceptance remains required by PR #3. The full ordinary-cycle
+counting theorem and external mathematical acceptance remain open.

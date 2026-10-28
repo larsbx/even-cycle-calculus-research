@@ -20,14 +20,17 @@ assumptions. The [canonical extraction component](proof/canonical-coordinate-ext
 adds 15 general first-occurrence lemmas and three finite controls. It recovers
 coordinate equality classes by a bounded scan; compressed shuffle encoding
 and the full counting bijection remain open. Run `python3 formal/check.py`
-for all 82 declaration audits. The [ordinal compression component](proof/ordinal-rank-compression.md)
+for all 110 declaration audits. The [ordinal compression component](proof/ordinal-rank-compression.md)
 adds 20 general lemmas and three controls: representative labels are now
 bijective with `Fin r`, reconstruction is exact, and zero-first/append bounds
 match the enumerator. The [coordinate-event component](proof/coordinate-event-shuffle.md)
 adds 17 general lemmas and five controls: compatible words and destination
 queues have a unique interleaving, and replay reconstructs a coherent vertex
-path after stationary-step deletion. Closed-walk endpoint/edge alignment and
-the full counting bijection remain open.
+path after stationary-step deletion. The [closed-walk component](proof/closed-coordinate-walks.md)
+adds 19 general lemmas and nine controls: compatible closed factor walks
+realize a unique closed product walk; endpoint normalization identifies exactly
+the departure vertices for collision testing. The full ordinary-cycle counting
+bijection remains open.
 
 Run `python3 experiments/lower_support.py` for exact symbolic coefficients,
 reproduction of all five original cases, 19 additional products, and 144 small

@@ -46,6 +46,21 @@ EXPECTED = {
     **{'ECC.EventControls.'+n: {'propext'} for n in (
         'prism_projections', 'prism_vertex_path', 'short_queue_fails',
         'extra_queue_not_exact', 'stationarity_required')},
+    **{'ECC.ClosedWalk.'+n: {'propext'} for n in (
+        'update_self', 'update_other', 'finish_coordinate', 'coordinate_step_update',
+        'valid_head_cartesian', 'replay_split', 'before_length', 'replay_length',
+        'before_eq_dropLast', 'closed_replay_split', 'update_cartesian_iff',
+        'product_walk_iff_valid')},
+    **{'ECC.ClosedWalk.'+n: {'propext', 'Quot.sound'} for n in (
+        'closure_iff', 'valid_iff_factor_walks', 'closed_valid_iff',
+        'closed_walk_realizable_iff', 'trace_injective_iff_nodup',
+        'before_transitions', 'closed_replay_not_nodup')},
+    **{'ECC.ClosedControls.'+n: {'propext'} for n in (
+        'colliding_same_queues', 'paired_triangle_profile')},
+    **{'ECC.ClosedControls.'+n: {'propext', 'Quot.sound'} for n in (
+        'prism_valid_closed', 'prism_departures_distinct', 'prism_full_replay_repeats',
+        'colliding_closed_walk_not_cycle', 'closure_not_edges',
+        'paired_triangles_valid_simple', 'paired_closed_factor_walks')},
 }
 
 
@@ -66,7 +81,9 @@ def main():
                      ('-o', str(Path(build)/'RankCompression.olean'), 'RankCompression.lean'),
                      ('RankControls.lean',),
                      ('-o', str(Path(build)/'EventShuffle.olean'), 'EventShuffle.lean'),
-                     ('EventControls.lean',)]:
+                     ('-o', str(Path(build)/'EventControls.olean'), 'EventControls.lean'),
+                     ('-o', str(Path(build)/'ClosedWalk.olean'), 'ClosedWalk.lean'),
+                     ('ClosedControls.lean',)]:
             run = subprocess.run([LEAN, *args], cwd=ROOT, env=env, text=True,
                                  stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             print(run.stdout, end='', flush=True)
@@ -81,7 +98,7 @@ def main():
                 actual[name] = {a.strip() for a in axioms.split(',')} if axioms else set()
     if actual != EXPECTED:
         raise RuntimeError('Axiom audit differs: '+repr(actual))
-    print('PASS: 82 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
+    print('PASS: 110 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
 
 
 if __name__ == '__main__':

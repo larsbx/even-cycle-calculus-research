@@ -109,7 +109,7 @@ status = "working"
 statement = "Finite coordinate event lists are determined by their axis word and coordinate projections. Realizability is equivalent to exact coordinate length compatibility. Projection/interleaving and replay recover every coherent single-coordinate transition path from its starting vertex."
 authority = "proof/coordinate-event-shuffle.md"
 evidence = "formal/EventShuffle.lean"
-formal_verification = "17 general Lean/Std declarations with exact propext or propext/Quot.sound audits. Closure, projected factor-edge conditions, endpoint normalization and simple-cycle counting are separate."
+formal_verification = "17 general Lean/Std declarations with exact propext or propext/Quot.sound audits. The separate closed-walk component supplies projected factor-edge/closure conditions and endpoint normalization; simple-cycle counting remains separate."
 independent_acceptance = "kernel-checked specified finite event/path component; full c8 formula and external mathematical acceptance remain separate"
 
 [[claim]]
@@ -138,3 +138,21 @@ authority = "proof/ordinal-rank-compression.md"
 evidence = "formal/RankControls.lean"
 formal_verification = "Three finite Lean/Std declarations, exact standard propext/Quot.sound axioms."
 independent_acceptance = "formal finite controls, not full formula acceptance"
+
+[[claim]]
+id = "CLOSED-COORDINATE-WALK-REALIZATION"
+status = "working"
+statement = "For finite coordinate vertex sets, an axis word and destination queues realize a unique closed Cartesian walk from a fixed root iff their lengths are compatible and every queue follows changing factor edges and closes at that root coordinate. The m departures are exactly the m+1 replay vertices with their final endpoint removed, and their distinctness is equivalent to trace injectivity."
+authority = "proof/closed-coordinate-walks.md"
+evidence = "formal/ClosedWalk.lean"
+formal_verification = "19 general Lean/Std declarations with exact propext or propext/Quot.sound audits. Arbitrary edge relations are permitted with changes required explicitly. Modular cycle adjacency for the list trace, executable pattern correspondence and ordinary-cycle cardinality remain separate."
+independent_acceptance = "kernel-checked specified closed-walk component; full c8 formula and external mathematical acceptance remain separate"
+
+[[claim]]
+id = "CLOSED-WALK-COLLISION-AND-ODD-PROJECTION-CONTROLS"
+status = "computed"
+statement = "The prism witness has valid factor edges, closes and has distinct departures but repeats its root in the full replay. The same projected queues admit a colliding interleaving. Another closed replay fails a factor edge. A simple K2 square K3 square K3 witness has profile (2,3,3) with both odd projections closed triangles."
+authority = "proof/closed-coordinate-walks.md"
+evidence = "formal/ClosedControls.lean"
+formal_verification = "Nine finite Lean/Std declarations with exact propext or propext/Quot.sound audits and constructive finite function equality."
+independent_acceptance = "formal finite controls, not a fresh enumeration of the corpus counts or full formula acceptance"
