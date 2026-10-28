@@ -103,7 +103,9 @@ zero, including all fixed-coordinate multiplicities.
    of stationary-coordinate steps for coherent transitions. The
    [closed-walk component](closed-coordinate-walks.md) proves projected factor-edge
    and closing conditions, exact closed-walk realization and endpoint
-   normalization. Full typed-pattern/executable correspondence remains open.
+   normalization. The [modular cycle criterion](modular-cycle-trace.md)
+   connects this departure trace to CycleEmbedding in both directions. Full
+   typed-pattern/executable correspondence remains open.
 3. The coordinate word w is a shuffle with ra copies of a. Before step u,
    let qa(u) be the number of a's in the preceding u positions. The product
    vertex at u has labels

@@ -3,8 +3,8 @@
 `Shuffle.lean` uses only Lean/Std, pinned to `leanprover/lean4:v4.34.0-rc2`.
 From the repository root, run `python3 formal/check.py` with that toolchain.
 Set `LEAN_BINARY` to an explicit compiler path when needed. This compiles all
-11 Lean sources, rebuilding all local imports in a temporary directory,
-and verifies 110 exact named axiom sets. It does not rely on a cached olean.
+13 Lean sources, rebuilding all local imports in a temporary directory,
+and verifies 127 exact named axiom sets. It does not rely on a cached olean.
 CI downloads the exact official release archive and checks SHA-256
 `3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8`.
 
@@ -71,8 +71,13 @@ departure-list injectivity. `ClosedControls.lean` adds nine controls for the
 prism, colliding interleavings, missing edges and paired triangle projections.
 See [the closed-walk scope](../proof/closed-coordinate-walks.md).
 
-Typed-shape/executable-encoding correspondence, modular cycle adjacency for the
-list-derived trace, restricted-growth completeness,
+`CycleTrace.lean` adds ten general lemmas proving modular adjacency for the
+list-derived trace and an exact simple-cycle criterion in terms of length,
+departure injectivity, factor walks and closure. `CycleControls.lean` adds
+seven controls, including necessity of closure and the minimum cycle length.
+See [the modular cycle scope](../proof/modular-cycle-trace.md).
+
+Typed-shape/executable-encoding correspondence, restricted-growth completeness,
 quotient-motif classification, the cardinality identity and the free 16-to-1
 orbit quotient remain open. The full graph formula and source-owned graph-ring
 theorems are not promoted. Kernel checks of the specified components do not

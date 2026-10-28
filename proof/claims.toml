@@ -145,7 +145,7 @@ status = "working"
 statement = "For finite coordinate vertex sets, an axis word and destination queues realize a unique closed Cartesian walk from a fixed root iff their lengths are compatible and every queue follows changing factor edges and closes at that root coordinate. The m departures are exactly the m+1 replay vertices with their final endpoint removed, and their distinctness is equivalent to trace injectivity."
 authority = "proof/closed-coordinate-walks.md"
 evidence = "formal/ClosedWalk.lean"
-formal_verification = "19 general Lean/Std declarations with exact propext or propext/Quot.sound audits. Arbitrary edge relations are permitted with changes required explicitly. Modular cycle adjacency for the list trace, executable pattern correspondence and ordinary-cycle cardinality remain separate."
+formal_verification = "19 general Lean/Std declarations with exact propext or propext/Quot.sound audits. Arbitrary edge relations are permitted with changes required explicitly. The separate CycleTrace component supplies modular cycle adjacency; executable pattern correspondence and ordinary-cycle cardinality remain open."
 independent_acceptance = "kernel-checked specified closed-walk component; full c8 formula and external mathematical acceptance remain separate"
 
 [[claim]]
@@ -156,3 +156,21 @@ authority = "proof/closed-coordinate-walks.md"
 evidence = "formal/ClosedControls.lean"
 formal_verification = "Nine finite Lean/Std declarations with exact propext or propext/Quot.sound audits and constructive finite function equality."
 independent_acceptance = "formal finite controls, not a fresh enumeration of the corpus counts or full formula acceptance"
+
+[[claim]]
+id = "MODULAR-CYCLE-TRACE-CRITERION"
+status = "working"
+statement = "For a finite positive-length coordinate-event replay with its explicit closing condition, the departure trace is a CycleEmbedding iff its length is at least three, its departures are distinct and its projected coordinate walks follow changing factor edges. A self-contained criterion includes closure on both sides, with no parity or simple-projection assumption."
+authority = "proof/modular-cycle-trace.md"
+evidence = "formal/CycleTrace.lean"
+formal_verification = "Ten general Lean/Std declarations: two with no axioms, three with propext, five with propext/Quot.sound. Exact axiom audit in formal/check.py. This is an event/trace structural criterion, not executable pattern completeness or ordinary-cycle cardinality."
+independent_acceptance = "kernel-checked specified cycle component; full c8 formula and external mathematical acceptance remain separate"
+
+[[claim]]
+id = "MODULAR-CYCLE-TRACE-CONTROLS"
+status = "computed"
+statement = "Prism and paired-triangle witnesses satisfy CycleEmbedding; colliding and missing-edge closed witnesses do not. Changing only the last destination preserves the departure trace while breaking closure and last-edge validity. A closed two-step backtrack has distinct departures but is not an ordinary cycle."
+authority = "proof/modular-cycle-trace.md"
+evidence = "formal/CycleControls.lean"
+formal_verification = "Seven finite Lean/Std declarations with exact propext/Quot.sound audits."
+independent_acceptance = "formal finite controls, not full counting-formula acceptance"

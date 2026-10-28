@@ -93,7 +93,7 @@ the final root. Further controls certify that:
 
 All 22 new declarations have exact audits using only standard `propext` and,
 where function extensionality is needed, `Quot.sound`. The full audit checks
-**110 named declarations across 11 sources**, rebuilding imports in a
+**127 named declarations across 13 sources**, rebuilding imports in a
 temporary directory. There is no choice, placeholder or native-evaluation
 axiom. Source pin, arithmetic receipts and theorem ownership are unchanged.
 

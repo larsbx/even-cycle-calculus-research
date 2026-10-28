@@ -26,7 +26,6 @@ assumptions. A further 15 general first-occurrence lemmas prove canonical
 coordinate extraction and uniqueness in a first-position representation;
 three controls delimit its encoding and injectivity assumptions. Remaining
 formal work includes typed-pattern/executable-encoding correspondence,
-modular cycle adjacency for the list-derived trace,
 motif isomorphism classification and the 16-to-1 counting quotient. No conjectured
 lower-support term remains in the displayed working decomposition.
 
@@ -49,6 +48,14 @@ endpoint is removed exactly once; departure-list distinctness is equivalent
 to trace injectivity. A colliding interleaving with the same prism queues and
 a simple paired-triangle witness isolate the remaining cycle condition.
 See `proof/closed-coordinate-walks.md`.
+
+Modular cycle adjacency is now checked by ten general lemmas and seven
+controls. For a closed event replay, the departure trace is a CycleEmbedding
+exactly when its length is at least three, its departures are distinct and
+its factor steps are valid. A self-contained criterion includes coordinate
+closure on both sides. Changing just the final destination demonstrates why
+closure cannot be inferred from the departure trace. See
+`proof/modular-cycle-trace.md`.
 
 ## Subsequent gates
 

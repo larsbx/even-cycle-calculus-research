@@ -61,6 +61,16 @@ EXPECTED = {
         'prism_valid_closed', 'prism_departures_distinct', 'prism_full_replay_repeats',
         'colliding_closed_walk_not_cycle', 'closure_not_edges',
         'paired_triangles_valid_simple', 'paired_closed_factor_walks')},
+    **{'ECC.CycleTrace.'+n: set() for n in ('state_zero', 'state_end')},
+    **{'ECC.CycleTrace.'+n: {'propext'} for n in (
+        'before_get_state', 'trace_eq_state', 'valid_iff_state_edges')},
+    **{'ECC.CycleTrace.'+n: {'propext', 'Quot.sound'} for n in (
+        'trace_next_eq_state', 'closed_trace_edges_iff', 'closed_cycle_iff',
+        'closed_cycle_iff_factor_walks', 'cycle_data_iff')},
+    **{'ECC.CycleControls.'+n: {'propext', 'Quot.sound'} for n in (
+        'prism_is_cycle', 'paired_is_cycle', 'colliding_is_not_cycle',
+        'invalid_closed_trace_not_cycle', 'open_endpoint_same_trace',
+        'closure_assumption_needed', 'length_bound_needed')},
 }
 
 
@@ -83,7 +93,9 @@ def main():
                      ('-o', str(Path(build)/'EventShuffle.olean'), 'EventShuffle.lean'),
                      ('-o', str(Path(build)/'EventControls.olean'), 'EventControls.lean'),
                      ('-o', str(Path(build)/'ClosedWalk.olean'), 'ClosedWalk.lean'),
-                     ('ClosedControls.lean',)]:
+                     ('-o', str(Path(build)/'ClosedControls.olean'), 'ClosedControls.lean'),
+                     ('-o', str(Path(build)/'CycleTrace.olean'), 'CycleTrace.lean'),
+                     ('CycleControls.lean',)]:
             run = subprocess.run([LEAN, *args], cwd=ROOT, env=env, text=True,
                                  stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             print(run.stdout, end='', flush=True)
@@ -98,7 +110,7 @@ def main():
                 actual[name] = {a.strip() for a in axioms.split(',')} if axioms else set()
     if actual != EXPECTED:
         raise RuntimeError('Axiom audit differs: '+repr(actual))
-    print('PASS: 110 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
+    print('PASS: 127 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
 
 
 if __name__ == '__main__':

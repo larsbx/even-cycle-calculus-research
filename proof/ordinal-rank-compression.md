@@ -83,8 +83,8 @@ Three kernel-checked controls establish:
 The new 23 declarations use exactly standard `propext` and `Quot.sound`.
 The constructive equality-equivalence instance is selected explicitly for
 the finite index bound, avoiding an order-derived instance that imports
-choice. `formal/check.py` compiles all 11 source files with fresh local
-imports and enforces all **110 exact named axiom sets**, rejecting any extra
+choice. `formal/check.py` compiles all 13 source files with fresh local
+imports and enforces all **127 exact named axiom sets**, rejecting any extra
 axiom or missing declaration. No choice, placeholders or native-evaluation
 axioms are permitted.
 

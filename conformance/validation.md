@@ -72,3 +72,19 @@ receipts, preserved source pin/status checks and seven regressions. Local
 execution uses the same documented executable-path compatibility shim.
 Final-head hosted acceptance remains required by PR #3. The full ordinary-cycle
 counting theorem and external mathematical acceptance remain open.
+
+## Modular cycle-trace continuation
+
+The next extension adds ten general lemmas and seven controls. They connect
+the event replay's departure list to modular CycleEmbedding adjacency in both
+directions, and give a self-contained cycle criterion with explicit coordinate
+closure, factor-edge validity, minimum length and departure injectivity.
+Controls certify the prism and paired-triangle witnesses, reject colliding
+and missing-edge witnesses, and demonstrate that closure and length at least
+three are essential. `formal/check.py` passes 127 exact declaration audits
+across 13 freshly compiled sources; the permitted axioms remain exactly the
+listed standard dependencies. `tools/validate.py` passes the unchanged source
+pin/status checks, both receipts and seven regressions. Final-head hosted
+acceptance is still required by PR #3 before merge. Executable pattern
+correspondence, enumeration completeness and the cardinality quotient remain
+separate from this structural criterion.
