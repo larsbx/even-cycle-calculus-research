@@ -5,3 +5,27 @@ Executed 2026-10-26 with the environment in `environment.json`.
 claim statuses checked, and the finite receipt reproduced byte-for-byte.
 This records local validation; hosted CI status is reported separately on the PR.
 No Lean build or independent mathematical acceptance was performed.
+
+## Subsequent c8 acceptance
+
+PR #2's original final-head hosted run has now been inspected and confirms
+success for both `finite-replay` and `finite-lean` at
+`c27c296665913bc8d3f71cbe9a353c8c2f70809e`:
+[run 40555414697](https://github.com/larsbx/even-cycle-calculus-research/actions/runs/40555414697).
+Merged main `fc4c7e3f646d59e92b224041d7939261c2bd0979` also passed
+[run 40555781489](https://github.com/larsbx/even-cycle-calculus-research/actions/runs/40555781489).
+These supersede the runner-queued observation recorded at merge time; earlier
+candidate runs failed before the correction already present at that final head.
+
+## Coordinate decoding continuation
+
+`python3 tools/validate.py` continues to pass the unchanged pinned-source and
+byte-for-byte finite receipts, including seven regression tests.
+`python3 formal/check.py` now checks the pinned compiler version and all 19
+declaration axiom sets: five coefficient tables, eight general finite
+coordinate-decoding lemmas and six formal control declarations. Imports are
+rebuilt in a temporary directory. Local checking used the executable-path
+compatibility shim described in PR #2; hosted CI uses the unmodified official
+digest-pinned compiler. New PR-head hosted evidence is recorded on that PR.
+Full extraction/counting formalization and external mathematical acceptance
+remain open.

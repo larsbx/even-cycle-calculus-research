@@ -1,7 +1,10 @@
-# Finite Lean coefficient certificates
+# Lean coefficients and coordinate decoding
 
 `Shuffle.lean` uses only Lean/Std, pinned to `leanprover/lean4:v4.34.0-rc2`.
-From this directory, run `lean Shuffle.lean` with that toolchain.
+From the repository root, run `python3 formal/check.py` with that toolchain.
+Set `LEAN_BINARY` to an explicit compiler path when needed. This compiles all
+three Lean sources, rebuilding the bridge import in a temporary directory,
+and verifies 19 exact named axiom sets. It does not rely on a cached olean.
 CI downloads the exact official release archive and checks SHA-256
 `3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8`.
 
@@ -21,9 +24,24 @@ each of the five declarations. Coefficients are defined
 through multiplicity-constrained word generation and pairwise distinct
 reconstructed label tuples, without hardcoding the acceptable words.
 
-These certificates do **not** formalize: completeness of restricted-growth
-patterns; the general projection/quotient injection and shuffle bijection;
-the 16-to-1 orbit quotient; five-/six-step motif classification; the general
-graph formulas; or any source-owned graph-ring theorem. Those have their
-separate working prose proof and Python checks. A successful finite Lean run
-does not establish external mathematical acceptance or novelty.
+`CollisionBridge.lean` now proves eight general lemmas about finite coordinate
+decoding: equality and single-coordinate-step reflection, unique changing axis,
+edge preservation, injectivity and support reflection, simple-cycle decoding,
+and fixed-shape assignment recovery when every label is used. See the exact
+assumptions and declaration table in
+[proof/coordinate-collision-bridge.md](../proof/coordinate-collision-bridge.md).
+Four declarations use only standard `Quot.sound` via function extensionality;
+four use no axioms. Edge preservation requires no nonedge preservation.
+
+`CollisionControls.lean` adds six formal control declarations. They show why
+edge preservation cannot replace injectivity and why unseen labels defeat
+assignment recovery. Five use standard `propext` and `Quot.sound`; one uses no
+axioms. The audit permits no choice, placeholders, added axioms or native
+evaluation axioms. Existing coefficient audits remain unchanged.
+
+The complete projection/extraction and shuffle bijection is **not** formalized.
+Typed-shape/executable-encoding correspondence, restricted-growth completeness,
+quotient-motif classification, the cardinality identity and the free 16-to-1
+orbit quotient remain open. The full graph formula and source-owned graph-ring
+theorems are not promoted. Kernel checks of the specified components do not
+establish external mathematical acceptance or novelty.

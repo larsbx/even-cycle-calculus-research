@@ -18,9 +18,13 @@ enumeration corpus. The pinned source owns the four-coordinate term.
 
 Independently review the general bijection and finite coefficient completeness;
 reconcile prior literature; formalize the graph-level extraction/decoding
-bijection and five-/six-step quotient classification. Existing Lean certificates
-cover all five raw coefficient tables; they do not certify the motif
-isomorphism classification or the graph-level bijection. No conjectured
+bijective count and five-/six-step quotient classification. Lean certificates
+cover all five raw coefficient tables and now eight general coordinate-decoding
+lemmas (collision/support reflection, edge preservation, cycle decoding and
+fixed-shape assignment recovery). Six formal controls certify essential
+assumptions. They do not certify canonical extraction across shapes, the
+executable-encoding correspondence, motif isomorphism classification, or the
+16-to-1 counting quotient. No conjectured
 lower-support term remains in the displayed working decomposition.
 
 ## Subsequent gates

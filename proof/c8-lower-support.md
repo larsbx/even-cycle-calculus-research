@@ -1,7 +1,9 @@
 # Complete c8 lower-support decomposition
 
 Working mathematical derivation, 2026-10-27. Exact finite coefficients have
-replayable certificates; general bijections below are prose proofs. This is
+replayable certificates. The [coordinate collision bridge](coordinate-collision-bridge.md)
+formally verifies the specified finite graph-level decoding components; the
+complete extraction/counting bijection below remains a prose proof. This is
 not a novelty claim, external mathematical acceptance, or a formalization of
 the full graph theorem. Shared support and top-symbol authority stays at
 [`graph-product-ring-research@28d0224`](https://github.com/larsbx/graph-product-ring-research/blob/28d022402037274a9fe85c1fd64ecda2532dceb9/proof/even-cycle-order-symbol.md).
@@ -98,7 +100,10 @@ zero, including all fixed-coordinate multiplicities.
    vertex at u has labels
    `(pi_a[qa(u) mod ra])_a`. Because each quotient map is injective, two
    product vertices at u,v coincide **if and only if** all these labels
-   agree. Let K(pi_1,...,pi_q) be the number of shuffles for which the eight
+   agree. The general typed-coordinate statement is now kernel-checked as
+   `ECC.CollisionBridge.decode_equal_iff` and `trace_injective_iff`; the
+   connection from the executable shuffle encoding to the typed shape remains
+   a separate formal obligation. Let K(pi_1,...,pi_q) be the number of shuffles for which the eight
    label tuples at times 0,...,7 are pairwise distinct. The final vertex
    at time 8 equals the root by coordinate closure.
 4. Therefore decoding the patterns, their injections, and a K-admissible
