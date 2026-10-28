@@ -20,7 +20,11 @@ assumptions. The [canonical extraction component](proof/canonical-coordinate-ext
 adds 15 general first-occurrence lemmas and three finite controls. It recovers
 coordinate equality classes by a bounded scan; compressed shuffle encoding
 and the full counting bijection remain open. Run `python3 formal/check.py`
-for all 37 declaration audits.
+for all 60 declaration audits. The [ordinal compression component](proof/ordinal-rank-compression.md)
+adds 20 general lemmas and three controls: representative labels are now
+bijective with `Fin r`, reconstruction is exact, and zero-first/append bounds
+match the enumerator. Stationary-step deletion and the full counting bijection
+remain open.
 
 Run `python3 experiments/lower_support.py` for exact symbolic coefficients,
 reproduction of all five original cases, 19 additional products, and 144 small

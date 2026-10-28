@@ -97,8 +97,9 @@ zero, including all fixed-coordinate multiplicities.
    change the equality pattern and must not be counted here. The
    [canonical extraction component](canonical-coordinate-extraction.md)
    now kernel-checks the first-occurrence representation of coordinate
-   equality classes; its conversion to contiguous restricted-growth labels
-   and compressed coordinate walks is not yet formalized.
+   equality classes. [Ordinal compression](ordinal-rank-compression.md) also
+   checks the contiguous label bijection and enumerator append bound;
+   stationary-step deletion and full compressed-walk correspondence are open.
 3. The coordinate word w is a shuffle with ra copies of a. Before step u,
    let qa(u) be the number of a's in the preceding u positions. The product
    vertex at u has labels

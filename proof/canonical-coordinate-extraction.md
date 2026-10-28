@@ -76,13 +76,14 @@ five-position example above.
 
 All 18 new declaration audits list only standard `propext` and `Quot.sound`;
 there is no choice, placeholder, added axiom or native-evaluation axiom.
-`formal/check.py` checks the complete exact set of 37 named declarations,
-rebuilding both imported local modules in a temporary directory.
+`formal/check.py` now checks the complete exact set of 60 named declarations,
+rebuilding imported local modules in a temporary directory.
 
-The representation is a subtype of traversal positions, not yet a contiguous
-`Fin(n_a)` label set. Formal rank compression of the representative subtype,
-deletion of stationary steps, recovery of the coordinate shuffle and proof
-of correspondence with `Shuffle.lean` remain open. So do quotient-motif
+This component's representation is a subtype of traversal positions. The
+[rank-compression extension](ordinal-rank-compression.md) now proves its
+bijection with a contiguous `Fin r` label set and the enumerator's candidate
+append bound. Deletion of stationary steps, recovery of the coordinate shuffle
+and full correspondence with `Shuffle.lean` remain open. So do quotient-motif
 classification and the free 16-to-1 cardinality quotient. In particular this
 does not yet prove the full product-cycle/shuffle counting bijection.
 

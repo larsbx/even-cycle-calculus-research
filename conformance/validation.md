@@ -39,3 +39,13 @@ in a temporary directory. Existing coefficient and collision-bridge audits
 are retained. Source pin and both arithmetic receipts are unchanged. Final-head
 hosted acceptance is still required by PR #3; earlier-head results do not
 validate this extension.
+
+## Ordinal rank-compression continuation
+
+The next extension of PR #3 adds 20 general ordinal rank-compression lemmas
+and three finite controls. The exact audit now checks 60 declarations across
+seven sources with fresh local imports. The rank bound explicitly selects a
+constructive equality-equivalence instance; no choice dependency is permitted.
+Arithmetic receipts, source pin and existing declarations are unchanged.
+Final-head hosted acceptance remains required; earlier-head runs do not
+validate the extension.

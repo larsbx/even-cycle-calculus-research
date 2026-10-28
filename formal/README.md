@@ -3,8 +3,8 @@
 `Shuffle.lean` uses only Lean/Std, pinned to `leanprover/lean4:v4.34.0-rc2`.
 From the repository root, run `python3 formal/check.py` with that toolchain.
 Set `LEAN_BINARY` to an explicit compiler path when needed. This compiles all
-five Lean sources, rebuilding both local imports in a temporary directory,
-and verifies 37 exact named axiom sets. It does not rely on a cached olean.
+seven Lean sources, rebuilding all local imports in a temporary directory,
+and verifies 60 exact named axiom sets. It does not rely on a cached olean.
 CI downloads the exact official release archive and checks SHA-256
 `3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8`.
 
@@ -49,7 +49,15 @@ showing failure under noninjective relabeling. All 18 use exactly standard
 [the exact scope](../proof/canonical-coordinate-extraction.md).
 
 The complete projection/extraction and shuffle bijection is **not** formalized.
-Rank compression of representative subtypes, stationary-step deletion,
+`RankCompression.lean` now proves 20 general lemmas giving an order-preserving
+bijection from representative subtypes to `Fin r`, exact reconstruction,
+injective decoding, label surjectivity and the literal restricted-growth
+candidate bound. `RankControls.lean` checks the finite representative list,
+compressed ordinal word and inverse lookup. All 23 audits use exactly standard
+`propext` and `Quot.sound`, without choice. See
+[the rank-compression scope](../proof/ordinal-rank-compression.md).
+
+Stationary-step deletion,
 typed-shape/executable-encoding correspondence, restricted-growth completeness,
 quotient-motif classification, the cardinality identity and the free 16-to-1
 orbit quotient remain open. The full graph formula and source-owned graph-ring

@@ -46,7 +46,7 @@ status = "working"
 statement = "The exact ordinary c8 profiles (6,2),(3,5),(4,4),(4,2,2),(2,3,3) and coordinate permutations have the motif formulas in proof/c8-lower-support.md, for every finite simple undirected factor family."
 authority = "proof/c8-lower-support.md"
 evidence = "conformance/lower-support.json"
-formal_verification = "Five coefficient tables, eight coordinate-decoding lemmas and 15 canonical first-occurrence lemmas are kernel-checked. Ordinal rank compression, compressed-walk/shuffle encoding correspondence, motif classification and the 16-to-1 counting quotient remain prose/open."
+formal_verification = "Five coefficient tables, eight coordinate-decoding lemmas, 15 canonical first-occurrence lemmas and 20 ordinal rank-compression lemmas are kernel-checked. Compressed-walk/shuffle correspondence, cyclic-pattern completeness, motif classification and the 16-to-1 counting quotient remain prose/open."
 independent_acceptance = "not established; hosted acceptance validates artifacts, not external mathematical acceptance"
 
 [[claim]]
@@ -100,5 +100,23 @@ status = "computed"
 statement = "The finite trace (0,1,0,2,1) has first-position labels (0,1,0,3,1), distinct from ordinal labels. Noninjective relabeling changes its first-position encoding."
 authority = "proof/canonical-coordinate-extraction.md"
 evidence = "formal/CanonicalControls.lean"
+formal_verification = "Three finite Lean/Std declarations, exact standard propext/Quot.sound axioms."
+independent_acceptance = "formal finite controls, not full formula acceptance"
+
+[[claim]]
+id = "ORDINAL-RANK-COMPRESSION"
+status = "working"
+statement = "Canonical coordinate representatives admit an order-preserving finite bijection with Fin r. Ordinal encoding reconstructs the coordinate trace, preserves equality, uses every label and satisfies initial-zero and the growPatterns candidate append range."
+authority = "proof/ordinal-rank-compression.md"
+evidence = "formal/RankCompression.lean"
+formal_verification = "20 general Lean/Std declarations, exact standard propext/Quot.sound axioms. No choice dependency; this is not full cyclic-pattern generator membership or a cycle/shuffle counting bijection."
+independent_acceptance = "kernel-checked specified finite coordinate component; full formula and external mathematical acceptance remain separate"
+
+[[claim]]
+id = "ORDINAL-RANK-CONTROLS"
+status = "computed"
+statement = "For the trace (0,1,0,2,1), representative positions are (0,1,3), compressed labels are (0,1,0,2,1), and ordinal 2 recovers position 3."
+authority = "proof/ordinal-rank-compression.md"
+evidence = "formal/RankControls.lean"
 formal_verification = "Three finite Lean/Std declarations, exact standard propext/Quot.sound axioms."
 independent_acceptance = "formal finite controls, not full formula acceptance"

@@ -27,6 +27,14 @@ EXPECTED = {
         'normalized_shape_recovered', 'canonical_shape_unique', 'extract_surjective')},
     **{'ECC.CanonicalControls.'+n: {'propext', 'Quot.sound'} for n in (
         'first_positions', 'positions_are_not_ordinals', 'noninjective_relabel_changes_first')},
+    **{'ECC.RankCompression.'+n: {'propext', 'Quot.sound'} for n in (
+        'positions_mem_iff', 'positions_nodup', 'positions_sorted', 'unrank_rank', 'rank_unrank',
+        'rank_injective', 'unrank_injective', 'rank_lt_implies', 'rank_lt_iff', 'decode_encode',
+        'encode_representative', 'encode_surjective', 'decode_injective', 'encode_eq_iff',
+        'initial_segment_seen', 'encode_zero', 'predecessor_seen', 'fold_max_bounds',
+        'append_bound', 'enumerator_label_allowed')},
+    **{'ECC.RankControls.'+n: {'propext', 'Quot.sound'} for n in (
+        'representative_positions', 'compressed_ordinals', 'last_ordinal_recovers_position')},
 }
 
 
@@ -43,7 +51,9 @@ def main():
         for args in [('Shuffle.lean',), ('-o', str(Path(build)/'CollisionBridge.olean'), 'CollisionBridge.lean'),
                      ('CollisionControls.lean',),
                      ('-o', str(Path(build)/'CanonicalTrace.olean'), 'CanonicalTrace.lean'),
-                     ('CanonicalControls.lean',)]:
+                     ('-o', str(Path(build)/'CanonicalControls.olean'), 'CanonicalControls.lean'),
+                     ('-o', str(Path(build)/'RankCompression.olean'), 'RankCompression.lean'),
+                     ('RankControls.lean',)]:
             run = subprocess.run([LEAN, *args], cwd=ROOT, env=env, text=True,
                                  stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             print(run.stdout, end='', flush=True)
@@ -58,7 +68,7 @@ def main():
                 actual[name] = {a.strip() for a in axioms.split(',')} if axioms else set()
     if actual != EXPECTED:
         raise RuntimeError('Axiom audit differs: '+repr(actual))
-    print('PASS: 37 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
+    print('PASS: 60 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
 
 
 if __name__ == '__main__':

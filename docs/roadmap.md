@@ -25,10 +25,16 @@ fixed-shape assignment recovery). Six formal controls certify essential
 assumptions. A further 15 general first-occurrence lemmas prove canonical
 coordinate extraction and uniqueness in a first-position representation;
 three controls delimit its encoding and injectivity assumptions. Remaining
-formal work includes rank compression to ordinal labels, stationary-step
-deletion and coordinate-word recovery, executable-encoding correspondence,
+formal work includes stationary-step deletion and coordinate-word recovery,
+executable-encoding correspondence,
 motif isomorphism classification and the 16-to-1 counting quotient. No conjectured
 lower-support term remains in the displayed working decomposition.
+
+Ordinal rank compression is now checked by 20 general lemmas and three finite
+controls. The maps to/from `Fin r` are inverse and preserve equality and
+representative order. Every ordinal is used, the first is zero, and subsequent
+labels lie in the exact candidate range used by `growPatterns`. This is not
+yet membership in the whole generated cyclic-pattern list.
 
 ## Subsequent gates
 
