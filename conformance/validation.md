@@ -49,3 +49,12 @@ constructive equality-equivalence instance; no choice dependency is permitted.
 Arithmetic receipts, source pin and existing declarations are unchanged.
 Final-head hosted acceptance remains required; earlier-head runs do not
 validate the extension.
+
+## Coordinate-event projection and replay continuation
+
+The next extension adds 17 general finite event/path lemmas and five controls,
+including exact replay of the recorded prism eight-cycle witness. The audit
+checks 82 declarations across nine sources with fresh imports. It rejects
+choice, placeholders and native-evaluation axioms. Both original arithmetic
+receipts and the source pin remain unchanged. Final-head hosted acceptance is
+still required by PR #3; no earlier run substitutes for it.

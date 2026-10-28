@@ -99,7 +99,9 @@ zero, including all fixed-coordinate multiplicities.
    now kernel-checks the first-occurrence representation of coordinate
    equality classes. [Ordinal compression](ordinal-rank-compression.md) also
    checks the contiguous label bijection and enumerator append bound;
-   stationary-step deletion and full compressed-walk correspondence are open.
+   [event projection and replay](coordinate-event-shuffle.md) check deletion
+   of stationary-coordinate steps for coherent transitions. Closing/edge and
+   endpoint conventions and full executable correspondence remain open.
 3. The coordinate word w is a shuffle with ra copies of a. Before step u,
    let qa(u) be the number of a's in the preceding u positions. The product
    vertex at u has labels

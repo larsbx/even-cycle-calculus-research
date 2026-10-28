@@ -35,6 +35,17 @@ EXPECTED = {
         'append_bound', 'enumerator_label_allowed')},
     **{'ECC.RankControls.'+n: {'propext', 'Quot.sound'} for n in (
         'representative_positions', 'compressed_ordinals', 'last_ordinal_recovers_position')},
+    **{'ECC.EventShuffle.'+n: {'propext'} for n in (
+        'project_head', 'project_other', 'project_length', 'projection_compatible',
+        'weave_sound', 'compatible_tail', 'transition_axis_word')},
+    **{'ECC.EventShuffle.'+n: {'propext', 'Quot.sound'} for n in (
+        'queue_after_project_head', 'weave_project', 'weave_complete',
+        'compatible_reconstruction', 'reconstruction_unique', 'reconstruction_iff_compatible',
+        'update_of_stationary', 'update_of_coordinate_step', 'replay_transitions',
+        'weave_replay_transitions')},
+    **{'ECC.EventControls.'+n: {'propext'} for n in (
+        'prism_projections', 'prism_vertex_path', 'short_queue_fails',
+        'extra_queue_not_exact', 'stationarity_required')},
 }
 
 
@@ -53,7 +64,9 @@ def main():
                      ('-o', str(Path(build)/'CanonicalTrace.olean'), 'CanonicalTrace.lean'),
                      ('-o', str(Path(build)/'CanonicalControls.olean'), 'CanonicalControls.lean'),
                      ('-o', str(Path(build)/'RankCompression.olean'), 'RankCompression.lean'),
-                     ('RankControls.lean',)]:
+                     ('RankControls.lean',),
+                     ('-o', str(Path(build)/'EventShuffle.olean'), 'EventShuffle.lean'),
+                     ('EventControls.lean',)]:
             run = subprocess.run([LEAN, *args], cwd=ROOT, env=env, text=True,
                                  stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             print(run.stdout, end='', flush=True)
@@ -68,7 +81,7 @@ def main():
                 actual[name] = {a.strip() for a in axioms.split(',')} if axioms else set()
     if actual != EXPECTED:
         raise RuntimeError('Axiom audit differs: '+repr(actual))
-    print('PASS: 60 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
+    print('PASS: 82 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
 
 
 if __name__ == '__main__':

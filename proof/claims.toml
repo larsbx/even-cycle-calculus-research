@@ -46,7 +46,7 @@ status = "working"
 statement = "The exact ordinary c8 profiles (6,2),(3,5),(4,4),(4,2,2),(2,3,3) and coordinate permutations have the motif formulas in proof/c8-lower-support.md, for every finite simple undirected factor family."
 authority = "proof/c8-lower-support.md"
 evidence = "conformance/lower-support.json"
-formal_verification = "Five coefficient tables, eight coordinate-decoding lemmas, 15 canonical first-occurrence lemmas and 20 ordinal rank-compression lemmas are kernel-checked. Compressed-walk/shuffle correspondence, cyclic-pattern completeness, motif classification and the 16-to-1 counting quotient remain prose/open."
+formal_verification = "Five coefficient tables, eight coordinate-decoding lemmas, 15 first-occurrence lemmas, 20 rank-compression lemmas and 17 event projection/replay lemmas are kernel-checked. Closed-walk endpoint/edge and executable-shuffle correspondence, cyclic-pattern completeness, motif classification and the 16-to-1 counting quotient remain prose/open."
 independent_acceptance = "not established; hosted acceptance validates artifacts, not external mathematical acceptance"
 
 [[claim]]
@@ -101,6 +101,24 @@ statement = "The finite trace (0,1,0,2,1) has first-position labels (0,1,0,3,1),
 authority = "proof/canonical-coordinate-extraction.md"
 evidence = "formal/CanonicalControls.lean"
 formal_verification = "Three finite Lean/Std declarations, exact standard propext/Quot.sound axioms."
+independent_acceptance = "formal finite controls, not full formula acceptance"
+
+[[claim]]
+id = "FINITE-EVENT-SHUFFLE-RECONSTRUCTION"
+status = "working"
+statement = "Finite coordinate event lists are determined by their axis word and coordinate projections. Realizability is equivalent to exact coordinate length compatibility. Projection/interleaving and replay recover every coherent single-coordinate transition path from its starting vertex."
+authority = "proof/coordinate-event-shuffle.md"
+evidence = "formal/EventShuffle.lean"
+formal_verification = "17 general Lean/Std declarations with exact propext or propext/Quot.sound audits. Closure, projected factor-edge conditions, endpoint normalization and simple-cycle counting are separate."
+independent_acceptance = "kernel-checked specified finite event/path component; full c8 formula and external mathematical acceptance remain separate"
+
+[[claim]]
+id = "EVENT-SHUFFLE-CONTROLS"
+status = "computed"
+statement = "The recorded C4 square K2 eight-cycle witness is reconstructed exactly; short queues fail, extra queues can leave residue while violating compatibility, and a two-coordinate change is not reconstructed by one coordinate event."
+authority = "proof/coordinate-event-shuffle.md"
+evidence = "formal/EventControls.lean"
+formal_verification = "Five finite Lean/Std declarations with exact propext audits."
 independent_acceptance = "formal finite controls, not full formula acceptance"
 
 [[claim]]

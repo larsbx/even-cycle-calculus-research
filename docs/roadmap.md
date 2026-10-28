@@ -25,8 +25,8 @@ fixed-shape assignment recovery). Six formal controls certify essential
 assumptions. A further 15 general first-occurrence lemmas prove canonical
 coordinate extraction and uniqueness in a first-position representation;
 three controls delimit its encoding and injectivity assumptions. Remaining
-formal work includes stationary-step deletion and coordinate-word recovery,
-executable-encoding correspondence,
+formal work includes closing/edge conditions and endpoint alignment for
+compressed coordinate walks, executable-encoding correspondence,
 motif isomorphism classification and the 16-to-1 counting quotient. No conjectured
 lower-support term remains in the displayed working decomposition.
 
@@ -35,6 +35,12 @@ controls. The maps to/from `Fin r` are inverse and preserve equality and
 representative order. Every ordinal is used, the first is zero, and subsequent
 labels lie in the exact candidate range used by `growPatterns`. This is not
 yet membership in the whole generated cyclic-pattern list.
+
+Event projection/interleaving is now checked by 17 general lemmas and five
+finite controls. Compatible coordinate words and destination queues have a
+unique event realization; projection and replay recover coherent vertex paths
+after stationary-step deletion. This does not automatically establish closed
+coordinate-walk conditions or injectivity of the product path.
 
 ## Subsequent gates
 

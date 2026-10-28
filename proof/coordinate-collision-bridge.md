@@ -65,7 +65,7 @@ The eight general declarations use either no axioms or Lean's standard
 use either no axioms or standard `propext` and `Quot.sound`. They use no
 choice, placeholders, added axioms or native-evaluation axioms. Together with
 the five existing coefficient declarations and the canonical coordinate
-extraction component, `formal/check.py` compiles and compares **60 exact named
+extraction and event components, `formal/check.py` compares **82 exact named
 axiom sets**; imports are built afresh in a temporary
 directory. Hosted CI uses the unchanged, digest-pinned official compiler.
 
@@ -75,7 +75,8 @@ formal obligations remain:
 - Construct the typed shape from the executable shuffle/prefix-index encoding
   and connect its collision predicate to the checked finite tables.
 - Connect the now-checked [ordinal rank compression](ordinal-rank-compression.md)
-  to stationary-step deletion and the compressed coordinate walks.
+  and [event projection/replay](coordinate-event-shuffle.md) to the closing,
+  factor-edge and endpoint conditions for compressed coordinate walks.
   The [coordinate-level extraction and recovery lemmas](canonical-coordinate-extraction.md)
   do not yet establish the full cycle/shuffle bijection.
 - Verify completeness of the equality-pattern enumeration and the quotient
