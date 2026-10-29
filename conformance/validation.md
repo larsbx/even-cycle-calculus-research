@@ -148,3 +148,30 @@ archive matches the CI SHA-256; execution uses the same documented PID-path
 shim. This increment requires its own final-head hosted acceptance. Canonical
 extraction/template assembly, motif classification and the counting quotient
 remain open.
+
+## PR #4 hosted acceptance and merge
+
+Both `finite-replay` and `finite-lean` completed successfully at exact final
+head `b64307c26806e16b34cf2a0b15e1d6f06c944534` in
+[run 40858189895](https://github.com/larsbx/even-cycle-calculus-research/actions/runs/40858189895).
+No submitted review findings, unresolved threads or change requests were recorded.
+PR #4 merged as `777ddc5ef704664d1e60650c7f1289261c486139` after its recorded
+final-head CI gate passed. This records engineering acceptance of the specified
+generator component, not external mathematical acceptance of the c8 theorem.
+
+## Canonical coordinate membership continuation
+
+The next increment adds 22 general lemmas and ten controls. A nonempty finite
+coordinate trace's canonical ordinal word is generated iff the source has
+unequal neighbors and unequal endpoints. The assignment reconstructs every
+source vertex, is injective, visits all labels and is unique for that fixed
+template. Equality patterns characterize canonical words exactly. Source
+selected steps are preserved without inducedness. Controls cover A-D, an odd
+triangle, a repeated-vertex six-step projection, faithful equality-pattern
+relabeling, adjacent/endpoint collapses, reconstruction and an extra graph edge.
+The exact audit passes 230 named declarations across 21 fresh source builds
+under the existing strict axiom policy. Both arithmetic receipts, Shuffle.lean,
+the source pin/statuses and all seven regressions are unchanged. Local Lean
+uses the documented PID-path shim. This increment requires its own final-head
+hosted acceptance. Arbitrary-template normalization inverses, full product-cycle
+composition, motif classification and the cardinality quotient remain open.

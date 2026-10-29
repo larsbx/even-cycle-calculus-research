@@ -25,7 +25,8 @@ fixed-shape assignment recovery). Six formal controls certify essential
 assumptions. A further 15 general first-occurrence lemmas prove canonical
 coordinate extraction and uniqueness in a first-position representation;
 three controls delimit its encoding and injectivity assumptions. Remaining
-formal work includes canonical-extraction/template assembly, motif isomorphism
+formal work includes arbitrary-template normalization inverses, product-cycle composition,
+motif isomorphism
 classification and the 16-to-1 counting quotient. No conjectured
 lower-support term remains in the displayed working decomposition.
 
@@ -62,9 +63,9 @@ typed departure trace by 16 general lemmas and eight controls, for finite
 bounded positive-period templates. Period-divisible coordinate step counts
 give endpoint closure, including zero steps. Prism, colliding and paired-triangle
 inputs match exactly; malformed default inputs isolate the required bounds.
-See `proof/executable-coordinate-trace.md`. Canonical extraction still needs
-to be assembled with all generated templates and the generator/cardinality
-proofs remain open.
+See `proof/executable-coordinate-trace.md`. The generator and forward
+canonical membership continuations below supply their specified interfaces.
+Inverse/product composition and cardinality proofs remain open.
 
 The literal axis-word generator now has 17 general lemmas and seven controls.
 It emits exactly the bounded words with the requested multiplicities, each
@@ -77,8 +78,19 @@ lemmas and seven controls. Its output is exactly the zero-first finite words
 satisfying all prefix append bounds, unequal neighbors and unequal endpoints,
 with no duplicates. The four four-step patterns and the 11/41 length-five/six
 inventories are checked directly. See `proof/cyclic-pattern-generator.md`.
-Canonical extraction/template assembly, motif classification and the counting
-quotient remain open.
+The coordinate membership continuation below supplies the forward canonical
+extraction interface; inverse/product composition and the counting quotient
+remain open.
+
+Canonical coordinate-trace membership is now checked by 22 general lemmas
+and ten controls. A trace with unequal neighbors and unequal endpoints
+normalizes to a generated word exactly once, with injective reconstruction,
+all labels visited and a unique assignment for that template. Canonical words
+agree exactly when source equality patterns agree. Source selected steps are
+preserved, with no inducedness requirement. See
+`proof/canonical-pattern-membership.md`. Inverse normalization for arbitrary
+generated templates, full product-cycle composition, motif classification
+and the cardinality quotient remain open.
 
 ## Subsequent gates
 

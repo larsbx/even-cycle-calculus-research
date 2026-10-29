@@ -104,13 +104,15 @@ in the working c8 derivation. Neither arithmetic receipt changes.
 
 Of the 17 general declarations, `map_lift` uses no axioms and the other 16
 use standard `propext/Quot.sound`. Three controls use only `propext`; four
-use `propext/Quot.sound`. The complete audit checks 198 exact named declarations
-across 19 fresh source builds: 138 general lemmas, 55 finite controls and five
+use `propext/Quot.sound`. The complete audit checks 230 exact named declarations
+across 21 fresh source builds: 160 general lemmas, 65 finite controls and five
 coefficient certificates. No choice, placeholders or native-evaluation axioms
 are permitted. The literal generator and coefficient source is unchanged.
 
-Remaining work includes assembly of canonical extraction with all generated
-bounded templates, quotient-motif classification and the finite cardinality/free
+The [canonical membership bridge](canonical-pattern-membership.md) now checks
+the forward coordinate-trace membership and assignment interface. Remaining
+work includes arbitrary-template normalization inverses, full product-cycle
+composition, quotient-motif classification and the finite cardinality/free
 16-to-1 quotient.
 The full c8 formula remains working. Shared source pin and theorem ownership
 are unchanged; external mathematical acceptance and novelty remain separate.

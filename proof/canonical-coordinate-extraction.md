@@ -76,7 +76,7 @@ five-position example above.
 
 All 18 new declaration audits list only standard `propext` and `Quot.sound`;
 there is no choice, placeholder, added axiom or native-evaluation axiom.
-`formal/check.py` now checks the complete exact set of 198 named declarations,
+`formal/check.py` now checks the complete exact set of 230 named declarations,
 rebuilding imported local modules in a temporary directory.
 
 This component's representation is a subtype of traversal positions. The
@@ -87,9 +87,12 @@ check stationary-step deletion and coordinate-word recovery for coherent
 transition records. The [closed-walk extension](closed-coordinate-walks.md)
 supplies factor-edge and closure conditions and endpoint normalization. The
 [executable bridge](executable-coordinate-trace.md) connects bounded templates
-to the literal prefix-index trace and collision test. Assembly of the canonical
-extraction into all generated bounded templates remains open, as does quotient-motif
-classification and the free 16-to-1 cardinality quotient. In particular this
+to the literal prefix-index trace and collision test. The
+[canonical membership bridge](canonical-pattern-membership.md) now places every
+proper coordinate trace's ordinal word in the generated inventory, with injective
+reconstruction and fixed-template assignment uniqueness. Inverse normalization
+for arbitrary generated templates, full product-cycle composition, quotient-motif
+classification and the free 16-to-1 cardinality quotient remain open. In particular this
 does not yet prove the full product-cycle/shuffle counting bijection.
 
 The general c8 formula keeps its working status. Source pin and shared theorem

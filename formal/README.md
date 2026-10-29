@@ -3,8 +3,8 @@
 `Shuffle.lean` uses only Lean/Std, pinned to `leanprover/lean4:v4.34.0-rc2`.
 From the repository root, run `python3 formal/check.py` with that toolchain.
 Set `LEAN_BINARY` to an explicit compiler path when needed. This compiles all
-19 Lean sources, rebuilding all local imports in a temporary directory,
-and verifies 198 exact named axiom sets. It does not rely on a cached olean.
+21 Lean sources, rebuilding all local imports in a temporary directory,
+and verifies 230 exact named axiom sets. It does not rely on a cached olean.
 CI downloads the exact official release archive and checks SHA-256
 `3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8`.
 
@@ -93,8 +93,15 @@ prefix/closing semantics, cyclic-pattern completeness and unique enumeration
 for the literal restricted-growth generator. `PatternControls.lean` adds seven
 controls. See [the cyclic-pattern proof](../proof/cyclic-pattern-generator.md).
 
-Assembly of canonical extraction into all generated bounded templates,
-quotient-motif classification, the cardinality identity and the free 16-to-1
+`NormalizedPattern.lean` adds 22 general lemmas connecting canonical ordinal
+traces to exact generated-pattern membership, source equality patterns,
+injective assignment reconstruction and selected-step preservation.
+`NormalizedControls.lean` adds ten controls. See
+[the canonical membership scope](../proof/canonical-pattern-membership.md).
+
+Normalization inverses for arbitrary generated bounded templates, complete
+product-cycle composition, quotient-motif classification, the cardinality
+identity and the free 16-to-1
 orbit quotient remain open. The full graph formula and source-owned graph-ring
 theorems are not promoted. Kernel checks of the specified components do not
 establish external mathematical acceptance or novelty.

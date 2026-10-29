@@ -228,3 +228,21 @@ authority = "proof/cyclic-pattern-generator.md"
 evidence = "formal/PatternControls.lean"
 formal_verification = "Seven finite Lean/Std declarations: two without axioms, five with propext/Quot.sound. Selected equality words are checked, not a new motif-isomorphism classification."
 independent_acceptance = "formal finite pattern controls, not ordinary-cycle totals or full formula acceptance"
+
+[[claim]]
+id = "CANONICAL-COORDINATE-PATTERN-MEMBERSHIP"
+status = "working"
+statement = "For a nonempty finite coordinate trace, its canonical ordinal word belongs to the literal generated cyclic-pattern inventory iff consecutive vertices and the last/first pair are unequal. Every proper trace's word occurs once. Canonical words agree exactly for equal source equality patterns. An injective assignment reconstructs the trace, visits every template label and is unique for that fixed template; selected source steps are preserved without inducedness."
+authority = "proof/canonical-pattern-membership.md"
+evidence = "formal/NormalizedPattern.lean"
+formal_verification = "22 general Lean/Std declarations, exact standard propext/Quot.sound audits. Inverse normalization for arbitrary generated templates, full product-cycle composition, quotient-motif classification and the cardinality quotient remain separate."
+independent_acceptance = "kernel-checked specified forward coordinate interface; full c8 formula and external mathematical acceptance remain separate"
+
+[[claim]]
+id = "CANONICAL-COORDINATE-MEMBERSHIP-CONTROLS"
+status = "computed"
+statement = "Arbitrarily named four-step traces normalize to A/B/C/D and occur once. Odd triangle and repeated-vertex six-step words are retained. Equal source equality relations over different finite alphabets give the same canonical word. Adjacent and endpoint collapses are rejected; reconstruction and selected-step looplessness are checked. A K10 wedge assignment permits a nonselected extra edge."
+authority = "proof/canonical-pattern-membership.md"
+evidence = "formal/NormalizedControls.lean"
+formal_verification = "Ten finite Lean/Std declarations, exact standard propext/Quot.sound audits. The six-step equality word and selected edges are checked, not a motif-isomorphism classification."
+independent_acceptance = "formal finite controls, not a fresh enumeration or full formula acceptance"
