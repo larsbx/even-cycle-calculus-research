@@ -19,8 +19,9 @@ python3 formal/check.py
 For an existing checkout, set `GPR_SOURCE=/absolute/path/to/pinned/source`.
 Replay rejects another source HEAD or changed pinned input bytes.
 `tools/validate.py` parses the registry, checks preserved source statuses,
-and recomputes both receipts byte-for-byte, including all symbolic coefficients
-and 144 small graph pairs, then runs the exact regression suite. The finite
+and recomputes all three receipts byte-for-byte, including all symbolic coefficients,
+144 small graph pairs and the independent quotient inversion, then runs the
+13-test regression suite. The finite
 Lean step needs the version in `formal/lean-toolchain`; it uses Std only and
 compiles all 21 Lean sources and enforces 230 exact named axiom sets. Set
 `LEAN_BINARY` if the compiler is not on PATH. See `formal/README.md`.
@@ -28,3 +29,18 @@ The printed JSON is deterministic;
 tool versions and execution date are recorded separately in `conformance/environment.json`.
 Use a clean checkout for independent reproduction. Passing this finite replay
 does not close an all-graph proof or external literature/acceptance obligation.
+
+To replay only the new independent comparison:
+
+```sh
+python3 experiments/partition_inversion.py > /tmp/partition-inversion.json
+diff -u conformance/partition-inversion.json /tmp/partition-inversion.json
+```
+
+`kernels/partition_inversion.py` has no repository imports. The experiment
+imports motif fixtures/formulas and the old DFS only on the comparison side;
+the oracle constructs its own colored Cartesian adjacency and counts arbitrary
+maps of weighted quotients. The same CI finite-replay job enforces this third
+receipt. New regressions cover every simple host of order at most four,
+complete-host selected-cycle counts, direct all-map checks of the frontier
+algorithm, Möbius cancellation, loops and parallel-edge exponents.
