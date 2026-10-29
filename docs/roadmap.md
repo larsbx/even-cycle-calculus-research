@@ -94,6 +94,15 @@ and the cardinality quotient remain open.
 
 ## Subsequent gates
 
+The independent partition-lattice comparison is delivered in
+`proof/partition-inversion.md`: all 168 existing product cases agree profile by
+profile with the old DFS, motif formulas and recorded receipts where present;
+five additional boundary cases also pass. This uses the established Möbius
+identity with weighted quotient edges, not the shuffle kernel. It strengthens
+finite reproducibility without closing arbitrary-template inverses,
+product-cycle composition, motif classification, the formal orbit quotient,
+external mathematical review or novelty review.
+
 1. Broaden independent fixtures, preserve negative controls and exact conventions.
 2. Write a claim-specific proof or counterexample record; distinguish conjecture
    from finite observations and working derivation.

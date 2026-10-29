@@ -4,6 +4,15 @@ status_values = ["source_reference", "open", "working", "computed", "conjectural
 acceptance_authority = false
 
 [[claim]]
+id = "C8-INDEPENDENT-PARTITION-INVERSION"
+status = "computed"
+statement = "Direct weighted-quotient homomorphism inversion agrees with every existing corpus profile: five original products, 19 additional products, 144 small factor pairs, plus five boundary cases. The Mobius identity is established literature, not a new theorem claim."
+authority = "proof/partition-inversion.md"
+evidence = "conformance/partition-inversion.json"
+formal_verification = "No new Lean declarations. Six independent-oracle regressions, including all-map comparisons, partition cancellation and parallel-edge multiplicity controls. Existing 230 declaration audits remain separate."
+independent_acceptance = "Independent computational method; no external mathematical review or novelty determination claimed"
+
+[[claim]]
 id = "SOURCE-SUPPORT-ORDER"
 status = "source_reference"
 source_id = "GPR-SUPPORT-ORDER"
