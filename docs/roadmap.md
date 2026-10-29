@@ -115,3 +115,15 @@ composition and motif-classification obligations remain active.
 4. Reconcile external literature and source manuscript provenance before asking
    for mathematical acceptance. Do not edit the source registry from this repo.
 5. Update the central map with any changed interface or dependency revision.
+
+## Independent partition-lattice comparison delivered
+
+The new histogram-assisted quotient-hom zeta and explicit Mobius inversion
+recovers the c8 corpus, all 144 small graph pairs, and both c10 support-four
+profiles, including the raw coefficients 660,2562,4008,8310,12540. A separate
+quotient-block CSP oracle cross-checks the zeta route. Twelve Lean declarations
+include conditional finite inversion transport with an explicit cancellation
+hypothesis. Six regression tests preserve counting conventions. See
+[the check note](../proof/partition-lattice-check.md). No formula discrepancy
+was found; general graph cardinality formalization and expansion novelty
+review remain open.

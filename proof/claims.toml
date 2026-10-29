@@ -281,3 +281,12 @@ statement = "Determine prior art and obtain independent review for the graph-sec
 authority = "proof/simple-projection-sectors.md"
 formal_verification = "Not a formal-verification claim"
 independent_acceptance = "open; absence of a matching search result is not evidence of priority"
+
+[[claim]]
+id = "FINITE-PARTITION-LATTICE-COMPARISON"
+status = "computed"
+statement = "An unrestricted adjacency equality histogram, quotient-hom zeta transform and explicit finite vertex-partition Mobius sum reproduce the five original c8 inventories, all 19 additional fixtures, 144 small graph pairs and all eight near-top profiles. Raw coefficients 660,2562,4008,8310,12540 agree; no formula discrepancies were found."
+authority = "proof/partition-lattice-check.md"
+evidence = "conformance/partition-inversion.json; experiments/partition_inversion.py; experiments/partition_walks.cpp; kernels/partition_lattice.py; tests/test_partition_inversion.py"
+formal_verification = "Twelve PartitionInversion declarations: six without axioms, five with propext, one with Quot.sound. finite_inversion has an explicit cancellation hypothesis. Actual partition enumeration, factorial weights, numerical c10 coefficients and full graph-level 2m cardinality are separate computational/prose components."
+independent_acceptance = "General partition inversion is prior work. Finite independent corroboration does not settle candidate factor-motif expansion priority or external mathematical acceptance."

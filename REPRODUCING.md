@@ -19,10 +19,11 @@ python3 formal/check.py
 For an existing checkout, set `GPR_SOURCE=/absolute/path/to/pinned/source`.
 Replay rejects another source HEAD or changed pinned input bytes.
 `tools/validate.py` parses the registry, checks preserved source statuses,
-and recomputes all three receipts byte-for-byte, including all symbolic coefficients
-and 144 small graph pairs, then runs the exact regression suite. The finite
+and recomputes all four receipts byte-for-byte. These include the symbolic
+coefficients, 144 small graph pairs and independent finite partition-lattice
+inversion check. It then runs the exact regression suite. The finite
 Lean step needs the version in `formal/lean-toolchain`; it uses Std only and
-compiles all 22 Lean sources and enforces 238 exact named axiom sets. Set
+compiles all 23 Lean sources and enforces 250 exact named axiom sets. Set
 `LEAN_BINARY` if the compiler is not on PATH. See `formal/README.md`.
 The printed JSON is deterministic;
 tool versions and execution date are recorded separately in `conformance/environment.json`.
@@ -33,3 +34,16 @@ standard library. The all-length recurrence and scoped c10 formulas have a
 working prose proof, separately from the eight new formal collision declarations.
 Use a clean checkout for independent reproduction. Passing this finite replay
 does not close an all-graph proof or external literature/acceptance obligation.
+
+The independent inversion receipt uses `g++ -std=c++17` and Python only:
+
+```sh
+python3 experiments/partition_inversion.py > /tmp/partition-inversion.json
+diff -u conformance/partition-inversion.json /tmp/partition-inversion.json
+```
+
+It checks unrestricted adjacency walks through explicit finite vertex-partition
+Mobius inversion, without importing a shuffle or connected-axis recurrence.
+The entire original/additional c8 corpus, 144 small graph pairs, and eight
+near-top profiles are compared. See `proof/partition-lattice-check.md` for
+quotient-hom oracle coverage, cancellation ledgers and formal boundaries.

@@ -17,5 +17,7 @@ lower = subprocess.check_output([sys.executable, str(root/'experiments/lower_sup
 assert lower == (root/'conformance/lower-support.json').read_bytes(), 'Lower-support receipt differs'
 near = subprocess.check_output([sys.executable, str(root/'experiments/near_top.py')], cwd=root)
 assert near == (root/'conformance/near-top.json').read_bytes(), 'Near-top receipt differs'
+inversion = subprocess.check_output([sys.executable, str(root/'experiments/partition_inversion.py')], cwd=root)
+assert inversion == (root/'conformance/partition-inversion.json').read_bytes(), 'Partition-inversion receipt differs'
 subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-v'], cwd=root, check=True)
-print('PASS: source pins, preserved statuses, all three exact receipts, and coefficient/graph regressions')
+print('PASS: source pins, preserved statuses, all four exact receipts, and coefficient/graph regressions')

@@ -8,6 +8,12 @@ import tempfile
 ROOT = Path(__file__).resolve().parent
 LEAN = os.environ.get('LEAN_BINARY', 'lean')
 EXPECTED = {
+    **{'ECC.PartitionInversion.'+n: set() for n in (
+        'factor_constant', 'quotient_factorization', 'kernel_discrete_iff',
+        'quotient_loop_obstruction', 'repeated_edge_cancellation', 'rooted_c10_quotient')},
+    'ECC.PartitionInversion.quotient_unique': {'Quot.sound'},
+    **{'ECC.PartitionInversion.'+n: {'propext'} for n in (
+        'isum_add', 'isum_mul', 'isum_swap', 'isum_congr', 'finite_inversion')},
     **{'ECC.'+n: {'propext'} for n in (
         'paired_triangle_coefficient', 'four_step_coefficients',
         'two_four_step_coefficients', 'six_two_coefficients', 'three_five_coefficients')},
@@ -160,7 +166,8 @@ def main():
                      ('PatternControls.lean',),
                      ('-o', str(Path(build)/'NormalizedPattern.olean'), 'NormalizedPattern.lean'),
                      ('NormalizedControls.lean',),
-                     ('IntervalCollision.lean',)]:
+                     ('IntervalCollision.lean',),
+                     ('PartitionInversion.lean',)]:
             run = subprocess.run([LEAN, *args], cwd=ROOT, env=env, text=True,
                                  stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             print(run.stdout, end='', flush=True)
@@ -175,7 +182,7 @@ def main():
                 actual[name] = {a.strip() for a in axioms.split(',')} if axioms else set()
     if actual != EXPECTED:
         raise RuntimeError('Axiom audit differs: '+repr(actual))
-    print('PASS: 238 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
+    print('PASS: 250 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
 
 
 if __name__ == '__main__':

@@ -3,8 +3,8 @@
 `Shuffle.lean` uses only Lean/Std, pinned to `leanprover/lean4:v4.34.0-rc2`.
 From the repository root, run `python3 formal/check.py` with that toolchain.
 Set `LEAN_BINARY` to an explicit compiler path when needed. This compiles all
-22 Lean sources, rebuilding all local imports in a temporary directory,
-and verifies 238 exact named axiom sets. It does not rely on a cached olean.
+23 Lean sources, rebuilding all local imports in a temporary directory,
+and verifies 250 exact named axiom sets. It does not rely on a cached olean.
 CI downloads the exact official release archive and checks SHA-256
 `3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8`.
 
@@ -116,3 +116,14 @@ identity and the free 16-to-1
 orbit quotient remain open. The full graph formula and source-owned graph-ring
 theorems are not promoted. Kernel checks of the specified components do not
 establish external mathematical acceptance or novelty.
+
+`PartitionInversion.lean` adds twelve declarations independent of the shuffle
+bridge: quotient factorization with explicit representatives, uniqueness,
+discrete-kernel injectivity, a quotient-loop obstruction, finite integer sum
+algebra, conditional finite inversion transport and two controls. The actual
+Mobius cancellation identity is an explicit hypothesis of `finite_inversion`,
+not a fully formalized factorial-weight theorem. The independent computation
+checks it through Pi_10; numerical C10 coefficients and the ordinary-cycle
+cardinality quotient remain outside this formal component. Six declarations
+have no axioms, five have exactly propext, and uniqueness has exactly Quot.sound.
+See `proof/partition-lattice-check.md` for computation and claim boundaries.

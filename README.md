@@ -107,3 +107,9 @@ claims; treating finite search or a language port as a theorem.
 The [existing Vizing program](https://github.com/larsbx/vizing-domination-conjecture-research)
 remains independent. Literature and novelty review remain coordinated with
 [novelty-lab](https://github.com/larsbx/novelty-lab).
+
+Independent finite verification now also uses explicit vertex-partition Mobius
+inversion, separately from the shuffle and connected-axis kernels. It recovers
+the full finite c8 corpus and the new c10 coefficients without discrepancies.
+See [the inversion note](proof/partition-lattice-check.md) for exact algorithm,
+cancellation ledgers, negative controls and formal scope.

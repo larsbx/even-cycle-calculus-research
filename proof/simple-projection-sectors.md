@@ -240,3 +240,13 @@ Regression also checks exact wordwise equivalence of the modular collision
 test and the interval test for nine profiles, coordinate permutations, empty
 factors and inactive-coordinate multiplicities. The original c8 receipts
 remain byte-identical. General formal graph counting and priority remain open.
+
+## Independent partition-lattice comparison
+
+The independent [finite inversion check](partition-lattice-check.md) recovers
+the five new raw coefficients and all specified ordinary cycle counts without
+the shuffle generator or connected-axis recurrence. It also checks the full
+existing c8 corpus and 144 small graph pairs. No formula discrepancy was found.
+The new conditional Lean inversion transport does not formalize the numerical
+C10 coefficients or the full graph-level quotient. General inversion remains
+prior work; candidate expansion priority and independent review remain open.

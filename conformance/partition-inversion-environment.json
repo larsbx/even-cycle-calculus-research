@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-29",
+  "python": "3.12.14",
+  "g++": "13.3.0",
+  "lean": "4.34.0-rc2",
+  "lean_archive_sha256": "3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8",
+  "local_lean_executable_path_shim": "/proc/<pid>/exe to /proc/self/exe readlink substitution; compiler and library bytes unchanged",
+  "base_commit": "fc14bd87cffa5c2202d49801fd130d3ee1972591",
+  "authority": "finite replay and specified Lean components; hosted acceptance is separate"
+}

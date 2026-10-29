@@ -1,4 +1,4 @@
-name: Exact c8 acceptance
+name: Exact ordinary-cycle acceptance
 on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
