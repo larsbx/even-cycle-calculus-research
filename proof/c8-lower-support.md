@@ -1,7 +1,9 @@
 # Complete c8 lower-support decomposition
 
 Working mathematical derivation, 2026-10-27. Exact finite coefficients have
-replayable certificates; general bijections below are prose proofs. This is
+replayable certificates. The [coordinate collision bridge](coordinate-collision-bridge.md)
+formally verifies the specified finite graph-level decoding components; the
+complete extraction/counting bijection below remains a prose proof. This is
 not a novelty claim, external mathematical acceptance, or a formalization of
 the full graph theorem. Shared support and top-symbol authority stays at
 [`graph-product-ring-research@28d0224`](https://github.com/larsbx/graph-product-ring-research/blob/28d022402037274a9fe85c1fd64ecda2532dceb9/proof/even-cycle-order-symbol.md).
@@ -92,13 +94,31 @@ zero, including all fixed-coordinate multiplicities.
    exactly one projected walk of that equality type. Conversely every such
    walk recovers exactly this pattern and this injection. Extra graph edges
    impose no restrictions. Importantly, a noninjective map from H would
-   change the equality pattern and must not be counted here.
+   change the equality pattern and must not be counted here. The
+   [canonical extraction component](canonical-coordinate-extraction.md)
+   now kernel-checks the first-occurrence representation of coordinate
+   equality classes. [Ordinal compression](ordinal-rank-compression.md) also
+   checks the contiguous label bijection and enumerator append bound;
+   [event projection and replay](coordinate-event-shuffle.md) check deletion
+   of stationary-coordinate steps for coherent transitions. The
+   [closed-walk component](closed-coordinate-walks.md) proves projected factor-edge
+   and closing conditions, exact closed-walk realization and endpoint
+   normalization. The [modular cycle criterion](modular-cycle-trace.md)
+   connects this departure trace to CycleEmbedding in both directions. The
+   [executable trace bridge](executable-coordinate-trace.md) now identifies
+   the literal prefix-index trace and collision test for bounded positive-period
+   templates. Assembly with canonical extraction and cyclic-pattern completeness
+   remain open.
 3. The coordinate word w is a shuffle with ra copies of a. Before step u,
    let qa(u) be the number of a's in the preceding u positions. The product
    vertex at u has labels
    `(pi_a[qa(u) mod ra])_a`. Because each quotient map is injective, two
    product vertices at u,v coincide **if and only if** all these labels
-   agree. Let K(pi_1,...,pi_q) be the number of shuffles for which the eight
+   agree. The general typed-coordinate statement is now kernel-checked as
+   `ECC.CollisionBridge.decode_equal_iff` and `trace_injective_iff`. The
+   executable correspondence for bounded templates is checked as
+   `ECC.ExecutableTrace.vertices_eq_encoded_departures` and
+   `executable_injectivity_iff`. Let K(pi_1,...,pi_q) be the number of shuffles for which the eight
    label tuples at times 0,...,7 are pairwise distinct. The final vertex
    at time 8 equals the root by coordinate closure.
 4. Therefore decoding the patterns, their injections, and a K-admissible
@@ -171,6 +191,11 @@ multiplicity and decrements it; induction on the remaining length proves
 that every word of that multiplicity occurs exactly once. The collision test
 uses precisely the label tuples in step 3. Thus the finite sums above have
 exhaustive certificates, rather than relying on sampled graph inputs.
+The general shuffle statement is now kernel-checked in
+`formal/WordGenerator.lean`: exact length/multiplicity membership, absence of
+duplicate emitted words, filtered-list uniqueness and a constructive typed-axis
+lift. See [the axis-word generator proof](axis-word-generator.md). Whole cyclic
+equality-pattern completeness remains a separate formal obligation.
 
 `conformance/lower-support.json` lists every **nonzero** pattern tuple and
 its K, together with aggregate coefficients. Zero terms are recomputed by

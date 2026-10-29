@@ -12,6 +12,34 @@ including odd projections and collision corrections. It is a **working** proof;
 external mathematical acceptance and full formalization remain open.
 The source-owned four-coordinate coefficient stays pinned and unchanged.
 
+The [formal collision bridge](proof/coordinate-collision-bridge.md) now proves
+eight general finite coordinate-decoding lemmas, including collision/support
+reflection and recovery of factor assignments for a fully visited fixed shape.
+Six formal control declarations certify the required injectivity and label-use
+assumptions. The [canonical extraction component](proof/canonical-coordinate-extraction.md)
+adds 15 general first-occurrence lemmas and three finite controls. It recovers
+coordinate equality classes by a bounded scan; compressed shuffle encoding
+and the full counting bijection remain open. Run `python3 formal/check.py`
+for all 175 declaration audits. The [ordinal compression component](proof/ordinal-rank-compression.md)
+adds 20 general lemmas and three controls: representative labels are now
+bijective with `Fin r`, reconstruction is exact, and zero-first/append bounds
+match the enumerator. The [coordinate-event component](proof/coordinate-event-shuffle.md)
+adds 17 general lemmas and five controls: compatible words and destination
+queues have a unique interleaving, and replay reconstructs a coherent vertex
+path after stationary-step deletion. The [closed-walk component](proof/closed-coordinate-walks.md)
+adds 19 general lemmas and nine controls: compatible closed factor walks
+realize a unique closed product walk; endpoint normalization identifies exactly
+the departure vertices for collision testing. The [modular cycle criterion](proof/modular-cycle-trace.md)
+adds ten general lemmas and seven controls: closed event replays yield exactly
+the existing simple-cycle predicate when their departures are distinct and
+they follow valid factor steps. The [executable trace bridge](proof/executable-coordinate-trace.md)
+adds 16 general lemmas and eight controls: for bounded positive-period templates,
+the literal prefix-index vertex list equals encoded departures, and its
+Boolean collision test is exactly trace injectivity. The [axis-word generator proof](proof/axis-word-generator.md)
+adds 17 general lemmas and seven controls: exact multiplicity completeness,
+unique emitted words, collision-filter uniqueness and constructive typed axes.
+Cyclic-pattern completeness and the ordinary-cycle counting bijection remain open.
+
 Run `python3 experiments/lower_support.py` for exact symbolic coefficients,
 reproduction of all five original cases, 19 additional products, and 144 small
 labeled factor pairs. Its deterministic receipt is
@@ -40,8 +68,9 @@ The shared graph-ring foundations retain a single authority in
 [28d0224](https://github.com/larsbx/graph-product-ring-research/tree/28d022402037274a9fe85c1fd64ecda2532dceb9); source claims labeled **working** remain working.
 Lean kernel verification of a specified component, bounded computational evidence,
 and independent mathematical acceptance are distinct fields. The bootstrap added
-no Lean proof. The subsequent [finite Lean certificates](formal/README.md)
-cover all five raw coefficient tables, not the general graph theorem. No
+no Lean proof. The subsequent [Lean components](formal/README.md)
+cover all five raw coefficient tables and the specified graph-level decoding
+lemmas, not the full extraction/counting theorem. No
 independent-acceptance or novelty claim is made.
 
 Non-goals: changing publication/manuscript bytes; silently upgrading inherited

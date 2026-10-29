@@ -46,7 +46,7 @@ status = "working"
 statement = "The exact ordinary c8 profiles (6,2),(3,5),(4,4),(4,2,2),(2,3,3) and coordinate permutations have the motif formulas in proof/c8-lower-support.md, for every finite simple undirected factor family."
 authority = "proof/c8-lower-support.md"
 evidence = "conformance/lower-support.json"
-formal_verification = "General projection/shuffle bijection is prose only; specific finite coefficient tables are separate."
+formal_verification = "Five coefficient tables, eight coordinate-decoding lemmas, 15 first-occurrence lemmas, 20 rank-compression lemmas and 17 event projection/replay lemmas are kernel-checked. Closed-walk endpoint/edge and executable-shuffle correspondence, cyclic-pattern completeness, motif classification and the 16-to-1 counting quotient remain prose/open."
 independent_acceptance = "not established; hosted acceptance validates artifacts, not external mathematical acceptance"
 
 [[claim]]
@@ -66,3 +66,147 @@ authority = "proof/c8-lower-support.md"
 evidence = "conformance/lower-support.json"
 formal_verification = "none for these graph counterexamples"
 independent_acceptance = "finite exact counterexamples, not a conjectured general correction"
+
+[[claim]]
+id = "FINITE-COORDINATE-COLLISION-BRIDGE"
+status = "working"
+statement = "For finite coordinate label sets, injective factor assignments preserve and reflect equality, single-coordinate changes, traversal injectivity and used support. Edge-preserving assignments decode a prescribed closed label walk to a simple cycle iff that shape is simple. A fixed shape visiting all labels uniquely determines its assignments."
+authority = "proof/coordinate-collision-bridge.md"
+evidence = "formal/CollisionBridge.lean"
+formal_verification = "Eight general declarations checked by Lean/Std 4.34.0-rc2; four depend on standard Quot.sound via function extensionality and four on no axioms. Exact declaration audit in formal/check.py."
+independent_acceptance = "kernel-checked specified components; full c8 theorem and external mathematical acceptance remain separate"
+
+[[claim]]
+id = "COORDINATE-BRIDGE-CONTROLS"
+status = "computed"
+statement = "An edge-preserving C4-to-K2 fold creates traversal collisions. Two injective assignments into three vertices can produce the same trace if a label is unvisited."
+authority = "proof/coordinate-collision-bridge.md"
+evidence = "formal/CollisionControls.lean"
+formal_verification = "Six finite declarations checked by Lean/Std 4.34.0-rc2; standard propext/Quot.sound only, or no axioms."
+independent_acceptance = "formal counterexamples under explicit hypotheses, not full formula acceptance"
+
+[[claim]]
+id = "CANONICAL-COORDINATE-EXTRACTION"
+status = "working"
+statement = "A bounded scan of a finite nonempty coordinate trace yields canonical first-occurrence representatives with exact equality classes, reconstruction, injective realization, label surjectivity and invariance under injective relabeling. Normalized first-position shapes with the same coordinate equality relation are unique."
+authority = "proof/canonical-coordinate-extraction.md"
+evidence = "formal/CanonicalTrace.lean"
+formal_verification = "15 general Lean/Std declarations, exact standard propext/Quot.sound axioms. This does not identify representative-position labels with contiguous ordinal labels or prove the full product-cycle/shuffle bijection."
+independent_acceptance = "kernel-checked specified coordinate component; full formula and external mathematical acceptance remain separate"
+
+[[claim]]
+id = "CANONICAL-ENCODING-CONTROLS"
+status = "computed"
+statement = "The finite trace (0,1,0,2,1) has first-position labels (0,1,0,3,1), distinct from ordinal labels. Noninjective relabeling changes its first-position encoding."
+authority = "proof/canonical-coordinate-extraction.md"
+evidence = "formal/CanonicalControls.lean"
+formal_verification = "Three finite Lean/Std declarations, exact standard propext/Quot.sound axioms."
+independent_acceptance = "formal finite controls, not full formula acceptance"
+
+[[claim]]
+id = "FINITE-EVENT-SHUFFLE-RECONSTRUCTION"
+status = "working"
+statement = "Finite coordinate event lists are determined by their axis word and coordinate projections. Realizability is equivalent to exact coordinate length compatibility. Projection/interleaving and replay recover every coherent single-coordinate transition path from its starting vertex."
+authority = "proof/coordinate-event-shuffle.md"
+evidence = "formal/EventShuffle.lean"
+formal_verification = "17 general Lean/Std declarations with exact propext or propext/Quot.sound audits. The separate closed-walk component supplies projected factor-edge/closure conditions and endpoint normalization; simple-cycle counting remains separate."
+independent_acceptance = "kernel-checked specified finite event/path component; full c8 formula and external mathematical acceptance remain separate"
+
+[[claim]]
+id = "EVENT-SHUFFLE-CONTROLS"
+status = "computed"
+statement = "The recorded C4 square K2 eight-cycle witness is reconstructed exactly; short queues fail, extra queues can leave residue while violating compatibility, and a two-coordinate change is not reconstructed by one coordinate event."
+authority = "proof/coordinate-event-shuffle.md"
+evidence = "formal/EventControls.lean"
+formal_verification = "Five finite Lean/Std declarations with exact propext audits."
+independent_acceptance = "formal finite controls, not full formula acceptance"
+
+[[claim]]
+id = "ORDINAL-RANK-COMPRESSION"
+status = "working"
+statement = "Canonical coordinate representatives admit an order-preserving finite bijection with Fin r. Ordinal encoding reconstructs the coordinate trace, preserves equality, uses every label and satisfies initial-zero and the growPatterns candidate append range."
+authority = "proof/ordinal-rank-compression.md"
+evidence = "formal/RankCompression.lean"
+formal_verification = "20 general Lean/Std declarations, exact standard propext/Quot.sound axioms. No choice dependency; this is not full cyclic-pattern generator membership or a cycle/shuffle counting bijection."
+independent_acceptance = "kernel-checked specified finite coordinate component; full formula and external mathematical acceptance remain separate"
+
+[[claim]]
+id = "ORDINAL-RANK-CONTROLS"
+status = "computed"
+statement = "For the trace (0,1,0,2,1), representative positions are (0,1,3), compressed labels are (0,1,0,2,1), and ordinal 2 recovers position 3."
+authority = "proof/ordinal-rank-compression.md"
+evidence = "formal/RankControls.lean"
+formal_verification = "Three finite Lean/Std declarations, exact standard propext/Quot.sound axioms."
+independent_acceptance = "formal finite controls, not full formula acceptance"
+
+[[claim]]
+id = "CLOSED-COORDINATE-WALK-REALIZATION"
+status = "working"
+statement = "For finite coordinate vertex sets, an axis word and destination queues realize a unique closed Cartesian walk from a fixed root iff their lengths are compatible and every queue follows changing factor edges and closes at that root coordinate. The m departures are exactly the m+1 replay vertices with their final endpoint removed, and their distinctness is equivalent to trace injectivity."
+authority = "proof/closed-coordinate-walks.md"
+evidence = "formal/ClosedWalk.lean"
+formal_verification = "19 general Lean/Std declarations with exact propext or propext/Quot.sound audits. Arbitrary edge relations are permitted with changes required explicitly. CycleTrace supplies modular cycle adjacency and ExecutableTrace supplies bounded-template executable correspondence; complete extraction/template assembly and ordinary-cycle cardinality remain open."
+independent_acceptance = "kernel-checked specified closed-walk component; full c8 formula and external mathematical acceptance remain separate"
+
+[[claim]]
+id = "CLOSED-WALK-COLLISION-AND-ODD-PROJECTION-CONTROLS"
+status = "computed"
+statement = "The prism witness has valid factor edges, closes and has distinct departures but repeats its root in the full replay. The same projected queues admit a colliding interleaving. Another closed replay fails a factor edge. A simple K2 square K3 square K3 witness has profile (2,3,3) with both odd projections closed triangles."
+authority = "proof/closed-coordinate-walks.md"
+evidence = "formal/ClosedControls.lean"
+formal_verification = "Nine finite Lean/Std declarations with exact propext or propext/Quot.sound audits and constructive finite function equality."
+independent_acceptance = "formal finite controls, not a fresh enumeration of the corpus counts or full formula acceptance"
+
+[[claim]]
+id = "MODULAR-CYCLE-TRACE-CRITERION"
+status = "working"
+statement = "For a finite positive-length coordinate-event replay with its explicit closing condition, the departure trace is a CycleEmbedding iff its length is at least three, its departures are distinct and its projected coordinate walks follow changing factor edges. A self-contained criterion includes closure on both sides, with no parity or simple-projection assumption."
+authority = "proof/modular-cycle-trace.md"
+evidence = "formal/CycleTrace.lean"
+formal_verification = "Ten general Lean/Std declarations: two with no axioms, three with propext, five with propext/Quot.sound. Exact axiom audit in formal/check.py. This is an event/trace structural criterion, not executable pattern completeness or ordinary-cycle cardinality."
+independent_acceptance = "kernel-checked specified cycle component; full c8 formula and external mathematical acceptance remain separate"
+
+[[claim]]
+id = "MODULAR-CYCLE-TRACE-CONTROLS"
+status = "computed"
+statement = "Prism and paired-triangle witnesses satisfy CycleEmbedding; colliding and missing-edge closed witnesses do not. Changing only the last destination preserves the departure trace while breaking closure and last-edge validity. A closed two-step backtrack has distinct departures but is not an ordinary cycle."
+authority = "proof/modular-cycle-trace.md"
+evidence = "formal/CycleControls.lean"
+formal_verification = "Seven finite Lean/Std declarations with exact propext/Quot.sound audits."
+independent_acceptance = "formal finite controls, not full counting-formula acceptance"
+
+[[claim]]
+id = "EXECUTABLE-PREFIX-TRACE-COLLISION-BRIDGE"
+status = "working"
+statement = "For finite bounded coordinate templates with positive periods, valid finite coordinate axes and a complete counter vector, the literal Shuffle.vertices output equals the encoded typed departures. Its distinct test is exactly trace injectivity. Final coordinate counters equal their initial values plus step counts, and period-divisible step counts give closure."
+authority = "proof/executable-coordinate-trace.md"
+evidence = "formal/ExecutableTrace.lean"
+formal_verification = "16 general Lean/Std declarations: one without axioms, two with propext, 13 with propext/Quot.sound. A structural list-modification proof avoids the choice dependency of the pinned Std lookup lemma. Full generator completeness, canonical extraction/template assembly and cardinality remain separate."
+independent_acceptance = "kernel-checked specified executable/typed component; full c8 formula and external mathematical acceptance remain separate"
+
+[[claim]]
+id = "EXECUTABLE-PREFIX-TRACE-CONTROLS"
+status = "computed"
+statement = "The prism and paired-triangle raw templates and axis words reproduce the prior typed witnesses and pass the literal collision test; the colliding interleaving fails. Profile step counts yield closure through the general period theorem. Empty templates and invalid raw axes demonstrate default behavior excluded by the theorem's hypotheses."
+authority = "proof/executable-coordinate-trace.md"
+evidence = "formal/ExecutableControls.lean"
+formal_verification = "Eight finite Lean/Std declarations: four with propext and four with propext/Quot.sound."
+independent_acceptance = "formal finite controls, not a fresh enumeration or full formula acceptance"
+
+[[claim]]
+id = "EXACT-AXIS-WORD-GENERATOR"
+status = "working"
+statement = "The literal finite axis-word generator emits exactly the bounded words of its requested length with precisely the requested coordinate multiplicities, each once. Boolean filtering preserves uniqueness. Every emitted word constructs finite typed coordinate axes with those step counts, and the actual collision-filtered kernel list has exact membership and no duplicate words."
+authority = "proof/axis-word-generator.md"
+evidence = "formal/WordGenerator.lean"
+formal_verification = "17 general Lean/Std declarations: map_lift without axioms, the other 16 with exact propext/Quot.sound audits. Cyclic equality-pattern completeness, canonical extraction/template assembly, motif classification and the ordinary-cycle cardinality quotient remain separate."
+independent_acceptance = "kernel-checked specified axis-word component; full c8 formula and external mathematical acceptance remain separate"
+
+[[claim]]
+id = "AXIS-WORD-GENERATOR-CONTROLS"
+status = "computed"
+statement = "Six eight-step profile inventories have 28, 56, 70, 420, 560 and 2520 words. Prism and paired-triangle witness words occur exactly once. A constructive prism axis lift preserves its values and step counts. Zero/exhausted inventories, wrong multiplicities, an invalid axis and an inconsistent step budget are checked explicitly."
+authority = "proof/axis-word-generator.md"
+evidence = "formal/WordControls.lean"
+formal_verification = "Seven finite Lean/Std declarations: three with propext, four with propext/Quot.sound. Kernel reductions only; no native evaluation."
+independent_acceptance = "formal finite shuffle-inventory controls, not ordinary-cycle totals or full formula acceptance"
