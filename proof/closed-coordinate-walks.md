@@ -118,11 +118,11 @@ The 19 general declarations and nine controls are audited with exact standard
 `propext` or `propext/Quot.sound` dependencies. Finite vertex-function equality
 in the controls is decided by a bounded universal quantifier and function
 extensionality, with no classical choice. The complete audit now checks
-175 declarations in 17 freshly compiled sources: 122 general lemmas,
-48 finite controls and five coefficient certificates.
+198 declarations in 19 freshly compiled sources: 138 general lemmas,
+55 finite controls and five coefficient certificates.
 
 Remaining formal obligations include assembling canonical extraction into
-all generated bounded templates, whole cyclic-pattern generator completeness,
+all generated bounded templates,
 quotient-motif classification and the free 16-to-1 ordinary-cycle count.
 The full c8 formula remains a working prose
 derivation with finite exact checks. Source pin and theorem ownership are

@@ -120,3 +120,31 @@ are unchanged; all seven regressions pass. Local Lean uses the same documented
 executable-path shim. Hosted final-head acceptance remains required by PR #3.
 Whole cyclic equality-pattern completeness, canonical extraction/template
 assembly, quotient-motif classification and the cardinality quotient remain open.
+
+## PR #3 hosted acceptance and merge
+
+Both `finite-replay` and `finite-lean` completed successfully at exact final
+head `4d3d85b0a51828bcb80ebca91b8b749dc6bad914` in
+[run 40803497078](https://github.com/larsbx/even-cycle-calculus-research/actions/runs/40803497078).
+No submitted review findings, review threads or change requests were recorded.
+The older bot notice reporting a running review at 469de73 is not treated as
+final-head review approval. PR #3 merged as
+`acb8fe4e9806d18dc357ac98554e47ad31b5b905` after its recorded CI gate passed.
+This is engineering acceptance of the specified components, not external
+mathematical acceptance of the full c8 theorem.
+
+## Cyclic-pattern generator continuation
+
+The next focused increment adds 16 general lemmas and seven controls for the
+unchanged literal restricted-growth generator. Output membership is exactly
+the positionwise append-bound, neighbor and closing conditions. Both extension
+and canonical pattern lists have no duplicate words. Controls reproduce A-D
+and the 11/41 length-five/six inventories, verify selected words occur once,
+and reject four distinct malformed conditions. The exact audit checks 198
+named declarations across 19 freshly compiled sources; no choice, placeholders
+or native-evaluation axioms are allowed. The original receipts, Shuffle.lean,
+source pin/statuses and seven regressions remain unchanged. The local compiler
+archive matches the CI SHA-256; execution uses the same documented PID-path
+shim. This increment requires its own final-head hosted acceptance. Canonical
+extraction/template assembly, motif classification and the counting quotient
+remain open.

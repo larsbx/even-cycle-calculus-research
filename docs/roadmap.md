@@ -25,8 +25,8 @@ fixed-shape assignment recovery). Six formal controls certify essential
 assumptions. A further 15 general first-occurrence lemmas prove canonical
 coordinate extraction and uniqueness in a first-position representation;
 three controls delimit its encoding and injectivity assumptions. Remaining
-formal work includes canonical-extraction/template assembly, generator
-completeness, motif isomorphism classification and the 16-to-1 counting quotient. No conjectured
+formal work includes canonical-extraction/template assembly, motif isomorphism
+classification and the 16-to-1 counting quotient. No conjectured
 lower-support term remains in the displayed working decomposition.
 
 Ordinal rank compression is now checked by 20 general lemmas and three finite
@@ -70,8 +70,15 @@ The literal axis-word generator now has 17 general lemmas and seven controls.
 It emits exactly the bounded words with the requested multiplicities, each
 once; collision filtering preserves uniqueness. Every emitted word constructs
 a typed coordinate word with exactly those step counts. This closes axis-word
-completeness while leaving cyclic-pattern completeness and the subsequent
-counting quotient open. See `proof/axis-word-generator.md`.
+completeness. See `proof/axis-word-generator.md`.
+
+The literal cyclic restricted-growth pattern generator now has 16 general
+lemmas and seven controls. Its output is exactly the zero-first finite words
+satisfying all prefix append bounds, unequal neighbors and unequal endpoints,
+with no duplicates. The four four-step patterns and the 11/41 length-five/six
+inventories are checked directly. See `proof/cyclic-pattern-generator.md`.
+Canonical extraction/template assembly, motif classification and the counting
+quotient remain open.
 
 ## Subsequent gates
 

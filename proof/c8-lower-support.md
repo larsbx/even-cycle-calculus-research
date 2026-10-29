@@ -107,8 +107,9 @@ zero, including all fixed-coordinate multiplicities.
    connects this departure trace to CycleEmbedding in both directions. The
    [executable trace bridge](executable-coordinate-trace.md) now identifies
    the literal prefix-index trace and collision test for bounded positive-period
-   templates. Assembly with canonical extraction and cyclic-pattern completeness
-   remain open.
+   templates. The [cyclic-pattern generator proof](cyclic-pattern-generator.md)
+   now establishes exact membership and unique enumeration for all lengths.
+   Assembly with canonical extraction remains open.
 3. The coordinate word w is a shuffle with ra copies of a. Before step u,
    let qa(u) be the number of a's in the preceding u positions. The product
    vertex at u has labels
@@ -195,7 +196,9 @@ The general shuffle statement is now kernel-checked in
 `formal/WordGenerator.lean`: exact length/multiplicity membership, absence of
 duplicate emitted words, filtered-list uniqueness and a constructive typed-axis
 lift. See [the axis-word generator proof](axis-word-generator.md). Whole cyclic
-equality-pattern completeness remains a separate formal obligation.
+restricted-growth membership and unique enumeration are now checked in
+`formal/PatternGenerator.lean`; assembly with canonical extraction remains
+a separate formal obligation.
 
 `conformance/lower-support.json` lists every **nonzero** pattern tuple and
 its K, together with aggregate coefficients. Zero terms are recomputed by

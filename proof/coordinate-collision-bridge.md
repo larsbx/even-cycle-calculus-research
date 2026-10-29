@@ -65,7 +65,7 @@ The eight general declarations use either no axioms or Lean's standard
 use either no axioms or standard `propext` and `Quot.sound`. They use no
 choice, placeholders, added axioms or native-evaluation axioms. Together with
 the five existing coefficient declarations and the canonical coordinate
-extraction and event components, `formal/check.py` compares **175 exact named
+extraction and event components, `formal/check.py` compares **198 exact named
 axiom sets**; imports are built afresh in a temporary
 directory. Hosted CI uses the unchanged, digest-pinned official compiler.
 
@@ -82,8 +82,9 @@ formal obligations remain:
   supplies factor-edge and closure conditions and endpoint normalization.
   The [coordinate-level extraction and recovery lemmas](canonical-coordinate-extraction.md)
   do not yet establish the full cycle/shuffle bijection.
-- Verify completeness of the equality-pattern enumeration and the quotient
-  motif isomorphism classification.
+- Assemble the [checked cyclic-pattern membership and uniqueness](cyclic-pattern-generator.md)
+  with canonical coordinate extraction, and verify quotient-motif isomorphism
+  classification.
 - Prove the finite cardinality identity and the free 16-to-1 root/direction
   quotient used for ordinary eight-cycle counts.
 

@@ -68,8 +68,9 @@ ordinary cycles or perform the division by 16.
 The lift processes the word directly using its proved bounds. It uses no
 classical selection. It supplies the finite axes required by the prior
 [executable trace bridge](executable-coordinate-trace.md), so generated axes
-cannot silently use the raw executable's out-of-range defaults. Whole cyclic
-equality-pattern generation remains a separate obligation.
+cannot silently use the raw executable's out-of-range defaults. The
+[cyclic-pattern extension](cyclic-pattern-generator.md) now separately proves
+whole pattern membership and unique enumeration.
 
 ## Finite controls
 
@@ -103,13 +104,13 @@ in the working c8 derivation. Neither arithmetic receipt changes.
 
 Of the 17 general declarations, `map_lift` uses no axioms and the other 16
 use standard `propext/Quot.sound`. Three controls use only `propext`; four
-use `propext/Quot.sound`. The complete audit checks 175 exact named declarations
-across 17 fresh source builds: 122 general lemmas, 48 finite controls and five
+use `propext/Quot.sound`. The complete audit checks 198 exact named declarations
+across 19 fresh source builds: 138 general lemmas, 55 finite controls and five
 coefficient certificates. No choice, placeholders or native-evaluation axioms
 are permitted. The literal generator and coefficient source is unchanged.
 
-Remaining work includes whole cyclic restricted-growth pattern completeness,
-assembly of canonical extraction with all generated bounded templates,
-quotient-motif classification and the finite cardinality/free 16-to-1 quotient.
+Remaining work includes assembly of canonical extraction with all generated
+bounded templates, quotient-motif classification and the finite cardinality/free
+16-to-1 quotient.
 The full c8 formula remains working. Shared source pin and theorem ownership
 are unchanged; external mathematical acceptance and novelty remain separate.

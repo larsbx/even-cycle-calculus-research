@@ -83,15 +83,16 @@ closure and injectivity hold.
 
 Two new general lemmas use no axioms, three use only standard `propext`, and
 five use standard `propext/Quot.sound`. All seven controls use standard
-`propext/Quot.sound`. The exact audit checks 175 named declarations across
-17 freshly compiled sources: 122 general lemmas, 48 finite controls and five
+`propext/Quot.sound`. The exact audit checks 198 named declarations across
+19 freshly compiled sources: 138 general lemmas, 55 finite controls and five
 coefficient certificates. Choice, placeholders and native-evaluation axioms
 are forbidden.
 
 The [executable bridge](executable-coordinate-trace.md) now identifies the
 literal modular-prefix vertex list and collision test for bounded positive-period
-templates. Remaining work includes assembly with canonical extraction, whole
-cyclic-pattern generator completeness, motif classification,
+templates. The [cyclic-pattern generator](cyclic-pattern-generator.md) now has
+exact membership and uniqueness proofs. Remaining work includes assembly with
+canonical extraction and motif classification,
 the finite cardinality and free 16-to-1 root/direction quotient.
 These have not been inferred from the
 structural cycle criterion. The general c8 formula remains working, with

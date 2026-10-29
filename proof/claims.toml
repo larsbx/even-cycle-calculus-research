@@ -210,3 +210,21 @@ authority = "proof/axis-word-generator.md"
 evidence = "formal/WordControls.lean"
 formal_verification = "Seven finite Lean/Std declarations: three with propext, four with propext/Quot.sound. Kernel reductions only; no native evaluation."
 independent_acceptance = "formal finite shuffle-inventory controls, not ordinary-cycle totals or full formula acceptance"
+
+[[claim]]
+id = "CYCLIC-RESTRICTED-GROWTH-GENERATOR"
+status = "working"
+statement = "The literal cyclic pattern generator emits exactly the zero-first finite words satisfying every positionwise restricted-growth append bound, unequal neighboring labels and unequal first/last labels. Arbitrary growPatterns extension membership is characterized by a pointwise prefix condition; both generator lists have no duplicate outputs."
+authority = "proof/cyclic-pattern-generator.md"
+evidence = "formal/PatternGenerator.lean"
+formal_verification = "16 general Lean/Std declarations: four without axioms, one with propext, 11 with propext/Quot.sound. Exact declaration audit in formal/check.py. Canonical extraction/template assembly, quotient-motif classification and ordinary-cycle cardinality remain separate."
+independent_acceptance = "kernel-checked specified cyclic-pattern component; full c8 formula and external mathematical acceptance remain separate"
+
+[[claim]]
+id = "CYCLIC-PATTERN-GENERATOR-CONTROLS"
+status = "computed"
+statement = "The four-step inventory is exactly A, B, C, D and lengths zero through six have 0, 0, 1, 1, 4, 11, 41 patterns. Selected pentagon and paired-triangle quotient words occur once. Adjacent repeats, equal endpoints, skipped labels and nonzero first labels are rejected."
+authority = "proof/cyclic-pattern-generator.md"
+evidence = "formal/PatternControls.lean"
+formal_verification = "Seven finite Lean/Std declarations: two without axioms, five with propext/Quot.sound. Selected equality words are checked, not a new motif-isomorphism classification."
+independent_acceptance = "formal finite pattern controls, not ordinary-cycle totals or full formula acceptance"
