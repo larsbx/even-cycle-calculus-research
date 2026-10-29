@@ -93,7 +93,7 @@ the final root. Further controls certify that:
 
 All 22 new declarations have exact audits using only standard `propext` and,
 where function extensionality is needed, `Quot.sound`. The full audit checks
-**175 named declarations across 17 sources**, rebuilding imports in a
+**198 named declarations across 19 sources**, rebuilding imports in a
 temporary directory. There is no choice, placeholder or native-evaluation
 axiom. Source pin, arithmetic receipts and theorem ownership are unchanged.
 
@@ -101,7 +101,8 @@ The [closed-walk continuation](closed-coordinate-walks.md) now proves the
 closing and factor-edge conditions and normalizes the endpoint and departure
 list. The [executable bridge](executable-coordinate-trace.md) now connects
 bounded positive-period templates to the literal prefix-index trace and
-collision test. Assembly with canonical extraction and whole cyclic-pattern
-generator completeness remain open. Motif classification and the free
+collision test. The [cyclic-pattern generator](cyclic-pattern-generator.md)
+now has exact membership and uniqueness proofs. Assembly with canonical
+extraction remains open. Motif classification and the free
 16-to-1 cardinality quotient also remain open. The general c8 formula keeps
 working status; no external mathematical acceptance or novelty is asserted.
