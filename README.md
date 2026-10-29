@@ -12,6 +12,19 @@ including odd projections and collision corrections. It is a **working** proof;
 external mathematical acceptance and full formalization remain open.
 The source-owned four-coordinate coefficient stays pinned and unchanged.
 
+The [all-length sector continuation](proof/simple-projection-sectors.md) translates
+the existing connected-partition transformation into exact simple-coordinate
+projection sectors. It yields a paired-triangle family and complete **working**
+c10 formulas for support on exactly four coordinates, including nonsimple
+four-step projections. New coefficients are 528, 5256, 26592 and 90288;
+independent product-adjacency DFS checks eight specified strata. The note
+attributes prior work and separates candidate contributions from established
+specializations. Priority and external mathematical acceptance remain open.
+Run `python3 experiments/near_top.py` to replay
+[the new receipt](conformance/near-top.json). Five general Lean lemmas and
+three finite controls certify the interval-collision component; the connected
+recurrence and c10 coefficient enumeration are not yet kernel-certified.
+
 The [formal collision bridge](proof/coordinate-collision-bridge.md) now proves
 eight general finite coordinate-decoding lemmas, including collision/support
 reflection and recovery of factor assignments for a fully visited fixed shape.
@@ -20,7 +33,7 @@ assumptions. The [canonical extraction component](proof/canonical-coordinate-ext
 adds 15 general first-occurrence lemmas and three finite controls. It recovers
 coordinate equality classes by a bounded scan; compressed shuffle encoding
 and the full counting bijection remain open. Run `python3 formal/check.py`
-for all 230 declaration audits. The [ordinal compression component](proof/ordinal-rank-compression.md)
+for all 238 declaration audits. The [ordinal compression component](proof/ordinal-rank-compression.md)
 adds 20 general lemmas and three controls: representative labels are now
 bijective with `Fin r`, reconstruction is exact, and zero-first/append bounds
 match the enumerator. The [coordinate-event component](proof/coordinate-event-shuffle.md)

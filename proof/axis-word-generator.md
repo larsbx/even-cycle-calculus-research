@@ -104,8 +104,8 @@ in the working c8 derivation. Neither arithmetic receipt changes.
 
 Of the 17 general declarations, `map_lift` uses no axioms and the other 16
 use standard `propext/Quot.sound`. Three controls use only `propext`; four
-use `propext/Quot.sound`. The complete audit checks 230 exact named declarations
-across 21 fresh source builds: 160 general lemmas, 65 finite controls and five
+use `propext/Quot.sound`. The complete audit checks 238 exact named declarations
+across 22 fresh source builds: 165 general lemmas, 68 finite controls and five
 coefficient certificates. No choice, placeholders or native-evaluation axioms
 are permitted. The literal generator and coefficient source is unchanged.
 

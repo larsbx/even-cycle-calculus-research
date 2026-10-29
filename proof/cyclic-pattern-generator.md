@@ -111,8 +111,8 @@ simple-projection-only or even-projection-only shortcut is introduced.
 
 Four general declarations use no axioms, one uses standard `propext`, and 11
 use `propext/Quot.sound`. Two controls use no axioms and five use
-`propext/Quot.sound`. The full audit checks 230 named declarations in 21 fresh
-source builds: 160 general lemmas, 65 finite controls and five coefficient
+`propext/Quot.sound`. The full audit checks 238 named declarations in 22 fresh
+source builds: 165 general lemmas, 68 finite controls and five coefficient
 certificates. No choice, placeholders or native-evaluation axioms are allowed.
 The literal generators, both arithmetic receipts and coefficient code remain
 unchanged. Source pin and theorem ownership are unchanged.

@@ -121,6 +121,11 @@ EXPECTED = {
         'repeated_projection_allowed', 'equal_pattern_relabeling', 'adjacent_collapse_rejected',
         'closing_collapse_rejected', 'assignment_reconstruction', 'selected_step_controls',
         'noninduced_extra_edge')},
+    **{'ECC.IntervalCollision.'+n: {'propext', 'Quot.sound'} for n in (
+        'bounded_mod_eq_iff', 'phase_equal_iff', 'decoded_equal_iff',
+        'trace_injective_iff_no_interval', 'decoded_injective_iff_no_interval')},
+    **{'ECC.IntervalCollision.'+n: set() for n in (
+        'full_period_is_collision', 'upper_bound_needed', 'injective_projection_needed')},
 }
 
 
@@ -154,7 +159,8 @@ def main():
                      ('-o', str(Path(build)/'PatternGenerator.olean'), 'PatternGenerator.lean'),
                      ('PatternControls.lean',),
                      ('-o', str(Path(build)/'NormalizedPattern.olean'), 'NormalizedPattern.lean'),
-                     ('NormalizedControls.lean',)]:
+                     ('NormalizedControls.lean',),
+                     ('IntervalCollision.lean',)]:
             run = subprocess.run([LEAN, *args], cwd=ROOT, env=env, text=True,
                                  stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             print(run.stdout, end='', flush=True)
@@ -169,7 +175,7 @@ def main():
                 actual[name] = {a.strip() for a in axioms.split(',')} if axioms else set()
     if actual != EXPECTED:
         raise RuntimeError('Axiom audit differs: '+repr(actual))
-    print('PASS: 230 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
+    print('PASS: 238 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
 
 
 if __name__ == '__main__':

@@ -94,6 +94,19 @@ and the cardinality quotient remain open.
 
 ## Subsequent gates
 
+The explicit novelty objective now has a scoped continuation in
+[simple-projection-sectors](../proof/simple-projection-sectors.md): all-length
+simple-coordinate sectors, the complete paired-triangle profile family and
+the complete c10 support-four formula. Connected-partition enumeration and
+known hypercube specializations are credited to prior work. New formula
+priority and independent review are open, separate gates. The finite receipt
+and new interval-collision formal lemma do not close those gates.
+
+Next focused obligations are to independently review the component/gap
+bijection, certify the new c10 coefficient sums in the proof kernel, and
+formalize the finite ordinary-cycle quotient. The original c8 extraction
+composition and motif-classification obligations remain active.
+
 1. Broaden independent fixtures, preserve negative controls and exact conventions.
 2. Write a claim-specific proof or counterexample record; distinguish conjecture
    from finite observations and working derivation.

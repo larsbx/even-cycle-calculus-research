@@ -19,12 +19,17 @@ python3 formal/check.py
 For an existing checkout, set `GPR_SOURCE=/absolute/path/to/pinned/source`.
 Replay rejects another source HEAD or changed pinned input bytes.
 `tools/validate.py` parses the registry, checks preserved source statuses,
-and recomputes both receipts byte-for-byte, including all symbolic coefficients
+and recomputes all three receipts byte-for-byte, including all symbolic coefficients
 and 144 small graph pairs, then runs the exact regression suite. The finite
 Lean step needs the version in `formal/lean-toolchain`; it uses Std only and
-compiles all 21 Lean sources and enforces 230 exact named axiom sets. Set
+compiles all 22 Lean sources and enforces 238 exact named axiom sets. Set
 `LEAN_BINARY` if the compiler is not on PATH. See `formal/README.md`.
 The printed JSON is deterministic;
 tool versions and execution date are recorded separately in `conformance/environment.json`.
+The new sector receipt can also be replayed with
+`python3 experiments/near_top.py > /tmp/near-top.json` followed by
+`diff -u conformance/near-top.json /tmp/near-top.json`. It uses only the Python
+standard library. The all-length recurrence and scoped c10 formulas have a
+working prose proof, separately from the eight new formal collision declarations.
 Use a clean checkout for independent reproduction. Passing this finite replay
 does not close an all-graph proof or external literature/acceptance obligation.

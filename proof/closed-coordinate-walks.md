@@ -118,8 +118,8 @@ The 19 general declarations and nine controls are audited with exact standard
 `propext` or `propext/Quot.sound` dependencies. Finite vertex-function equality
 in the controls is decided by a bounded universal quantifier and function
 extensionality, with no classical choice. The complete audit now checks
-230 declarations in 21 freshly compiled sources: 160 general lemmas,
-65 finite controls and five coefficient certificates.
+238 declarations in 22 freshly compiled sources: 165 general lemmas,
+68 finite controls and five coefficient certificates.
 
 The [canonical membership bridge](canonical-pattern-membership.md) now checks
 the forward coordinate-trace membership and assignment interface. Remaining
