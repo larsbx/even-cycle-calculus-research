@@ -68,8 +68,9 @@ eight-step coefficient cases.
 The endpoint condition includes zero steps and any whole number of template
 periods. In the coefficient cases, using a coordinate exactly its template
 length gives closure. This proves the implication under the stated step-count
-hypothesis; it does not yet prove multiplicity correctness or completeness of
-the `words` generator.
+hypothesis. The [axis-word generator extension](axis-word-generator.md) now
+proves multiplicity soundness/completeness, uniqueness and a constructive lift
+to these typed axes for the literal `words` generator.
 
 `executable_cycle_iff` keeps length at least three, factor-edge validity and
 coordinate closure explicit. A passing collision test alone does not prove
@@ -106,13 +107,13 @@ lemma imports classical choice, so the bridge instead proves its required
 bounded identity directly by structural recursion. No choice dependency is
 admitted by the audit.
 
-The complete audit checks 151 named declarations across 15 fresh source
-builds: 105 general lemmas, 41 finite controls and five coefficient
+The complete audit checks 175 named declarations across 17 fresh source
+builds: 122 general lemmas, 48 finite controls and five coefficient
 certificates. The literal Shuffle.lean source and both arithmetic receipts
 are unchanged. Source pin and theorem ownership remain unchanged.
 
 Still open are the formal assembly from canonical coordinate extraction to
-all generated bounded templates, whole cyclic-pattern and axis-word generator
+all generated bounded templates, whole cyclic-pattern generator
 completeness, quotient-motif classification and the finite cardinality/free
 16-to-1 quotient. In particular, finite coefficient certificates and this
 general encoding equivalence do not by themselves establish the full ordinary

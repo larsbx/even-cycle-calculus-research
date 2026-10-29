@@ -66,6 +66,13 @@ See `proof/executable-coordinate-trace.md`. Canonical extraction still needs
 to be assembled with all generated templates and the generator/cardinality
 proofs remain open.
 
+The literal axis-word generator now has 17 general lemmas and seven controls.
+It emits exactly the bounded words with the requested multiplicities, each
+once; collision filtering preserves uniqueness. Every emitted word constructs
+a typed coordinate word with exactly those step counts. This closes axis-word
+completeness while leaving cyclic-pattern completeness and the subsequent
+counting quotient open. See `proof/axis-word-generator.md`.
+
 ## Subsequent gates
 
 1. Broaden independent fixtures, preserve negative controls and exact conventions.

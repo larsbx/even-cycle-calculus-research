@@ -3,8 +3,8 @@
 `Shuffle.lean` uses only Lean/Std, pinned to `leanprover/lean4:v4.34.0-rc2`.
 From the repository root, run `python3 formal/check.py` with that toolchain.
 Set `LEAN_BINARY` to an explicit compiler path when needed. This compiles all
-15 Lean sources, rebuilding all local imports in a temporary directory,
-and verifies 151 exact named axiom sets. It does not rely on a cached olean.
+17 Lean sources, rebuilding all local imports in a temporary directory,
+and verifies 175 exact named axiom sets. It does not rely on a cached olean.
 CI downloads the exact official release archive and checks SHA-256
 `3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8`.
 
@@ -83,8 +83,13 @@ test equivalent to trace injectivity and closure from period-divisible step
 counts. `ExecutableControls.lean` adds eight controls, including malformed
 default inputs. See [the executable bridge](../proof/executable-coordinate-trace.md).
 
+`WordGenerator.lean` adds 17 general lemmas proving exact multiplicity
+soundness/completeness and duplicate-free enumeration for the literal axis-word
+generator, filtered-list uniqueness and constructive typed axes.
+`WordControls.lean` adds seven controls. See [the generator proof](../proof/axis-word-generator.md).
+
 Assembly of canonical extraction into all generated bounded templates,
-restricted-growth and axis-word generator completeness,
+restricted-growth cyclic-pattern completeness,
 quotient-motif classification, the cardinality identity and the free 16-to-1
 orbit quotient remain open. The full graph formula and source-owned graph-ring
 theorems are not promoted. Kernel checks of the specified components do not

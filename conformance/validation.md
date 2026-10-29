@@ -105,3 +105,18 @@ are unchanged; all seven regressions pass. Local Lean uses the same documented
 executable-path compatibility shim. Final-head hosted acceptance remains
 required by PR #3. Canonical extraction/template assembly, whole generator
 completeness, motif classification and the cardinality quotient remain open.
+
+## Axis-word generator continuation
+
+The next extension adds 17 general lemmas and seven controls for the unchanged
+literal axis-word generator. Exact membership is characterized by word length,
+bounded axes and coordinate occurrence counts. Every emitted word occurs once;
+collision filtering preserves uniqueness. A constructive typed-axis lift has
+the requested step counts. Controls check all six profile inventories, witness
+uniqueness and invalid inventory/axis/budget cases. The exact audit passes 175
+named declarations across 17 fresh source builds with the existing strict
+axiom policy. Both arithmetic receipts, Shuffle.lean and the source pin/statuses
+are unchanged; all seven regressions pass. Local Lean uses the same documented
+executable-path shim. Hosted final-head acceptance remains required by PR #3.
+Whole cyclic equality-pattern completeness, canonical extraction/template
+assembly, quotient-motif classification and the cardinality quotient remain open.

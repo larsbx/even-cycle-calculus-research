@@ -76,7 +76,7 @@ five-position example above.
 
 All 18 new declaration audits list only standard `propext` and `Quot.sound`;
 there is no choice, placeholder, added axiom or native-evaluation axiom.
-`formal/check.py` now checks the complete exact set of 151 named declarations,
+`formal/check.py` now checks the complete exact set of 175 named declarations,
 rebuilding imported local modules in a temporary directory.
 
 This component's representation is a subtype of traversal positions. The

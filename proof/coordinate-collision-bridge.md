@@ -65,7 +65,7 @@ The eight general declarations use either no axioms or Lean's standard
 use either no axioms or standard `propext` and `Quot.sound`. They use no
 choice, placeholders, added axioms or native-evaluation axioms. Together with
 the five existing coefficient declarations and the canonical coordinate
-extraction and event components, `formal/check.py` compares **151 exact named
+extraction and event components, `formal/check.py` compares **175 exact named
 axiom sets**; imports are built afresh in a temporary
 directory. Hosted CI uses the unchanged, digest-pinned official compiler.
 

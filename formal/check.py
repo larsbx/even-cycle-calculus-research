@@ -84,6 +84,18 @@ EXPECTED = {
     **{'ECC.ExecutableControls.'+n: {'propext', 'Quot.sound'} for n in (
         'prism_collision_passes', 'paired_collision_passes',
         'profile_counts_give_closure', 'malformed_default_controls')},
+    'ECC.WordGenerator.map_lift': set(),
+    **{'ECC.WordGenerator.'+n: {'propext', 'Quot.sound'} for n in (
+        'matches_nil_iff', 'matches_cons_iff', 'mem_words_zero', 'mem_words_succ',
+        'mem_words_iff', 'range_nodup_safe', 'prefix_nodup', 'branch_head',
+        'branches_disjoint', 'words_nodup', 'accepted_nodup', 'mem_accepted_iff',
+        'steps_eq_raw_count', 'generated_typed_axes', 'kernel_membership_iff',
+        'kernel_words_nodup')},
+    **{'ECC.WordControls.'+n: {'propext'} for n in (
+        'profile_word_counts', 'zero_inventory_controls', 'inconsistent_budget_rejected')},
+    **{'ECC.WordControls.'+n: {'propext', 'Quot.sound'} for n in (
+        'wrong_multiplicity_rejected', 'illegal_axis_rejected', 'witnesses_occur_once',
+        'typed_lift_control')},
 }
 
 
@@ -111,7 +123,9 @@ def main():
                      ('-o', str(Path(build)/'CycleTrace.olean'), 'CycleTrace.lean'),
                      ('-o', str(Path(build)/'CycleControls.olean'), 'CycleControls.lean'),
                      ('-o', str(Path(build)/'ExecutableTrace.olean'), 'ExecutableTrace.lean'),
-                     ('ExecutableControls.lean',)]:
+                     ('ExecutableControls.lean',),
+                     ('-o', str(Path(build)/'WordGenerator.olean'), 'WordGenerator.lean'),
+                     ('WordControls.lean',)]:
             run = subprocess.run([LEAN, *args], cwd=ROOT, env=env, text=True,
                                  stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             print(run.stdout, end='', flush=True)
@@ -126,7 +140,7 @@ def main():
                 actual[name] = {a.strip() for a in axioms.split(',')} if axioms else set()
     if actual != EXPECTED:
         raise RuntimeError('Axiom audit differs: '+repr(actual))
-    print('PASS: 151 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
+    print('PASS: 175 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
 
 
 if __name__ == '__main__':
