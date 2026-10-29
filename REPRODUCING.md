@@ -19,7 +19,7 @@ python3 formal/check.py
 For an existing checkout, set `GPR_SOURCE=/absolute/path/to/pinned/source`.
 Replay rejects another source HEAD or changed pinned input bytes.
 `tools/validate.py` parses the registry, checks preserved source statuses,
-and recomputes all four receipts byte-for-byte. These include the symbolic
+and recomputes all five receipts byte-for-byte. These include the symbolic
 coefficients, 144 small graph pairs and independent finite partition-lattice
 inversion check. It then runs the exact regression suite. The finite
 Lean step needs the version in `formal/lean-toolchain`; it uses Std only and
@@ -35,11 +35,11 @@ working prose proof, separately from the eight new formal collision declarations
 Use a clean checkout for independent reproduction. Passing this finite replay
 does not close an all-graph proof or external literature/acceptance obligation.
 
-The independent inversion receipt uses `g++ -std=c++17` and Python only:
+The histogram-assisted inversion receipt uses `g++ -std=c++17` and Python only:
 
 ```sh
-python3 experiments/partition_inversion.py > /tmp/partition-inversion.json
-diff -u conformance/partition-inversion.json /tmp/partition-inversion.json
+python3 experiments/partition_histogram.py > /tmp/partition-inversion.json
+diff -u conformance/partition-histogram.json /tmp/partition-inversion.json
 ```
 
 It checks unrestricted adjacency walks through explicit finite vertex-partition
@@ -47,3 +47,17 @@ Mobius inversion, without importing a shuffle or connected-axis recurrence.
 The entire original/additional c8 corpus, 144 small graph pairs, and eight
 near-top profiles are compared. See `proof/partition-lattice-check.md` for
 quotient-hom oracle coverage, cancellation ledgers and formal boundaries.
+
+The independently merged direct quotient oracle from PR #7 is preserved
+byte-for-byte in `kernels/partition_inversion.py`; its original receipt is
+`conformance/partition-inversion.json`. Replay it separately with:
+
+```sh
+python3 experiments/partition_inversion.py > /tmp/direct-inversion.json
+diff -u conformance/partition-inversion.json /tmp/direct-inversion.json
+```
+
+This standard-library-only route counts weighted quotient maps by frontier
+dynamic programming. The histogram route additionally checks c10 and the raw
+projection coefficients. Both receipts are mandatory, and all 25 regressions
+run together. See `proof/partition-inversion.md` for the direct oracle's scope.

@@ -64,6 +64,15 @@ reproduction of all five original cases, 19 additional products, and 144 small
 labeled factor pairs. Its deterministic receipt is
 [conformance/lower-support.json](conformance/lower-support.json).
 
+The [independent partition-lattice comparison](proof/partition-inversion.md)
+checks every existing corpus profile through direct quotient-graph
+homomorphisms, retaining parallel-edge multiplicities. It agrees on all five
+original cases, 19 additional products and 144 small factor pairs, plus five
+boundary cases. Run `python3 experiments/partition_inversion.py`; its receipt is
+[conformance/partition-inversion.json](conformance/partition-inversion.json).
+The inversion identity is established literature; this is an independent
+finite comparison, not a novelty claim or completion of the counting proof.
+
 The reproducible first experiment is `python3 experiments/first.py`; its exact
 bounded output is recorded in [conformance/first.json](conformance/first.json).
 See [REPRODUCING.md](REPRODUCING.md) for setup and comparison commands, and

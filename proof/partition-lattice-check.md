@@ -183,10 +183,21 @@ regression tests check the named controls, including relabeling and fibers.
 The complete audit has 250 declarations across 23 rebuilt Lean sources, with
 exact permitted standard axiom sets and no placeholders or choice axioms.
 
-Run `python3 experiments/partition_inversion.py` and compare its output
-byte-for-byte with `conformance/partition-inversion.json`. Python 3.11+ and
+Run `python3 experiments/partition_histogram.py` and compare its output
+byte-for-byte with `conformance/partition-histogram.json`. Python 3.11+ and
 g++ C++17 are sufficient; the temporary executable is removed automatically.
 The receipt is also mandatory in `tools/validate.py`. The full finite Lean
 check uses the same pinned toolchain and official archive digest as before.
 Local replay used the documented executable-path environment shim; hosted
 acceptance must succeed on the exact final PR head before merge.
+
+## Integration with PR #7
+
+Main independently gained a direct quotient frontier-DP oracle while this
+continuation was open. That kernel, experiment, receipt and six tests are
+preserved under their original `partition_inversion` names. This continuation's
+histogram experiment, receipt and six tests use `partition_histogram` names,
+with the separate partition-lattice kernel unchanged. Both inversion routes
+remain mandatory alongside the original three receipts: five deterministic
+receipts and 25 regressions in the integrated tree. The direct route covers
+the full c8 corpus and the histogram route also covers the c10 formulas.

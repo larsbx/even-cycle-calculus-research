@@ -4,6 +4,15 @@ status_values = ["source_reference", "open", "working", "computed", "conjectural
 acceptance_authority = false
 
 [[claim]]
+id = "C8-INDEPENDENT-PARTITION-INVERSION"
+status = "computed"
+statement = "Direct weighted-quotient homomorphism inversion agrees with every existing corpus profile: five original products, 19 additional products, 144 small factor pairs, plus five boundary cases. The Mobius identity is established literature, not a new theorem claim."
+authority = "proof/partition-inversion.md"
+evidence = "conformance/partition-inversion.json"
+formal_verification = "No new Lean declarations. Six independent-oracle regressions, including all-map comparisons, partition cancellation and parallel-edge multiplicity controls. Existing 230 declaration audits remain separate."
+independent_acceptance = "Independent computational method; no external mathematical review or novelty determination claimed"
+
+[[claim]]
 id = "SOURCE-SUPPORT-ORDER"
 status = "source_reference"
 source_id = "GPR-SUPPORT-ORDER"
@@ -287,6 +296,6 @@ id = "FINITE-PARTITION-LATTICE-COMPARISON"
 status = "computed"
 statement = "An unrestricted adjacency equality histogram, quotient-hom zeta transform and explicit finite vertex-partition Mobius sum reproduce the five original c8 inventories, all 19 additional fixtures, 144 small graph pairs and all eight near-top profiles. Raw coefficients 660,2562,4008,8310,12540 agree; no formula discrepancies were found."
 authority = "proof/partition-lattice-check.md"
-evidence = "conformance/partition-inversion.json; experiments/partition_inversion.py; experiments/partition_walks.cpp; kernels/partition_lattice.py; tests/test_partition_inversion.py"
+evidence = "conformance/partition-histogram.json; experiments/partition_histogram.py; experiments/partition_walks.cpp; kernels/partition_lattice.py; tests/test_partition_histogram.py"
 formal_verification = "Twelve PartitionInversion declarations: six without axioms, five with propext, one with Quot.sound. finite_inversion has an explicit cancellation hypothesis. Actual partition enumeration, factorial weights, numerical c10 coefficients and full graph-level 2m cardinality are separate computational/prose components."
 independent_acceptance = "General partition inversion is prior work. Finite independent corroboration does not settle candidate factor-motif expansion priority or external mathematical acceptance."
