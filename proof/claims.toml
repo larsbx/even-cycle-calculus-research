@@ -255,3 +255,47 @@ authority = "proof/canonical-pattern-membership.md"
 evidence = "formal/NormalizedControls.lean"
 formal_verification = "Ten finite Lean/Std declarations, exact standard propext/Quot.sound audits. The six-step equality word and selected edges are checked, not a motif-isomorphism classification."
 independent_acceptance = "formal finite controls, not a fresh enumeration or full formula acceptance"
+
+[[claim]]
+id = "SIMPLE-PROJECTION-SECTOR-TRANSLATION"
+status = "working"
+statement = "For positive labeled periods d_a>=2 and total length L>=3, once-traversed selected edge/simple-cycle coordinate projections give exactly K(d)*product rho_d/(2L) times their factor motif counts and unused vertex fibers. K is the finite connected-partition count. For r edge axes and two triangle axes this is the entire profile (2^r,3,3), at every r>=0."
+authority = "proof/simple-projection-sectors.md"
+evidence = "kernels/simple_projections.py; conformance/near-top.json"
+formal_verification = "Five general IntervalCollision declarations prove the bounded modular, whole-block interval and injective trace equivalences under explicit monotone/bounded prefix hypotheses. Connected-partition enumeration, word-prefix instantiation and the ordinary-cycle cardinality quotient remain prose."
+independent_acceptance = "Lehner's connected-partition transformation is prior work; product-sector translation is a candidate contribution. Priority and independent mathematical review remain open."
+
+[[claim]]
+id = "C10-SUPPORT-FOUR"
+status = "working"
+statement = "All ten-cycle strata with exactly four active coordinates have the formulas F4222=(528e+5256w+26592s)*e*e*e and F3322=90288t*t*e*e, with all coordinate allocations and inactive vertex fibers. Other support sizes are not asserted here."
+authority = "proof/simple-projection-sectors.md"
+evidence = "kernels/simple_projections.py; conformance/near-top.json"
+formal_verification = "Existing general pattern/shuffle interfaces and the new general interval lemma are kernel-checked; the five new finite coefficient sums, motif identification and 20-to-1 quotient are not fully formalized."
+independent_acceptance = "Working proof plus independent adjacency DFS on specified products. General formula priority and independent mathematical review remain open."
+
+[[claim]]
+id = "MIXED-PROJECTION-FINITE-CONTROLS"
+status = "computed"
+statement = "The receipt records five ten-cycle coefficient sums, eight independent product DFS strata, and paired-triangle recurrence evaluations r=0..6. Only r=0,1,2 have independent product DFS checks. Thirteen regression tests include the unchanged seven c8 tests and six new tests."
+authority = "experiments/near_top.py"
+evidence = "conformance/near-top.json; tests/test_simple_projections.py"
+formal_verification = "Three new finite IntervalCollision controls have no axioms; five new general lemmas have exactly propext/Quot.sound. Python coefficient/DFS results are separate from these Lean declarations."
+independent_acceptance = "Finite deterministic checks; no full c10 formula, general novelty or external acceptance inferred."
+
+[[claim]]
+id = "MIXED-PROJECTION-NOVELTY-REVIEW"
+status = "open"
+statement = "Determine prior art and obtain independent review for the graph-sector translation, paired-triangle family and c10 support-four mixed-motif formulas. Hypercube specializations, connected partitions and general injectivity inversion are explicitly prior work."
+authority = "proof/simple-projection-sectors.md"
+formal_verification = "Not a formal-verification claim"
+independent_acceptance = "open; absence of a matching search result is not evidence of priority"
+
+[[claim]]
+id = "FINITE-PARTITION-LATTICE-COMPARISON"
+status = "computed"
+statement = "An unrestricted adjacency equality histogram, quotient-hom zeta transform and explicit finite vertex-partition Mobius sum reproduce the five original c8 inventories, all 19 additional fixtures, 144 small graph pairs and all eight near-top profiles. Raw coefficients 660,2562,4008,8310,12540 agree; no formula discrepancies were found."
+authority = "proof/partition-lattice-check.md"
+evidence = "conformance/partition-histogram.json; experiments/partition_histogram.py; experiments/partition_walks.cpp; kernels/partition_lattice.py; tests/test_partition_histogram.py"
+formal_verification = "Twelve PartitionInversion declarations: six without axioms, five with propext, one with Quot.sound. finite_inversion has an explicit cancellation hypothesis. Actual partition enumeration, factorial weights, numerical c10 coefficients and full graph-level 2m cardinality are separate computational/prose components."
+independent_acceptance = "General partition inversion is prior work. Finite independent corroboration does not settle candidate factor-motif expansion priority or external mathematical acceptance."

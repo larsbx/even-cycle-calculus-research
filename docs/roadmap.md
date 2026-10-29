@@ -94,6 +94,19 @@ and the cardinality quotient remain open.
 
 ## Subsequent gates
 
+The explicit novelty objective now has a scoped continuation in
+[simple-projection-sectors](../proof/simple-projection-sectors.md): all-length
+simple-coordinate sectors, the complete paired-triangle profile family and
+the complete c10 support-four formula. Connected-partition enumeration and
+known hypercube specializations are credited to prior work. New formula
+priority and independent review are open, separate gates. The finite receipt
+and new interval-collision formal lemma do not close those gates.
+
+Next focused obligations are to independently review the component/gap
+bijection, certify the new c10 coefficient sums in the proof kernel, and
+formalize the finite ordinary-cycle quotient. The original c8 extraction
+composition and motif-classification obligations remain active.
+
 The independent partition-lattice comparison is delivered in
 `proof/partition-inversion.md`: all 168 existing product cases agree profile by
 profile with the old DFS, motif formulas and recorded receipts where present;
@@ -111,3 +124,15 @@ external mathematical review or novelty review.
 4. Reconcile external literature and source manuscript provenance before asking
    for mathematical acceptance. Do not edit the source registry from this repo.
 5. Update the central map with any changed interface or dependency revision.
+
+## Independent partition-lattice comparison delivered
+
+The new histogram-assisted quotient-hom zeta and explicit Mobius inversion
+recovers the c8 corpus, all 144 small graph pairs, and both c10 support-four
+profiles, including the raw coefficients 660,2562,4008,8310,12540. A separate
+quotient-block CSP oracle cross-checks the zeta route. Twelve Lean declarations
+include conditional finite inversion transport with an explicit cancellation
+hypothesis. Six regression tests preserve counting conventions. See
+[the check note](../proof/partition-lattice-check.md). No formula discrepancy
+was found; general graph cardinality formalization and expansion novelty
+review remain open.

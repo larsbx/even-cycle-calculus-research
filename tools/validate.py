@@ -15,7 +15,11 @@ actual = subprocess.check_output([sys.executable, str(root/'experiments/first.py
 assert actual == (root/'conformance/first.json').read_bytes(), 'Receipt differs from replay'
 lower = subprocess.check_output([sys.executable, str(root/'experiments/lower_support.py')], cwd=root)
 assert lower == (root/'conformance/lower-support.json').read_bytes(), 'Lower-support receipt differs'
+near = subprocess.check_output([sys.executable, str(root/'experiments/near_top.py')], cwd=root)
+assert near == (root/'conformance/near-top.json').read_bytes(), 'Near-top receipt differs'
 inversion = subprocess.check_output([sys.executable, str(root/'experiments/partition_inversion.py')], cwd=root)
-assert inversion == (root/'conformance/partition-inversion.json').read_bytes(), 'Partition-inversion receipt differs'
+assert inversion == (root/'conformance/partition-inversion.json').read_bytes(), 'Direct quotient-inversion receipt differs'
+histogram = subprocess.check_output([sys.executable, str(root/'experiments/partition_histogram.py')], cwd=root)
+assert histogram == (root/'conformance/partition-histogram.json').read_bytes(), 'Histogram-inversion receipt differs'
 subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-v'], cwd=root, check=True)
-print('PASS: source pins, preserved statuses, three exact receipts, and coefficient/graph/inversion regressions')
+print('PASS: source pins, preserved statuses, all five exact receipts, and coefficient/graph regressions')

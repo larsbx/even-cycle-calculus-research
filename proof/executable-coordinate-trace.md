@@ -107,8 +107,8 @@ lemma imports classical choice, so the bridge instead proves its required
 bounded identity directly by structural recursion. No choice dependency is
 admitted by the audit.
 
-The complete audit checks 230 named declarations across 21 fresh source
-builds: 160 general lemmas, 65 finite controls and five coefficient
+The complete audit checks 238 named declarations across 22 fresh source
+builds: 165 general lemmas, 68 finite controls and five coefficient
 certificates. The literal Shuffle.lean source and both arithmetic receipts
 are unchanged. Source pin and theorem ownership remain unchanged.
 

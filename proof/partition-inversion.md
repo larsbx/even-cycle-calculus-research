@@ -173,3 +173,12 @@ No Lean source or declaration audit is changed by this comparison. The existing
 template normalization inverses, product-wide assembly, motif classification
 and the formal counting quotient remain open. The next proof increment can
 use this independent oracle while continuing those obligations.
+
+## Integration with the c10 continuation
+
+The c10 continuation preserves this kernel, experiment, receipt and six tests.
+The integrated driver replays five receipts and 25 tests, and audits 250 Lean
+declarations across 23 sources. The added Lean components and independent
+histogram-assisted c10 check are scoped in `proof/partition-lattice-check.md`;
+this direct quotient oracle still introduces no new Lean theorem or novelty
+claim. Historical counts above describe the original PR #7 increment.

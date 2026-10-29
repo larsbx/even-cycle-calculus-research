@@ -1,0 +1,141 @@
+{
+  "scope": "working general sector identities; the listed finite evaluations are exact",
+  "four_step_raw_coefficients": [
+    660,
+    2562,
+    4008,
+    8310
+  ],
+  "paired_triangle_raw_coefficient": 12540,
+  "paired_triangle_family": [
+    {
+      "edge_axes": 0,
+      "length": 6,
+      "valid_axis_words": 14,
+      "motif_coefficient": 42
+    },
+    {
+      "edge_axes": 1,
+      "length": 8,
+      "valid_axis_words": 312,
+      "motif_coefficient": 1404
+    },
+    {
+      "edge_axes": 2,
+      "length": 10,
+      "valid_axis_words": 12540,
+      "motif_coefficient": 90288
+    },
+    {
+      "edge_axes": 3,
+      "length": 12,
+      "valid_axis_words": 778128,
+      "motif_coefficient": 9337536
+    },
+    {
+      "edge_axes": 4,
+      "length": 14,
+      "valid_axis_words": 68251680,
+      "motif_coefficient": 1404034560
+    },
+    {
+      "edge_axes": 5,
+      "length": 16,
+      "valid_axis_words": 7995853440,
+      "motif_coefficient": 287850723840
+    },
+    {
+      "edge_axes": 6,
+      "length": 18,
+      "valid_axis_words": 1202585516640,
+      "motif_coefficient": 76965473064960
+    }
+  ],
+  "independent_product_dfs": [
+    {
+      "case": "Q4, distinguished repeated axis",
+      "profile": [
+        4,
+        2,
+        2,
+        2
+      ],
+      "ordinary_cycles": 528
+    },
+    {
+      "case": "P3 square Q3",
+      "profile": [
+        4,
+        2,
+        2,
+        2
+      ],
+      "ordinary_cycles": 6312
+    },
+    {
+      "case": "C4 square Q3",
+      "profile": [
+        4,
+        2,
+        2,
+        2
+      ],
+      "ordinary_cycles": 49728
+    },
+    {
+      "case": "K3 square Q3",
+      "profile": [
+        4,
+        2,
+        2,
+        2
+      ],
+      "ordinary_cycles": 17352
+    },
+    {
+      "case": "K4 square Q3",
+      "profile": [
+        4,
+        2,
+        2,
+        2
+      ],
+      "ordinary_cycles": 146016
+    },
+    {
+      "case": "Q2 square K3 square K3",
+      "profile": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "ordinary_cycles": 90288
+    },
+    {
+      "case": "K2 square K3 square K3",
+      "profile": [
+        2,
+        3,
+        3
+      ],
+      "ordinary_cycles": 1404
+    },
+    {
+      "case": "K3 square K3, six-step paired sector",
+      "profile": [
+        3,
+        3
+      ],
+      "ordinary_cycles": 42
+    }
+  ],
+  "negative_controls": {
+    "c10_C4_Q3_square_projection_only": 26592,
+    "c10_C4_Q3_actual_profile": 49728,
+    "c10_paired_unfiltered_walks_divided_by_20": 181440,
+    "c10_paired_actual_profile": 90288,
+    "c10_Q4_full_support_five_only": 0,
+    "c10_Q4_all_four_support_profiles": 2112
+  }
+}

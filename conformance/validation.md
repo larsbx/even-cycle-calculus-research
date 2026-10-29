@@ -175,3 +175,34 @@ the source pin/statuses and all seven regressions are unchanged. Local Lean
 uses the documented PID-path shim. This increment requires its own final-head
 hosted acceptance. Arbitrary-template normalization inverses, full product-cycle
 composition, motif classification and the cardinality quotient remain open.
+
+## PR #5 hosted acceptance and merge
+
+Both `finite-replay` and `finite-lean` completed successfully at final head
+`11f900b93043a33191475a4ed94c0421c974cdae` in
+[run 40871170599](https://github.com/larsbx/even-cycle-calculus-research/actions/runs/40871170599).
+Jobs 123438298996 and 123438299315 succeeded. Fresh review inspection found
+no submitted reviews or threads. PR #5 merged as
+`eec9c407721e7515cf747c16f8d0225edd47eaf2`. This is formal/executable component
+acceptance, not external mathematical acceptance or novelty evidence.
+
+## Mixed-projection and c10 support-four continuation
+
+The new independent receipt is `near-top.json`. It records the four four-step
+coefficient sums 660, 2562, 4008, 8310, the paired-triangle coefficient 12540,
+eight product-adjacency DFS strata and seven bounded evaluations of the
+paired-triangle recurrence. Only the first three recurrence rows have an
+independent product DFS comparison. New negative controls distinguish closed
+walks from simple cycles, nonsimple projections from square projections, and
+support four from support five. No original receipt is changed.
+
+Local exact replay passes all three receipts and thirteen tests. The complete
+fresh Lean audit passes 238 declarations across 22 sources: 165 general lemmas,
+68 finite controls and five coefficient certificates. The five new general
+interval-collision lemmas use exactly `propext/Quot.sound`; their three controls
+use no axioms. Local compilation uses the previously documented executable-path
+shim with the same pinned official archive. The connected-partition recurrence,
+c10 numeric coefficient sums and ordinary-cycle cardinality quotient remain
+prose/computational results, separate from the new kernel-checked component.
+This increment requires its own final-head hosted acceptance before merging.
+Mathematical priority and independent review remain open.

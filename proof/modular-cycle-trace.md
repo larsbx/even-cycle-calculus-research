@@ -83,8 +83,8 @@ closure and injectivity hold.
 
 Two new general lemmas use no axioms, three use only standard `propext`, and
 five use standard `propext/Quot.sound`. All seven controls use standard
-`propext/Quot.sound`. The exact audit checks 230 named declarations across
-21 freshly compiled sources: 160 general lemmas, 65 finite controls and five
+`propext/Quot.sound`. The exact audit checks 238 named declarations across
+22 freshly compiled sources: 165 general lemmas, 68 finite controls and five
 coefficient certificates. Choice, placeholders and native-evaluation axioms
 are forbidden.
 

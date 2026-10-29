@@ -19,28 +19,45 @@ python3 formal/check.py
 For an existing checkout, set `GPR_SOURCE=/absolute/path/to/pinned/source`.
 Replay rejects another source HEAD or changed pinned input bytes.
 `tools/validate.py` parses the registry, checks preserved source statuses,
-and recomputes all three receipts byte-for-byte, including all symbolic coefficients,
-144 small graph pairs and the independent quotient inversion, then runs the
-13-test regression suite. The finite
+and recomputes all five receipts byte-for-byte. These include the symbolic
+coefficients, 144 small graph pairs and independent finite partition-lattice
+inversion check. It then runs the exact regression suite. The finite
 Lean step needs the version in `formal/lean-toolchain`; it uses Std only and
-compiles all 21 Lean sources and enforces 230 exact named axiom sets. Set
+compiles all 23 Lean sources and enforces 250 exact named axiom sets. Set
 `LEAN_BINARY` if the compiler is not on PATH. See `formal/README.md`.
 The printed JSON is deterministic;
 tool versions and execution date are recorded separately in `conformance/environment.json`.
+The new sector receipt can also be replayed with
+`python3 experiments/near_top.py > /tmp/near-top.json` followed by
+`diff -u conformance/near-top.json /tmp/near-top.json`. It uses only the Python
+standard library. The all-length recurrence and scoped c10 formulas have a
+working prose proof, separately from the eight new formal collision declarations.
 Use a clean checkout for independent reproduction. Passing this finite replay
 does not close an all-graph proof or external literature/acceptance obligation.
 
-To replay only the new independent comparison:
+The histogram-assisted inversion receipt uses `g++ -std=c++17` and Python only:
 
 ```sh
-python3 experiments/partition_inversion.py > /tmp/partition-inversion.json
-diff -u conformance/partition-inversion.json /tmp/partition-inversion.json
+python3 experiments/partition_histogram.py > /tmp/partition-inversion.json
+diff -u conformance/partition-histogram.json /tmp/partition-inversion.json
 ```
 
-`kernels/partition_inversion.py` has no repository imports. The experiment
-imports motif fixtures/formulas and the old DFS only on the comparison side;
-the oracle constructs its own colored Cartesian adjacency and counts arbitrary
-maps of weighted quotients. The same CI finite-replay job enforces this third
-receipt. New regressions cover every simple host of order at most four,
-complete-host selected-cycle counts, direct all-map checks of the frontier
-algorithm, Möbius cancellation, loops and parallel-edge exponents.
+It checks unrestricted adjacency walks through explicit finite vertex-partition
+Mobius inversion, without importing a shuffle or connected-axis recurrence.
+The entire original/additional c8 corpus, 144 small graph pairs, and eight
+near-top profiles are compared. See `proof/partition-lattice-check.md` for
+quotient-hom oracle coverage, cancellation ledgers and formal boundaries.
+
+The independently merged direct quotient oracle from PR #7 is preserved
+byte-for-byte in `kernels/partition_inversion.py`; its original receipt is
+`conformance/partition-inversion.json`. Replay it separately with:
+
+```sh
+python3 experiments/partition_inversion.py > /tmp/direct-inversion.json
+diff -u conformance/partition-inversion.json /tmp/direct-inversion.json
+```
+
+This standard-library-only route counts weighted quotient maps by frontier
+dynamic programming. The histogram route additionally checks c10 and the raw
+projection coefficients. Both receipts are mandatory, and all 25 regressions
+run together. See `proof/partition-inversion.md` for the direct oracle's scope.

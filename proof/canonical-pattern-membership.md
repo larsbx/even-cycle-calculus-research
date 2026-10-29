@@ -113,8 +113,8 @@ convention without changing any motif count.
 ## Verification and remaining composition
 
 All 22 general declarations and ten controls have exactly the standard
-`propext/Quot.sound` dependencies. The audit now checks 230 named declarations
-across 21 fresh source builds: 160 general lemmas, 65 finite controls and five
+`propext/Quot.sound` dependencies. The audit now checks 238 named declarations
+across 22 fresh source builds: 165 general lemmas, 68 finite controls and five
 coefficient certificates. Choice, placeholders and native-evaluation axioms
 are forbidden. Original arithmetic receipts, coefficient/generator source,
 source pin and theorem ownership remain unchanged.

@@ -3,8 +3,8 @@
 `Shuffle.lean` uses only Lean/Std, pinned to `leanprover/lean4:v4.34.0-rc2`.
 From the repository root, run `python3 formal/check.py` with that toolchain.
 Set `LEAN_BINARY` to an explicit compiler path when needed. This compiles all
-21 Lean sources, rebuilding all local imports in a temporary directory,
-and verifies 230 exact named axiom sets. It does not rely on a cached olean.
+23 Lean sources, rebuilding all local imports in a temporary directory,
+and verifies 250 exact named axiom sets. It does not rely on a cached olean.
 CI downloads the exact official release archive and checks SHA-256
 `3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8`.
 
@@ -38,6 +38,17 @@ edge preservation cannot replace injectivity and why unseen labels defeat
 assignment recovery. Five use standard `propext` and `Quot.sound`; one uses no
 axioms. The audit permits no choice, placeholders, added axioms or native
 evaluation axioms. Existing coefficient audits remain unchanged.
+
+`IntervalCollision.lean` adds five general lemmas and three finite controls.
+For monotone coordinate prefix counters bounded by their positive periods,
+equal injective periodic product states are exactly intervals containing
+zero or a full period in every coordinate. Absence of such intervals is
+equivalent to trace injectivity. The proof reuses `CollisionBridge` for
+injective assignments. Five declarations have exactly `propext/Quot.sound`;
+three finite controls have no axioms. The all-length connected recurrence,
+c10 numerical coefficients, word-prefix instantiation and counting quotient
+remain separate prose/computational components; see
+[the sector note](../proof/simple-projection-sectors.md).
 
 `CanonicalTrace.lean` adds 15 general bounded first-occurrence extraction
 lemmas. They prove reconstruction, injective realization, visited-label
@@ -105,3 +116,14 @@ identity and the free 16-to-1
 orbit quotient remain open. The full graph formula and source-owned graph-ring
 theorems are not promoted. Kernel checks of the specified components do not
 establish external mathematical acceptance or novelty.
+
+`PartitionInversion.lean` adds twelve declarations independent of the shuffle
+bridge: quotient factorization with explicit representatives, uniqueness,
+discrete-kernel injectivity, a quotient-loop obstruction, finite integer sum
+algebra, conditional finite inversion transport and two controls. The actual
+Mobius cancellation identity is an explicit hypothesis of `finite_inversion`,
+not a fully formalized factorial-weight theorem. The independent computation
+checks it through Pi_10; numerical C10 coefficients and the ordinary-cycle
+cardinality quotient remain outside this formal component. Six declarations
+have no axioms, five have exactly propext, and uniqueness has exactly Quot.sound.
+See `proof/partition-lattice-check.md` for computation and claim boundaries.
