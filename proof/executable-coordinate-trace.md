@@ -107,14 +107,15 @@ lemma imports classical choice, so the bridge instead proves its required
 bounded identity directly by structural recursion. No choice dependency is
 admitted by the audit.
 
-The complete audit checks 198 named declarations across 19 fresh source
-builds: 138 general lemmas, 55 finite controls and five coefficient
+The complete audit checks 230 named declarations across 21 fresh source
+builds: 160 general lemmas, 65 finite controls and five coefficient
 certificates. The literal Shuffle.lean source and both arithmetic receipts
 are unchanged. Source pin and theorem ownership remain unchanged.
 
-Still open are the formal assembly from canonical coordinate extraction to
-all generated bounded templates and quotient-motif classification and the finite cardinality/free
-16-to-1 quotient. In particular, finite coefficient certificates and this
+The [canonical membership bridge](canonical-pattern-membership.md) now checks
+the forward coordinate-trace membership and assignment interface. Still open
+are arbitrary-template normalization inverses, full product-cycle composition,
+quotient-motif classification and the finite cardinality/free 16-to-1 quotient. In particular, finite coefficient certificates and this
 general encoding equivalence do not by themselves establish the full ordinary
 c8 formula. It remains working, with external mathematical acceptance and
 novelty separate.

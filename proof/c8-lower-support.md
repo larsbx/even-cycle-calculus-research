@@ -109,7 +109,9 @@ zero, including all fixed-coordinate multiplicities.
    the literal prefix-index trace and collision test for bounded positive-period
    templates. The [cyclic-pattern generator proof](cyclic-pattern-generator.md)
    now establishes exact membership and unique enumeration for all lengths.
-   Assembly with canonical extraction remains open.
+   The [canonical membership bridge](canonical-pattern-membership.md) now
+   checks forward coordinate-trace membership and injective assignment
+   reconstruction. Inverse normalization and product-wide composition remain open.
 3. The coordinate word w is a shuffle with ra copies of a. Before step u,
    let qa(u) be the number of a's in the preceding u positions. The product
    vertex at u has labels
@@ -197,8 +199,10 @@ The general shuffle statement is now kernel-checked in
 duplicate emitted words, filtered-list uniqueness and a constructive typed-axis
 lift. See [the axis-word generator proof](axis-word-generator.md). Whole cyclic
 restricted-growth membership and unique enumeration are now checked in
-`formal/PatternGenerator.lean`; assembly with canonical extraction remains
-a separate formal obligation.
+`formal/PatternGenerator.lean`. The forward coordinate-trace normalization
+and assignment interface is checked in `formal/NormalizedPattern.lean`.
+Inverse normalization and full product-cycle composition remain separate formal
+obligations.
 
 `conformance/lower-support.json` lists every **nonzero** pattern tuple and
 its K, together with aggregate coefficients. Zero terms are recomputed by

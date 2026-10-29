@@ -65,14 +65,15 @@ The eight general declarations use either no axioms or Lean's standard
 use either no axioms or standard `propext` and `Quot.sound`. They use no
 choice, placeholders, added axioms or native-evaluation axioms. Together with
 the five existing coefficient declarations and the canonical coordinate
-extraction and event components, `formal/check.py` compares **198 exact named
+extraction and event components, `formal/check.py` compares **230 exact named
 axiom sets**; imports are built afresh in a temporary
 directory. Hosted CI uses the unchanged, digest-pinned official compiler.
 
 The general c8 formula remains **working**, not externally accepted. Open
 formal obligations remain:
 
-- Assemble canonical extraction with every generated bounded template. The
+- Prove inverse normalization for arbitrary generated bounded templates and
+  assemble the complete product-cycle interfaces. The
   [executable bridge](executable-coordinate-trace.md) now constructs the typed
   event trace for bounded positive-period templates and proves its exact
   correspondence with the literal prefix-index and collision functions.
@@ -83,8 +84,8 @@ formal obligations remain:
   The [coordinate-level extraction and recovery lemmas](canonical-coordinate-extraction.md)
   do not yet establish the full cycle/shuffle bijection.
 - Assemble the [checked cyclic-pattern membership and uniqueness](cyclic-pattern-generator.md)
-  with canonical coordinate extraction, and verify quotient-motif isomorphism
-  classification.
+  with the [forward canonical membership and assignment interface](canonical-pattern-membership.md)
+  in the complete product count, and verify quotient-motif isomorphism classification.
 - Prove the finite cardinality identity and the free 16-to-1 root/direction
   quotient used for ordinary eight-cycle counts.
 

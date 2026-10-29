@@ -78,7 +78,9 @@ The prior ordinal compression proves the literal next-label candidate bound.
 These new theorems establish the whole generator's semantics and uniqueness.
 They do not silently supply the remaining composition from arbitrary graph
 cycles through stationary-step deletion, canonical extraction and all bounded
-templates. That assembly is still an explicit proof obligation.
+templates. The [canonical membership continuation](canonical-pattern-membership.md)
+now checks the forward coordinate-trace membership and assignment interface.
+Arbitrary-template normalization inverses and full product composition remain open.
 
 ## Exact controls
 
@@ -109,8 +111,8 @@ simple-projection-only or even-projection-only shortcut is introduced.
 
 Four general declarations use no axioms, one uses standard `propext`, and 11
 use `propext/Quot.sound`. Two controls use no axioms and five use
-`propext/Quot.sound`. The full audit checks 198 named declarations in 19 fresh
-source builds: 138 general lemmas, 55 finite controls and five coefficient
+`propext/Quot.sound`. The full audit checks 230 named declarations in 21 fresh
+source builds: 160 general lemmas, 65 finite controls and five coefficient
 certificates. No choice, placeholders or native-evaluation axioms are allowed.
 The literal generators, both arithmetic receipts and coefficient code remain
 unchanged. Source pin and theorem ownership are unchanged.
@@ -121,7 +123,8 @@ head `4d3d85b0a51828bcb80ebca91b8b749dc6bad914` in
 and merged as `acb8fe4e9806d18dc357ac98554e47ad31b5b905`. Those checks do not
 replace hosted acceptance for this extension's own final head.
 
-Remaining work is canonical extraction/template assembly, quotient-motif
-classification and the finite cardinality/free 16-to-1 quotient. The full
+Remaining work is arbitrary-template normalization inverses, full product-cycle
+composition, quotient-motif classification and the finite cardinality/free
+16-to-1 quotient. The full
 ordinary c8 formula remains working; external mathematical acceptance and
 novelty remain separate.

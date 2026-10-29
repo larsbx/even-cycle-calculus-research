@@ -108,6 +108,19 @@ EXPECTED = {
     **{'ECC.PatternControls.'+n: {'propext', 'Quot.sound'} for n in (
         'motif_words_occur_once', 'adjacent_collision_rejected', 'closing_collision_rejected',
         'skipped_label_rejected', 'nonzero_first_rejected')},
+    **{'ECC.NormalizedPattern.'+n: {'propext', 'Quot.sound'} for n in (
+        'word_length', 'tail_length', 'word_split', 'prefix_labels_eq_take',
+        'word_take_last', 'word_last', 'initial_prefix', 'normalized_extension',
+        'normalized_closing', 'normalized_cyclic', 'normalized_mem_patterns',
+        'normalized_occurs_once', 'proper_of_normalized_cyclic', 'normalized_mem_iff_proper',
+        'positions_same_equality', 'word_eq_of_equality', 'word_lookup_eq_iff',
+        'word_eq_iff_equality', 'assignment_unique', 'canonical_factorization',
+        'selected_step_preserved', 'selected_loopless')},
+    **{'ECC.NormalizedControls.'+n: {'propext', 'Quot.sound'} for n in (
+        'four_normalized_words', 'four_patterns_once', 'odd_triangle_normalization',
+        'repeated_projection_allowed', 'equal_pattern_relabeling', 'adjacent_collapse_rejected',
+        'closing_collapse_rejected', 'assignment_reconstruction', 'selected_step_controls',
+        'noninduced_extra_edge')},
 }
 
 
@@ -139,7 +152,9 @@ def main():
                      ('-o', str(Path(build)/'WordGenerator.olean'), 'WordGenerator.lean'),
                      ('WordControls.lean',),
                      ('-o', str(Path(build)/'PatternGenerator.olean'), 'PatternGenerator.lean'),
-                     ('PatternControls.lean',)]:
+                     ('PatternControls.lean',),
+                     ('-o', str(Path(build)/'NormalizedPattern.olean'), 'NormalizedPattern.lean'),
+                     ('NormalizedControls.lean',)]:
             run = subprocess.run([LEAN, *args], cwd=ROOT, env=env, text=True,
                                  stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             print(run.stdout, end='', flush=True)
@@ -154,7 +169,7 @@ def main():
                 actual[name] = {a.strip() for a in axioms.split(',')} if axioms else set()
     if actual != EXPECTED:
         raise RuntimeError('Axiom audit differs: '+repr(actual))
-    print('PASS: 198 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
+    print('PASS: 230 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
 
 
 if __name__ == '__main__':

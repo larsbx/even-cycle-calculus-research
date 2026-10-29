@@ -20,7 +20,7 @@ assumptions. The [canonical extraction component](proof/canonical-coordinate-ext
 adds 15 general first-occurrence lemmas and three finite controls. It recovers
 coordinate equality classes by a bounded scan; compressed shuffle encoding
 and the full counting bijection remain open. Run `python3 formal/check.py`
-for all 198 declaration audits. The [ordinal compression component](proof/ordinal-rank-compression.md)
+for all 230 declaration audits. The [ordinal compression component](proof/ordinal-rank-compression.md)
 adds 20 general lemmas and three controls: representative labels are now
 bijective with `Fin r`, reconstruction is exact, and zero-first/append bounds
 match the enumerator. The [coordinate-event component](proof/coordinate-event-shuffle.md)
@@ -40,8 +40,11 @@ adds 17 general lemmas and seven controls: exact multiplicity completeness,
 unique emitted words, collision-filter uniqueness and constructive typed axes.
 The [cyclic-pattern generator proof](proof/cyclic-pattern-generator.md) adds
 16 general lemmas and seven controls: exact zero-first restricted-growth
-conditions, proper closing and unique enumeration. Canonical extraction/template
-assembly and the ordinary-cycle counting bijection remain open.
+conditions, proper closing and unique enumeration. The [canonical membership bridge](proof/canonical-pattern-membership.md)
+adds 22 general lemmas and ten controls: proper finite coordinate traces
+normalize to generated words exactly once, with injective reconstruction and
+fixed-template assignment uniqueness. Arbitrary-template normalization inverses
+and the full product-cycle counting composition remain open.
 
 Run `python3 experiments/lower_support.py` for exact symbolic coefficients,
 reproduction of all five original cases, 19 additional products, and 144 small
