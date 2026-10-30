@@ -206,3 +206,38 @@ c10 numeric coefficient sums and ordinary-cycle cardinality quotient remain
 prose/computational results, separate from the new kernel-checked component.
 This increment requires its own final-head hosted acceptance before merging.
 Mathematical priority and independent review remain open.
+
+## Completed final-head evidence for merged PR #6
+
+PR #6 merged as `76d00684013a8038d73e646ef043faa9c699ae3e` after the earlier
+user instruction to merge while checks were queued. A fresh inspection on
+2026-10-30 found that its final resolved head
+`89e85cb57108bff9055453c87bcc4bd7575a41c0` subsequently passed both jobs in
+[PR run 40947582908](https://github.com/larsbx/even-cycle-calculus-research/actions/runs/40947582908):
+`finite-replay` 123706895883 and `finite-lean` 123706896226. These are completed
+results at the final integrated tree, not earlier-head evidence. They do not
+retroactively change the recorded merge timing or establish external
+mathematical acceptance or priority.
+
+## Fixed-cycle representations and c10 kernel certificates
+
+The continuation adds the explicit fixed-trace root/direction parameterization,
+injectivity and cyclic-edge preservation, with length-two, repeated-vertex and
+directed-edge negative controls. Prefix decomposition connects the unchanged
+literal ten-step collision count to eighty individual two-step-prefix cells,
+twenty row identities and five complete raw coefficient identities. Exact
+multiplier arithmetic and root-dependent wedge divisibility are checked
+separately. See `proof/rooted-cycle-counting.md` for the formal boundaries.
+
+The audit procedure now checks 382 exact named declarations across 46 fresh
+source builds, including the isolated coefficient modules. No native evaluation
+or added axiom is permitted. The local official compiler archive has the same
+verified digest as CI; the previously documented executable-path shim is used
+only for local process-path compatibility. The Lean workflow receives a
+45-minute budget for the added kernel reductions. The five existing exact
+receipts replay unchanged and all 25 regression tests pass locally.
+
+The global graph-inventory orbit partition, coordinate-profile cardinality
+transport, full motif assembly and partition-weight cancellation theorem remain
+open. Both final-head hosted jobs are required for this increment's merge;
+external mathematical review and expansion novelty are separate obligations.

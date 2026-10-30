@@ -1,10 +1,29 @@
 # Lean coefficients and coordinate decoding
 
+`TenCycleBase.lean` proves exact two-step prefix decompositions of the literal
+length-ten kernel. Twenty isolated sources in `C10Coefficients/` certify its
+eighty individual two-axis-prefix cells and twenty corresponding rows for
+A/B/C/D and paired triangles. Every cell checks the complete prefix-plus-suffix collision
+test. Compiler invocations are isolated to bound memory. `TenCycle.lean`
+combines those opaque certificates into 660, 2562, 4008, 8310 and 12540, then
+checks the multiplier arithmetic and rooted wedge divisibility control.
+No native evaluation is used. The three decomposition and five combined
+coefficient declarations have exactly `propext/Quot.sound`; eighty ground
+cells and twenty rows use `propext`; two arithmetic controls use no axioms.
+
+`RootedCycle.lean` adds eighteen general finite-trace lemmas and four controls.
+It gives an explicit complete, duplicate-free list of 2m root/direction
+representations for a fixed injective trace of length m>=3, preserving
+injectivity and symmetric cyclic adjacency. Every declaration has exactly
+`propext/Quot.sound`. This is the fixed-cycle multiplicity component; full
+ordinary graph-inventory partitioning and coordinate-profile count transport
+remain separate. See [the proof note](../proof/rooted-cycle-counting.md).
+
 `Shuffle.lean` uses only Lean/Std, pinned to `leanprover/lean4:v4.34.0-rc2`.
 From the repository root, run `python3 formal/check.py` with that toolchain.
 Set `LEAN_BINARY` to an explicit compiler path when needed. This compiles all
-23 Lean sources, rebuilding all local imports in a temporary directory,
-and verifies 250 exact named axiom sets. It does not rely on a cached olean.
+46 Lean sources, rebuilding all local imports in a temporary directory,
+and verifies 382 exact named axiom sets. It does not rely on a cached olean.
 CI downloads the exact official release archive and checks SHA-256
 `3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8`.
 

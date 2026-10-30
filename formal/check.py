@@ -7,7 +7,30 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parent
 LEAN = os.environ.get('LEAN_BINARY', 'lean')
+C10_ROWS = [name+str(i) for name in ('Edge', 'WedgeB', 'WedgeC', 'Square', 'PairedTriangle')
+            for i in range(4)]
 EXPECTED = {
+    **{'ECC.RootedCycle.'+n: {'propext', 'Quot.sound'} for n in (
+        'forward_zero', 'backward_zero', 'index_zero', 'forward_injective',
+        'backward_injective', 'index_injective', 'directions_distinct', 'next_val',
+        'forward_next', 'backward_next', 'representation_edges',
+        'representation_injective', 'representation_parameters_unique',
+        'parameter_injective', 'parameter_surjective', 'representations_length',
+        'representations_nodup', 'mem_representations_iff',
+        'eight_ten_representation_counts', 'length_two_direction_control',
+        'repeated_trace_rotation_control', 'symmetry_control')},
+    **{'ECC.TenCycle.'+n: {'propext', 'Quot.sound'} for n in (
+        'countFrom_succ', 'split_4222', 'split_3322', 'edge_coefficient',
+        'wedge_B_coefficient', 'wedge_C_coefficient', 'square_coefficient',
+        'paired_triangle_coefficient')},
+    **{f'ECC.TenCycle.{name}_row_{i}': {'propext'}
+       for name in ('edge', 'wedge_B', 'wedge_C', 'square', 'paired_triangle')
+       for i in range(4)},
+    **{f'ECC.TenCycle.{name}_cell_{i}_{j}': {'propext'}
+       for name in ('edge', 'wedge_B', 'wedge_C', 'square', 'paired_triangle')
+       for i in range(4) for j in range(4)},
+    **{'ECC.TenCycle.'+n: set() for n in (
+        'motif_coefficient_arithmetic', 'rooted_wedge_categories_not_divisible')},
     **{'ECC.PartitionInversion.'+n: set() for n in (
         'factor_constant', 'quotient_factorization', 'kernel_discrete_iff',
         'quotient_loop_obstruction', 'repeated_edge_cancellation', 'rooted_c10_quotient')},
@@ -145,8 +168,14 @@ def main():
     pattern = re.compile(r"^'([^']+)' (?:depends on axioms: \[([^]]*)\]|does not depend on any axioms)$")
     with tempfile.TemporaryDirectory(prefix='ecc-lean-') as build:
         env = dict(os.environ, LEAN_PATH=build)
+        (Path(build)/'C10Coefficients').mkdir()
         for args in [('-o', str(Path(build)/'Shuffle.olean'), 'Shuffle.lean'),
+                     ('-o', str(Path(build)/'TenCycleBase.olean'), 'TenCycleBase.lean'),
+                     *[('-o', str(Path(build)/'C10Coefficients'/f'{name}.olean'),
+                        f'C10Coefficients/{name}.lean') for name in C10_ROWS],
+                     ('TenCycle.lean',),
                      ('-o', str(Path(build)/'CollisionBridge.olean'), 'CollisionBridge.lean'),
+                     ('RootedCycle.lean',),
                      ('CollisionControls.lean',),
                      ('-o', str(Path(build)/'CanonicalTrace.olean'), 'CanonicalTrace.lean'),
                      ('-o', str(Path(build)/'CanonicalControls.olean'), 'CanonicalControls.lean'),
@@ -182,7 +211,7 @@ def main():
                 actual[name] = {a.strip() for a in axioms.split(',')} if axioms else set()
     if actual != EXPECTED:
         raise RuntimeError('Axiom audit differs: '+repr(actual))
-    print('PASS: 250 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
+    print('PASS: 382 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
 
 
 if __name__ == '__main__':

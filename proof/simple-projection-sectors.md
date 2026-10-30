@@ -197,7 +197,8 @@ Here w counts ordinary selected P3 copies and s ordinary selected squares.
 The square term independently matches (2): K(4,2,2,2)=8310.
 The paired-triangle raw sum is 12540 out of 25200 axis words.
 Finite complete word sums are computed and regression checked in Python;
-their numerical values have not been independently certified in Lean.
+their numerical values are now independently kernel-certified in TenCycle.lean
+through the proved prefix decomposition. See rooted-cycle-counting.md.
 
 For an arbitrary finite factor family, sum the first identity over the
 choice of four axes and its distinguished four-step axis, and the second

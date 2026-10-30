@@ -20,10 +20,16 @@ four-step projections. New coefficients are 528, 5256, 26592 and 90288;
 independent product-adjacency DFS checks eight specified strata. The note
 attributes prior work and separates candidate contributions from established
 specializations. Priority and external mathematical acceptance remain open.
-Run `python3 experiments/near_top.py` to replay
+The [kernel coefficient and root-count continuation](proof/rooted-cycle-counting.md)
+certifies all five c10 raw coefficients and their motif-multiplier arithmetic.
+For a fixed injective finite trace of length m>=3, its 2m rotation/reversal
+representations are now proved distinct, complete and edge-preserving under
+symmetric adjacency. The global graph-inventory quotient and full motif-count
+assembly remain open. Run `python3 experiments/near_top.py` to replay
 [the new receipt](conformance/near-top.json). Five general Lean lemmas and
 three finite controls certify the interval-collision component; the connected
-recurrence and c10 coefficient enumeration are not yet kernel-certified.
+recurrence is not yet kernel-certified. The continuation below certifies
+the c10 coefficient enumeration separately.
 
 The [formal collision bridge](proof/coordinate-collision-bridge.md) now proves
 eight general finite coordinate-decoding lemmas, including collision/support

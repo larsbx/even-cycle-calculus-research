@@ -103,8 +103,11 @@ priority and independent review are open, separate gates. The finite receipt
 and new interval-collision formal lemma do not close those gates.
 
 Next focused obligations are to independently review the component/gap
-bijection, certify the new c10 coefficient sums in the proof kernel, and
-formalize the finite ordinary-cycle quotient. The original c8 extraction
+bijection and assemble the finite ordinary-cycle inventory quotient. The
+c10 coefficient sums now have exact kernel certificates through isolated
+prefix rows. RootedCycle proves the fixed-cycle 2m representation factor,
+including symmetric adjacency preservation, but does not yet partition an
+arbitrary rooted graph-walk inventory into those classes. The original c8 extraction
 composition and motif-classification obligations remain active.
 
 The independent partition-lattice comparison is delivered in
