@@ -27,6 +27,8 @@ def extract(word, r):
 
 def reconstruct(matching):
     four, pairs = matching
+    if len(four) != 4:
+        raise ValueError('distinguished endpoint inventory must have four entries')
     positions = four+tuple(x for pair in pairs for x in pair)
     if len(set(positions)) != len(positions) or set(positions) != set(range(len(positions))):
         raise ValueError('endpoint cover/disjointness failure')
@@ -153,7 +155,7 @@ def receipt():
             pass
         else:
             raise AssertionError(('malformed word accepted', w, r))
-    for M in (((0, 1, 2, 3), ((3, 4),)), ((0, 1, 2, 4), ()), ((1, 0, 2, 3), ())):
+    for M in (((0, 1, 2, 3), ((3, 4),)), ((0, 1, 2, 4), ()), ((1, 0, 2, 3), ()), ((0, 1, 2), ())):
         try:
             reconstruct(M)
         except ValueError:
@@ -167,7 +169,7 @@ def receipt():
     controls['unstable_predicate'] = dict(fiber_size=2, accepted_labels=unstable_count,
                                           predicate='the first nonzero label is 1')
     controls['missing_label_factor'] = dict(edge_axes=3, correct_labeled_words=660, wrong=110)
-    controls['malformed_inputs_rejected'] = dict(words=3, matchings=3)
+    controls['malformed_inputs_rejected'] = dict(words=3, matchings=4)
     return dict(scope='finite observations; general word/data cardinality is separately proved in Lean',
                 rows=rows, negative_controls=controls,
                 remaining_general_proof='identify rooted inputs with the full product-sector trace inventory and transport its ordinary-cycle quotient')

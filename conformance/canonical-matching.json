@@ -89,7 +89,7 @@
     },
     "malformed_inputs_rejected": {
       "words": 3,
-      "matchings": 3
+      "matchings": 4
     }
   },
   "remaining_general_proof": "identify rooted inputs with the full product-sector trace inventory and transport its ordinary-cycle quotient"

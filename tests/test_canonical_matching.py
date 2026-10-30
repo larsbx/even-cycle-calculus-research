@@ -24,7 +24,7 @@ class CanonicalMatchingControls(unittest.TestCase):
                 extract(word, r)
 
     def test_endpoint_hypotheses_are_required(self):
-        for matching in (((0, 1, 2, 3), ((3, 4),)), ((0, 1, 2, 4), ()), ((1, 0, 2, 3), ())):
+        for matching in (((0, 1, 2, 3), ((3, 4),)), ((0, 1, 2, 4), ()), ((1, 0, 2, 3), ()), ((0, 1, 2), ())):
             with self.assertRaises(ValueError):
                 reconstruct(matching)
 
