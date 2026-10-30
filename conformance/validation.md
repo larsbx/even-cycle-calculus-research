@@ -275,3 +275,17 @@ individual selected-copy classes (3,7,17,33,21 across its five product hosts)
 and confirms that K4 has three distinct ordinary four-cycles on the same vertex
 set. Its updated receipt and eight controls are replayed separately. The Lean
 sources and exact audit manifest are unchanged by this strengthening.
+
+## Canonical matching–word continuation
+
+The complete word/matching occurrence inverses, canonical unlabeled data and
+global r!J word count are now general proofs. See
+`proof/canonical-matching-word-count.md`. There are 102 added exact audits,
+bringing the manifest to 571 declarations across 65 source builds. Rooted-input
+cardinality is proved; actual product-trace transport remains an explicit
+map/injectivity/image obligation. The eighth receipt checks the full finite
+correspondence and rooted trace image sets through r=3. Five additional
+boundary regressions bring the suite to 44 tests. The seven previous receipts
+are unchanged. An exploratory r=2 ground Lean inventory reduction was killed
+with exit 137 and is recorded as a resource failure, not passed evidence;
+required small kernel controls and general proofs are audited separately.

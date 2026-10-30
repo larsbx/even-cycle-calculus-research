@@ -168,3 +168,11 @@ automorphism transport, and independent coordinate/fiber cardinalities.
 canonical-matching/product-sector bijection is still open. Older paragraphs
 describing the global orbit quotient as open are superseded by this increment,
 while their product-sector extraction obligations remain.
+
+The [canonical matching–word closure](../proof/canonical-matching-word-count.md)
+adds inverse occurrence extraction, explicit label-free matching data, complete
+canonical representatives and disjoint r! fibers. `labeled_joint_count` proves
+the full accepted-word count without a cardinality assumption. The rooted
+input count is also proved. `formula_from_trace_transport` now names the
+remaining trace map, injectivity and exact-image hypotheses; its actual
+product-graph construction remains open.

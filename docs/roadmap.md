@@ -165,3 +165,9 @@ inventories have exact product cardinalities. The next obligation is the
 canonical unlabeled matching extraction/disjoint union and its specialization
 to the full selected-product coordinate-profile inventory. The conditional
 coefficient arithmetic must not be reported as discharging that obligation.
+
+The subsequent [canonical matching–word continuation](../proof/canonical-matching-word-count.md)
+closes the canonical unlabeled matching and global accepted-word r!J count.
+The complete rooted-input inventory has cardinality 2^(r+1)r!J. The next proof
+is the actual input/product-trace bijection, including final-edge closure and
+input recovery, followed by arbitrary-factor specialization.

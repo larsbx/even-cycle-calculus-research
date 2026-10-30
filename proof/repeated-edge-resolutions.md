@@ -204,3 +204,9 @@ coordinate-fiber transport are also available. The assembled canonical
 matching inventory/product-sector bijection remains open; the final formula
 theorem retains an explicit rooted-count hypothesis. No full general machine
 proof, independent mathematical acceptance or priority determination is claimed.
+
+The [canonical matching–word continuation](canonical-matching-word-count.md)
+subsequently closes the complete canonical matching/word inventory and proves
+the unconditional r!J word count. Its rooted-input count is proved too. The
+remaining formal obligation is the actual product-trace bridge and its
+arbitrary-factor specialization, now stated by `formula_from_trace_transport`.

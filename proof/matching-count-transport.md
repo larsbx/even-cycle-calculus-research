@@ -11,13 +11,20 @@ Lean proof of the all-factor coefficient formula.**
 
 | Component | General Lean result | Remaining connection |
 |---|---|---|
-| Double-occurrence words | `ChordConnectivity.collision_free_iff_connected` | Words use their ordered occurrence-position representation. Extraction from the literal Python/list word inventory is separate. |
+| Double-occurrence words | `ChordConnectivity.collision_free_iff_connected` | Literal typed-word occurrence extraction and both inverse identities are subsequently proved in OccurrenceMatching. Refining the Python enumerator remains separate. |
 | Two resolutions | `ResolutionMatching.simultaneous_resolutions` | Both diagrams and their parity states are constructed from an endpoint bijection; no connectivity hypothesis is supplied. |
-| Labeled multiplicity | `MatchingWord.words_length`, `words_nodup`, `words_membership` | Each fixed matching has exactly r! distinct labelings. The complete canonical matching inventory and its disjoint union over matchings are not yet instantiated. |
+| Labeled multiplicity | `MatchingWord.words_length`, `words_nodup`, `words_membership` | The subsequent canonical matching continuation proves the complete global disjoint fiber inventory and unconditional r!J word count. |
 | Root/direction quotient | `GlobalCycleCount.graph_ordinary_count` | Complete finite graph trace enumeration and deterministic orbit transversal are provided. Specializing the inventory to the product coordinate-step sector still requires transport. |
 | Selected motif assignments | `MotifTransport.selected_copy_factorization`, `motif_automorphisms` | Given a selected copy and an inverse of its vertex labeling, assignments factor uniquely through its automorphisms. The complete projection-to-selected-copy inventory is not constructed. |
 | Coordinate and inactive fibers | `FiberCardinality.choices_length`, `choices_membership`, `choices_nodup` | Independent coordinate inventories have an exact product cardinality; one-label inactive coordinates have N assignments. Their full product-cycle extraction is separate. |
-| Final arithmetic | `FiberCardinality.repeated_edge_formula` | **Conditional** on `hcount : (2L)C = 2^(r+1) r! J`. This hypothesis is the outstanding assembled bijection, not a proved consequence of the component audits. |
+| Final arithmetic | `FiberCardinality.repeated_edge_formula` | The word and rooted-input counts are now proved. RepeatedEdgeAssembly states the remaining concrete trace-map injectivity and exact-image conditions. |
+
+The subsequent [canonical matching–word closure](canonical-matching-word-count.md)
+now discharges the canonical matching extraction, complete disjoint fiber
+inventory and general r!J word-count obligations listed in this initial table.
+It also proves the complete rooted-input cardinality. The remaining obligation
+is its actual product-trace transport; the new assembly theorem states that
+map, injectivity and image membership explicitly.
 
 The full formula remains a working general finite derivation. Computational
 agreement, a checked conditional theorem, and a complete general machine proof
@@ -123,10 +130,9 @@ positions bearing the distinguished label and the two positions bearing each
 other label. Forget the names and sort the pairs. Conversely, labeling that
 canonical matching recovers the word. Equality of words forces equality of
 the canonical matching data and of its labeling. This proves, as a finite
-bijection argument, the labeled valid-word count r! J_r. **The global canonical
-matching extraction and list partition in this paragraph remain a machine
-formalization obligation.** The per-matching r! theorem does not silently
-assume that partition.
+bijection argument, the labeled valid-word count r! J_r. The [subsequent closure](canonical-matching-word-count.md) now proves the
+global extraction and list partition using label-free four-set/pair data and
+a finite transversal; the complete r!J word theorem no longer assumes them.
 
 ## 4. The global ordinary-cycle quotient
 
@@ -253,11 +259,12 @@ general statements. Lean proofs and their exact axiom audits are separate.
 
 ## Next reproducible proof obligation
 
-Construct and verify the canonical inventory of ordered four-sets plus
-unlabeled complementary matchings, with inverse extraction from every labeled
-word of the profile. Prove that its distinct per-matching word fibers partition
-the entire accepted word inventory. Then specialize the finite graph orbit
-inventory to the selected-product motifs and prove both extraction inverses,
-including every inactive coordinate. This supplies `hcount` rather than
-assuming it and closes the assembled machine theorem. Preserve the source
-ownership and prior-work attributions when doing so.
+The canonical matching extraction and complete r!J word count are now proved
+in [canonical-matching-word-count.md](canonical-matching-word-count.md).
+Construct the rooted product-trace map from the already counted input inventory,
+prove its input recovery and complete image in the selected product-sector
+inventory, then apply `RepeatedEdgeAssembly.formula_from_trace_transport`.
+Finish its specialization to arbitrary selected motifs, active-coordinate
+allocations and inactive vertices. The full product formula remains conditional
+on this concrete trace bridge. Preserve source ownership and prior-work
+attributions throughout.
