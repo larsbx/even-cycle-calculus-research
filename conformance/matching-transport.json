@@ -1,0 +1,213 @@
+{
+  "scope": "finite observations; general proofs are in separately audited Lean sources",
+  "double_occurrence": [
+    {
+      "chords": 1,
+      "diagrams": 1,
+      "connected": 1
+    },
+    {
+      "chords": 2,
+      "diagrams": 3,
+      "connected": 1
+    },
+    {
+      "chords": 3,
+      "diagrams": 15,
+      "connected": 4
+    },
+    {
+      "chords": 4,
+      "diagrams": 105,
+      "connected": 27
+    },
+    {
+      "chords": 5,
+      "diagrams": 945,
+      "connected": 248
+    },
+    {
+      "chords": 6,
+      "diagrams": 10395,
+      "connected": 2830
+    }
+  ],
+  "labeled_resolution_fibers": [
+    {
+      "edge_axes": 0,
+      "words": 1,
+      "matching_fibers": 1,
+      "fiber_size": 1,
+      "accepted_words": 0,
+      "J": 0
+    },
+    {
+      "edge_axes": 1,
+      "words": 15,
+      "matching_fibers": 15,
+      "fiber_size": 1,
+      "accepted_words": 0,
+      "J": 0
+    },
+    {
+      "edge_axes": 2,
+      "words": 420,
+      "matching_fibers": 210,
+      "fiber_size": 2,
+      "accepted_words": 4,
+      "J": 2
+    },
+    {
+      "edge_axes": 3,
+      "words": 18900,
+      "matching_fibers": 3150,
+      "fiber_size": 6,
+      "accepted_words": 660,
+      "J": 110
+    }
+  ],
+  "selected_motif_automorphisms": {
+    "edge": 2,
+    "wedge": 2,
+    "square": 8,
+    "triangle": 6
+  },
+  "literal_word_coefficients": [
+    {
+      "edge": 0,
+      "wedge": 0,
+      "square": 1
+    },
+    {
+      "edge": 0,
+      "wedge": 1,
+      "square": 12
+    },
+    {
+      "edge": 2,
+      "wedge": 60,
+      "square": 408
+    }
+  ],
+  "product_adjacency": [
+    {
+      "case": "edge",
+      "length": 8,
+      "selected_profile": [
+        4,
+        2,
+        2
+      ],
+      "cycles": 2,
+      "all_near_top_cycles": 6,
+      "rooted_quotient": 16,
+      "total_graph_cycles": 6
+    },
+    {
+      "case": "wedge",
+      "length": 8,
+      "selected_profile": [
+        4,
+        2,
+        2
+      ],
+      "cycles": 64,
+      "all_near_top_cycles": 72,
+      "rooted_quotient": 16,
+      "total_graph_cycles": 72
+    },
+    {
+      "case": "square",
+      "length": 8,
+      "selected_profile": [
+        4,
+        2,
+        2
+      ],
+      "cycles": 656,
+      "all_near_top_cycles": 672,
+      "rooted_quotient": 16,
+      "total_graph_cycles": 696
+    },
+    {
+      "case": "extra_host_edges",
+      "length": 8,
+      "selected_profile": [
+        4,
+        2,
+        2
+      ],
+      "cycles": 1956,
+      "all_near_top_cycles": 1980,
+      "rooted_quotient": 16,
+      "total_graph_cycles": 2100
+    },
+    {
+      "case": "inactive_vertex_fiber",
+      "length": 8,
+      "selected_profile": [
+        4,
+        2,
+        2,
+        0
+      ],
+      "cycles": 192,
+      "all_near_top_cycles": 216,
+      "rooted_quotient": 16,
+      "total_graph_cycles": 216
+    }
+  ],
+  "paired_triangle": [
+    {
+      "edge_axes": 0,
+      "raw_words": 14,
+      "coefficient": 42
+    },
+    {
+      "edge_axes": 1,
+      "raw_words": 312,
+      "coefficient": 1404
+    }
+  ],
+  "negative_controls": {
+    "outer_only": {
+      "word": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "original": false,
+      "front": false,
+      "outer": true
+    },
+    "front_only": {
+      "word": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "original": false,
+      "front": true,
+      "outer": false
+    },
+    "omit_direction_factor": {
+      "correct": 2,
+      "wrong": 4
+    },
+    "omit_inactive_fiber": {
+      "correct": 192,
+      "wrong": 64
+    },
+    "wedge_root_categories": "individual root categories are not invariant under rotation",
+    "full_return": "including the final root rejects every closed simple cycle",
+    "missing_endpoint_cover": "one chord at 0,3 has repeated departures",
+    "shared_endpoint": "two noncrossing chords on 0,1 and 1,2 have distinct departures",
+    "non_simple_trace": "0101 has only two distinct rotations"
+  }
+}

@@ -156,3 +156,15 @@ in these three declarations. Four finite controls have exactly `propext`.
 Word-prefix instantiation, connected matching enumeration, motif assembly and
 the all-graph cardinality quotient are prose components. See
 [the two-resolution scope](../proof/repeated-edge-resolutions.md).
+
+## Matching-count continuation (2026-10-30)
+
+The current boundary is [matching-count transport](../proof/matching-count-transport.md).
+Nine new components prove the general connected-chord/word correspondence,
+constructed simultaneous resolutions, a fixed matching's r! distinct labeled
+words, a complete finite-graph ordinary-cycle orbit quotient, selected-copy
+automorphism transport, and independent coordinate/fiber cardinalities.
+`repeated_edge_formula` has an explicit `hcount` hypothesis; the assembled
+canonical-matching/product-sector bijection is still open. Older paragraphs
+describing the global orbit quotient as open are superseded by this increment,
+while their product-sector extraction obligations remain.

@@ -76,3 +76,10 @@ connectivity against endpoint intervals, original c8/c10 corpus agreement,
 coordinate permutations, inactive fibers and single-resolution failures.
 See `proof/repeated-edge-resolutions.md` for the all-length identity and
 precise formal limits. The seven new Lean audits cover the collision component.
+
+The matching-count continuation adds `conformance/matching-transport.json`,
+replayed independently by `experiments/matching_transport.py`. It imports no
+production matching evaluator, word generator, recurrence or product DFS.
+`formal/check.py` includes the nine new proof components and enforces each
+declaration's exact axiom set. See `proof/matching-count-transport.md` for the
+remaining canonical matching/product-sector extraction obligation.

@@ -10,6 +10,38 @@ LEAN = os.environ.get('LEAN_BINARY', 'lean')
 C10_ROWS = [name+str(i) for name in ('Edge', 'WedgeB', 'WedgeC', 'Square', 'PairedTriangle')
             for i in range(4)]
 EXPECTED = {
+    **{'ECC.ChordConnectivity.'+n: {'propext', 'Quot.sound'} for n in (
+        'mem_colors', 'component_iff', 'component_self', 'component_step', 'inside_pair', 'inside_step', 'least', 'outside_encloses_none', 'separating_cut_interval', 'connected_iff_no_interval', 'state_collision', 'collision_free_iff_connected')},
+    'ECC.ChordConnectivity.cross_symm': set(),
+    **{'ECC.ResolutionMatching.'+n: {'propext', 'Quot.sound'} for n in (
+        'ends_owner', 'resolved_state', 'resolved_equal', 'simultaneous_resolutions')},
+    'ECC.ResolutionMatching.owner_ends': {'propext'},
+    'ECC.ResolutionMatching.side_ends': {'propext'},
+    **{'ECC.MatchingLabels.'+n: {'propext', 'Quot.sound'} for n in (
+        'erase_length', 'head_perm', 'labels_membership', 'labels_length', 'prefix_nodup', 'labels_nodup')},
+    'ECC.MatchingLabels.flatMap_constant_length': {'propext'},
+    **{'ECC.MatchingWord.'+n: {'propext', 'Quot.sound'} for n in (
+        'mem_endpoints', 'pos_read', 'read_pos', 'word_at_endpoint', 'word_labels_recovered', 'words_length', 'words_nodup', 'words_membership')},
+    **{'ECC.FiniteCardinality.'+n: {'propext', 'Quot.sound'} for n in (
+        'remove_length', 'same_members_length')},
+    **{'ECC.FiniteQuotient.'+n: {'propext', 'Quot.sound'} for n in (
+        'select_subset', 'select_covers', 'select_separates', 'select_nodup', 'select_unique')},
+    **{'ECC.GlobalCycleCount.'+n: {'propext', 'Quot.sound'} for n in (
+        'graph_rooted_membership', 'graphInventory', 'graph_ordinary_count', 'representation_identity', 'orbit_refl', 'orbit_trans', 'orbit_symm', 'fromRooted', 'global_ordinary_count', 'index_comp', 'representation_comp', 'index_surjective', 'global_rooted_count', 'ordinary_cycle_quotient')},
+    **{'ECC.MotifTransport.'+n: {'propext', 'Quot.sound'} for n in (
+        'mem_maps', 'maps_nodup', 'mem_autos', 'assignments_nodup', 'selected_copy_factorization')},
+    'ECC.MotifTransport.maps_length': {'propext'},
+    'ECC.MotifTransport.motif_automorphisms': {'propext'},
+    'ECC.MotifTransport.assignments_length': {'propext'},
+    'ECC.MotifTransport.four_step_partition': set(),
+    'ECC.MotifTransport.square_vertices_distinct': {'propext'},
+    'ECC.MotifTransport.triangle_vertices_distinct': {'propext'},
+    'ECC.MotifTransport.selected_product_transport': {'Quot.sound'},
+    **{'ECC.FiberCardinality.'+n: {'propext', 'Quot.sound'} for n in (
+        'choices_membership', 'choices_nodup', 'repeated_edge_cancellation', 'repeated_edge_formula')},
+    'ECC.FiberCardinality.choices_length': {'propext'},
+    'ECC.FiberCardinality.inactive_vertex_fiber': {'propext'},
+    'ECC.FiberCardinality.edge_endpoint_choices': {'propext'},
     **{'ECC.RepeatedEdge.'+n: set() for n in (
         'phase_collision', 'state_collision', 'trace_injective_iff')},
     **{'ECC.RepeatedEdge.'+n: {'propext'} for n in (
@@ -183,8 +215,17 @@ def main():
                         f'C10Coefficients/{name}.lean') for name in C10_ROWS],
                      ('TenCycle.lean',),
                      ('-o', str(Path(build)/'CollisionBridge.olean'), 'CollisionBridge.lean'),
-                     ('RootedCycle.lean',),
-                     ('RepeatedEdge.lean',),
+                     ('-o', str(Path(build)/'RootedCycle.olean'), 'RootedCycle.lean'),
+                     ('-o', str(Path(build)/'RepeatedEdge.olean'), 'RepeatedEdge.lean'),
+                     ('-o', str(Path(build)/'ChordConnectivity.olean'), 'ChordConnectivity.lean'),
+                     ('-o', str(Path(build)/'MatchingLabels.olean'), 'MatchingLabels.lean'),
+                     ('-o', str(Path(build)/'ResolutionMatching.olean'), 'ResolutionMatching.lean'),
+                     ('MatchingWord.lean',),
+                     ('-o', str(Path(build)/'FiniteCardinality.olean'), 'FiniteCardinality.lean'),
+                     ('-o', str(Path(build)/'FiniteQuotient.olean'), 'FiniteQuotient.lean'),
+                     ('-o', str(Path(build)/'MotifTransport.olean'), 'MotifTransport.lean'),
+                     ('GlobalCycleCount.lean',),
+                     ('FiberCardinality.lean',),
                      ('CollisionControls.lean',),
                      ('-o', str(Path(build)/'CanonicalTrace.olean'), 'CanonicalTrace.lean'),
                      ('-o', str(Path(build)/'CanonicalControls.olean'), 'CanonicalControls.lean'),
@@ -220,7 +261,7 @@ def main():
                 actual[name] = {a.strip() for a in axioms.split(',')} if axioms else set()
     if actual != EXPECTED:
         raise RuntimeError('Axiom audit differs: '+repr(actual))
-    print('PASS: 395 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
+    print(f'PASS: {len(EXPECTED)} exact declaration audits; no placeholders, choice, or native-evaluation axioms')
 
 
 if __name__ == '__main__':

@@ -249,3 +249,22 @@ by grouping two edge axes into C4. Its four selected wedge classes and one
 square class partition the source top-support cycles. This prose proof and
 its finite regression are distinct from the kernel coefficient certificates;
 the all-r coarsening theorem is not claimed formally verified.
+
+## Matching-count transport continuation
+
+The new scope is recorded in `proof/matching-count-transport.md`. The checker
+now expects 469 exact named declaration audits across 56 source builds. The
+74 added declarations cover connected chords, constructed simultaneous
+resolutions, fixed-matching factorial label fibers, complete finite-graph
+ordinary-cycle orbits, selected-copy transport and dependent coordinate fibers.
+Every new axiom set is a subset of propext/Quot.sound. The final repeated-edge
+arithmetic theorem retains the explicit assembled-rooted-count hypothesis.
+
+An independent extension/support build passed all 111 relevant exact audits.
+The new independent receipt exhausts diagrams through six chords and labeled
+folded words through r=3, and checks rooted adjacency orbits, all allocations
+in five small next-to-top hosts, inactive fibers and paired triangles. Eight
+new regression controls enforce the hypotheses. Full fresh-replay/audit and
+hosted final-head results must be recorded separately; these component results
+do not establish a complete all-factor machine proof or external mathematical
+acceptance. The six earlier receipt files and source pin are unchanged.
