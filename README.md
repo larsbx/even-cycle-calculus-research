@@ -12,6 +12,14 @@ including odd projections and collision corrections. It is a **working** proof;
 external mathematical acceptance and full formalization remain open.
 The source-owned four-coordinate coefficient stays pinned and unchanged.
 
+The [all-length wedge correction](proof/wedge-coarsening.md) now gives the
+working identity `T_(r+2)=4W_r+S_r`: coarsening two edge coordinates into a
+square computes the wedge coefficient from the source-owned top coefficient
+and the local simple-square sector. It recovers 60 and 5256 at lengths eight
+and ten and gives exact higher-length evaluations. Direct B/C sums and product
+DFS check the specified small cases. This candidate contribution has a prose
+proof; all-r formalization, independent review and priority remain open.
+
 The [all-length sector continuation](proof/simple-projection-sectors.md) translates
 the existing connected-partition transformation into exact simple-coordinate
 projection sectors. It yields a paired-triangle family and complete **working**

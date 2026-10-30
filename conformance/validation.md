@@ -235,9 +235,17 @@ or added axiom is permitted. The local official compiler archive has the same
 verified digest as CI; the previously documented executable-path shim is used
 only for local process-path compatibility. The Lean workflow receives a
 45-minute budget for the added kernel reductions. The five existing exact
-receipts replay unchanged and all 25 regression tests pass locally.
+receipts replay unchanged. The added all-length wedge identity test brings
+the suite to 26 regressions; it checks recurrence values through r=6, direct
+B/C word sums through r=3, and independent adjacency DFS isolation for r=1..3.
 
 The global graph-inventory orbit partition, coordinate-profile cardinality
 transport, full motif assembly and partition-weight cancellation theorem remain
 open. Both final-head hosted jobs are required for this increment's merge;
 external mathematical review and expansion novelty are separate obligations.
+
+The same increment derives the working all-length identity T_(r+2)=4W_r+S_r
+by grouping two edge axes into C4. Its four selected wedge classes and one
+square class partition the source top-support cycles. This prose proof and
+its finite regression are distinct from the kernel coefficient certificates;
+the all-r coarsening theorem is not claimed formally verified.

@@ -317,3 +317,12 @@ authority = "proof/rooted-cycle-counting.md"
 evidence = "formal/TenCycle.lean"
 formal_verification = "Three prefix-decomposition lemmas connect eighty two-step prefix-cell certificates and twenty row identities to the literal kernel, yielding five complete coefficient certificates. Two arithmetic controls have no axioms. Kernel reduction only, with no native evaluation or external arithmetic oracle."
 independent_acceptance = "Ground kernel certificates, independent product DFS and partition-inversion receipts are separate corroboration; the full all-graph counting proof and expansion priority remain open."
+
+[[claim]]
+id = "ALL-LENGTH-WEDGE-COARSENING"
+status = "working"
+statement = "For every finite r>=0, grouping two edge coordinates into C4 gives T_(r+2)=4W_r+S_r. Hence the selected-wedge contribution to the ordinary cycle profile (4,2^r) is ((T_(r+2)-S_r)/4)*w(G)*product e(H_i), with unused vertex fibers. T retains source top-support ownership; S is the local simple-square sector."
+authority = "proof/wedge-coarsening.md"
+evidence = "kernels/simple_projections.py; tests/test_simple_projections.py"
+formal_verification = "The coarsening bijection is a prose proof. Kernel c8/c10 coefficients anchor r=2,3 separately; no all-r Lean theorem is claimed. Direct B/C sums check r=0..3 and independent product DFS isolates W_r for r=1..3. Higher displayed rows are finite recurrence evaluations only."
+independent_acceptance = "Candidate factor-motif contribution; priority and independent mathematical review remain open. This is not a new source top-symbol or connected-partition theorem."

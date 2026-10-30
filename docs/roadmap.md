@@ -119,6 +119,14 @@ finite reproducibility without closing arbitrary-template inverses,
 product-cycle composition, motif classification, the formal orbit quotient,
 external mathematical review or novelty review.
 
+Coordinate coarsening now supplies a further working all-length result:
+`T_(r+2)=4W_r+S_r`, computing the wedge projection term in profile (4,2^r)
+from the source-owned top coefficient and the simple-square sector. See
+[wedge-coarsening](../proof/wedge-coarsening.md). The new proof is a finite
+partition of ordinary cycles by their projected selected edges. Its all-r
+formalization and priority review remain open; the all-length repeated-edge
+coefficient is still undetermined here.
+
 1. Broaden independent fixtures, preserve negative controls and exact conventions.
 2. Write a claim-specific proof or counterexample record; distinguish conjecture
    from finite observations and working derivation.

@@ -9,6 +9,7 @@ import unittest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from kernels.eight_cycles import collision_free, invariants, shuffles
 from kernels.simple_projections import (connected_words, simple_projection_coefficient,
+                                        wedge_projection_coefficient,
                                         c10_support_four, f4222, f3322)
 from experiments.near_top import cases, profile_count
 
@@ -25,6 +26,29 @@ def interval_free(word, profile):
 
 
 class SimpleProjections(unittest.TestCase):
+    def test_all_length_wedge_coarsening_identity(self):
+        expected = [0, 1, 60, 5256, 663168, 114681600, 26074068480]
+        self.assertEqual([wedge_projection_coefficient(r) for r in range(7)], expected)
+        # Direct B/C collision sums, independent of the top-minus-square evaluation.
+        for r in range(4):
+            counts = (4,)+(2,)*r
+            rest = ((0, 1),)*r
+            rooted = sum(collision_free(w, (p,)+rest)
+                         for p in ((0, 1, 0, 2), (0, 1, 2, 1))
+                         for w in shuffles(counts))
+            numerator = rooted*2*2**r
+            self.assertEqual(numerator, 2*sum(counts)*expected[r])
+        # Independent adjacency DFS: P3 has two edge copies and one wedge copy.
+        edge = cases()[0][1][0]
+        wedge = cases()[1][1][0]
+        for r in range(1, 4):
+            p = (4,)+(2,)*r
+            observed = profile_count([wedge]+[edge]*r, p) - 2*profile_count([edge]*(r+1), p)
+            self.assertEqual(observed, expected[r])
+        for r in (-1, True, 2.5):
+            with self.assertRaises(ValueError):
+                wedge_projection_coefficient(r)
+
     def test_recurrence_against_two_distinct_collision_checks(self):
         # Covers odd/even and repeated/different block sizes; labeled axes.
         for profile in ((2, 2), (3, 3), (2, 2, 2), (2, 3, 3), (4, 2, 2),
