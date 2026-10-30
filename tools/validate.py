@@ -23,5 +23,9 @@ histogram = subprocess.check_output([sys.executable, str(root/'experiments/parti
 assert histogram == (root/'conformance/partition-histogram.json').read_bytes(), 'Histogram-inversion receipt differs'
 repeated = subprocess.check_output([sys.executable, str(root/'experiments/repeated_edge.py')], cwd=root)
 assert repeated == (root/'conformance/repeated-edge.json').read_bytes(), 'Repeated-edge receipt differs'
+transport = subprocess.check_output([sys.executable, str(root/'experiments/matching_transport.py')], cwd=root)
+assert transport == (root/'conformance/matching-transport.json').read_bytes(), 'Matching transport receipt differs'
+canonical = subprocess.check_output([sys.executable, str(root/'experiments/canonical_matching.py')], cwd=root)
+assert canonical == (root/'conformance/canonical-matching.json').read_bytes(), 'Canonical matching receipt differs'
 subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-v'], cwd=root, check=True)
-print('PASS: source pins, preserved statuses, all six exact receipts, and coefficient/graph regressions')
+print('PASS: source pins, preserved statuses, all eight exact receipts, and coefficient/graph regressions')

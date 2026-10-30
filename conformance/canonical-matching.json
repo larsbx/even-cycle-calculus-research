@@ -1,0 +1,96 @@
+{
+  "scope": "finite observations; general word/data cardinality is separately proved in Lean",
+  "rows": [
+    {
+      "edge_axes": 0,
+      "length": 4,
+      "profile_words": 1,
+      "canonical_unlabeled_data": 1,
+      "independent_endpoint_matchings": 1,
+      "label_fiber_size": 1,
+      "accepted_unlabeled_data": 0,
+      "accepted_labeled_words": 0,
+      "rooted_inputs": 0,
+      "distinct_product_traces": 0,
+      "ordinary_cycle_orbits": 0,
+      "independent_adjacency_cycles": 0
+    },
+    {
+      "edge_axes": 1,
+      "length": 6,
+      "profile_words": 15,
+      "canonical_unlabeled_data": 15,
+      "independent_endpoint_matchings": 15,
+      "label_fiber_size": 1,
+      "accepted_unlabeled_data": 0,
+      "accepted_labeled_words": 0,
+      "rooted_inputs": 0,
+      "distinct_product_traces": 0,
+      "ordinary_cycle_orbits": 0,
+      "independent_adjacency_cycles": 0
+    },
+    {
+      "edge_axes": 2,
+      "length": 8,
+      "profile_words": 420,
+      "canonical_unlabeled_data": 210,
+      "independent_endpoint_matchings": 210,
+      "label_fiber_size": 2,
+      "accepted_unlabeled_data": 2,
+      "accepted_labeled_words": 4,
+      "rooted_inputs": 32,
+      "distinct_product_traces": 32,
+      "ordinary_cycle_orbits": 2,
+      "independent_adjacency_cycles": 2
+    },
+    {
+      "edge_axes": 3,
+      "length": 10,
+      "profile_words": 18900,
+      "canonical_unlabeled_data": 3150,
+      "independent_endpoint_matchings": 3150,
+      "label_fiber_size": 6,
+      "accepted_unlabeled_data": 110,
+      "accepted_labeled_words": 660,
+      "rooted_inputs": 10560,
+      "distinct_product_traces": 10560,
+      "ordinary_cycle_orbits": 528,
+      "independent_adjacency_cycles": 528
+    }
+  ],
+  "negative_controls": {
+    "single_resolution": {
+      "word": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "folded": false,
+      "front": false,
+      "outer": true
+    },
+    "omitted_accepted_word": {
+      "edge_axes": 3,
+      "correct": 660,
+      "truncated": 659
+    },
+    "unstable_predicate": {
+      "fiber_size": 2,
+      "accepted_labels": 1,
+      "predicate": "the first nonzero label is 1"
+    },
+    "missing_label_factor": {
+      "edge_axes": 3,
+      "correct_labeled_words": 660,
+      "wrong": 110
+    },
+    "malformed_inputs_rejected": {
+      "words": 3,
+      "matchings": 4
+    }
+  },
+  "remaining_general_proof": "identify rooted inputs with the full product-sector trace inventory and transport its ordinary-cycle quotient"
+}

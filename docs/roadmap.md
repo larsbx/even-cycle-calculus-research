@@ -154,3 +154,20 @@ the working formula for support exactly k-1 in C_(2k). The three general
 collision lemmas are kernel-checked; matching enumeration, all-graph cardinality
 transport, independent mathematical acceptance and priority remain open. An
 efficient scalar recurrence for the joint-connected matching sum is also open.
+
+## Matching-count verification continuation
+
+See [the exact proof boundary](../proof/matching-count-transport.md). The
+connected-chord characterization and finite-graph 2L orbit quotient are now
+general machine-checked components. Per-matching label fibers have cardinality
+r!, selected-copy automorphism transport is proved, and coordinate assignment
+inventories have exact product cardinalities. The next obligation is the
+canonical unlabeled matching extraction/disjoint union and its specialization
+to the full selected-product coordinate-profile inventory. The conditional
+coefficient arithmetic must not be reported as discharging that obligation.
+
+The subsequent [canonical matching–word continuation](../proof/canonical-matching-word-count.md)
+closes the canonical unlabeled matching and global accepted-word r!J count.
+The complete rooted-input inventory has cardinality 2^(r+1)r!J. The next proof
+is the actual input/product-trace bijection, including final-edge closure and
+input recovery, followed by arbitrary-factor specialization.

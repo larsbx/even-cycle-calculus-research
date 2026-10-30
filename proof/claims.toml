@@ -306,7 +306,7 @@ status = "working"
 statement = "A fixed injective finite trace of length m>=3 has exactly 2m distinct rotation/reversal representations. Every representation stays injective, and symmetric cyclic adjacency is preserved. An explicit Fin(2m) parameterization gives complete list membership, length and no duplicates."
 authority = "proof/rooted-cycle-counting.md"
 evidence = "formal/RootedCycle.lean"
-formal_verification = "18 general Lean/Std declarations and four controls with exact propext/Quot.sound audits. This fixed-trace theorem does not yet assemble an arbitrary graph's ordinary-cycle orbit partition or transport coordinate-profile cardinalities."
+formal_verification = "18 general Lean/Std declarations and four controls with exact propext/Quot.sound audits. The subsequent FINITE-GLOBAL-ORDINARY-CYCLE-QUOTIENT claim assembles finite graph orbits; coordinate-profile extraction and cardinality transport remain separate."
 independent_acceptance = "Standard finite cycle-counting principle, formally verified here as a component of candidate motif formulas; no novelty claimed for the 2m factor."
 
 [[claim]]
@@ -333,7 +333,7 @@ status = "working"
 statement = "For every finite r>=0, A_r=2^r*r!*J_r/(2r+4), where J_r counts a distinguished ordered four-set and a matching of its complement for which both noncrossing resolutions give connected chord intersection graphs. A folded repeated-edge trace is injective exactly when both resolutions are injective."
 authority = "proof/repeated-edge-resolutions.md"
 evidence = "kernels/repeated_edge.py; formal/RepeatedEdge.lean; conformance/repeated-edge.json"
-formal_verification = "Three general finite collision declarations have no axioms; four controls have exactly propext. Word-prefix instantiation, connected matching characterization/enumeration and cardinality transport remain prose."
+formal_verification = "Three general finite collision declarations have no axioms; four controls have exactly propext. The continuation constructs endpoint-based resolution diagrams and proves connected-chord correspondence, simultaneous connectivity, r! fixed-matching word fibers, selected-copy/fiber transport and the full finite-graph 2L orbit quotient. The canonical matching inventory is subsequently closed by CANONICAL-MATCHING-WORD-COUNT. The product-sector trace bridge remains open; repeated_edge_formula retains hcount explicitly."
 independent_acceptance = "Candidate contribution; established connected-pairing machinery and hypercube specializations are not claimed novel. Independent mathematical review and priority remain open."
 
 [[claim]]
@@ -353,3 +353,57 @@ authority = "experiments/repeated_edge.py"
 evidence = "conformance/repeated-edge.json; tests/test_repeated_edge.py"
 formal_verification = "Four finite Lean controls certify related phase-level failures; displayed matching/DFS counts are Python finite arithmetic observations, not Lean numerical certificates."
 independent_acceptance = "Finite corroboration only; r=5 lacks an independent product DFS observation. No claim of new numerical hypercube counts."
+
+[[claim]]
+id = "FINITE-CONNECTED-CHORD-CORRESPONDENCE"
+status = "working"
+statement = "For every positive finite endpoint inventory covered exactly by disjoint ordered chord pairs, the departure parity trace is injective exactly when its chord intersection graph is connected. Both distinguished resolutions are constructed from the actual endpoint data and the folded trace is injective exactly when both intersection graphs are connected."
+authority = "proof/matching-count-transport.md"
+evidence = "formal/ChordConnectivity.lean; formal/ResolutionMatching.lean"
+formal_verification = "Constructive finite cut/component proof with a proper whole-chord interval witness; no imported connectivity axiom. Exact declaration audits use subsets of propext and Quot.sound only. Literal list extraction/enumerator correspondence is separate."
+independent_acceptance = "Established connected-pairing characterization, independently formalized here. Novelty is not claimed for this characterization. External mathematical acceptance of the candidate two-resolution application remains open."
+
+[[claim]]
+id = "FINITE-GLOBAL-ORDINARY-CYCLE-QUOTIENT"
+status = "working"
+statement = "Every finite symmetric graph has exactly 2L rooted directed representations per ordinary simple length-L cycle for L>=3. A complete finite function inventory, graph predicate and deterministic orbit transversal establish the global cardinality identity."
+authority = "proof/matching-count-transport.md"
+evidence = "formal/FiniteCardinality.lean; formal/FiniteQuotient.lean; formal/GlobalCycleCount.lean"
+formal_verification = "Composition, inverses, equivalence, finite representative selection, coverage, separation and a complete graph inventory are proved with exact propext/Quot.sound audits. graph_ordinary_count assumes graph symmetry and L>=3; no supplied representative inventory is assumed. Product-profile specialization remains separate."
+independent_acceptance = "Standard finite cycle-counting principle; no novelty claim. Independent adjacency paths check actual rooted orbit sizes separately from the proof."
+
+[[claim]]
+id = "MATCHING-LABEL-AND-FACTOR-FIBERS"
+status = "working"
+statement = "Every fixed matching with r complementary pairs has exactly r! distinct labeled position-indexed words. Selected edge/wedge/square/triangle copies have 2/2/8/6 labelings. Independent coordinate assignment inventories have exact product cardinality, including N assignments for an inactive one-label coordinate."
+authority = "proof/matching-count-transport.md"
+evidence = "formal/MatchingLabels.lean; formal/MatchingWord.lean; formal/MotifTransport.lean; formal/FiberCardinality.lean"
+formal_verification = "General labeled-word reconstruction/injectivity and constructive factorial enumeration; finite motif automorphism certificates; unique selected-copy factorization with explicit inverse and selected-edge assumptions; dependent product assignment completeness/nodup/cardinality. repeated_edge_formula remains conditional on the assembled rooted count hcount. Canonical matching extraction is subsequently covered by CANONICAL-MATCHING-WORD-COUNT; the global product-sector trace extraction remains unproved."
+independent_acceptance = "General proof components and finite corroboration only; candidate motif-assembly priority and external review remain open."
+
+[[claim]]
+id = "MATCHING-TRANSPORT-INDEPENDENT-FINITE-CHECKS"
+status = "computed"
+statement = "Cut connectivity, literal parity collisions and whole-chord intervals agree on every matching diagram through six chords. Every labeled folded word through r=3 has the simultaneous-resolution result and exact r! fiber multiplicity. Independent adjacency paths verify all near-top allocations in five small hosts, including K4 and inactive fibers, and isolate paired-triangle rows."
+authority = "experiments/matching_transport.py"
+evidence = "conformance/matching-transport.json; tests/test_matching_transport.py"
+formal_verification = "Python observations and eight hypothesis/quotient controls are separate from the new general Lean component proofs; neither closes the assembled hcount obligation. All six earlier receipt files and the source pin are preserved."
+independent_acceptance = "Independent finite methods; no external mathematical acceptance or novelty determination claimed."
+
+[[claim]]
+id = "CANONICAL-MATCHING-WORD-COUNT"
+status = "working"
+statement = "For every finite r>=0, the complete accepted labeled-word inventory of profile (4,2^r) has cardinality r! times the canonical unlabeled matching count, with actual simultaneous two-resolution acceptance. The distinguished four-set and complementary pairs have a complete duplicate-free label-free data inventory. Rooted inputs have cardinality 2^(r+1)r!J."
+authority = "proof/canonical-matching-word-count.md"
+evidence = "formal/OccurrenceMatching.lean; formal/FinitePermutation.lean; formal/MatchingRelabel.lean; formal/MatchingFiber.lean; formal/MatchingCount.lean; formal/JointMatchingCount.lean; formal/UnlabeledMatchingData.lean"
+formal_verification = "Inverse literal-word/endpoint-matching constructions, exact matching-data equivalence, complete canonical representatives, disjoint r! fibers, proved acceptance stability and global cardinality. No word-count hypothesis is supplied. RepeatedEdgeAssembly replaces the numerical hcount assumption with an explicit injective trace-map/exact-image obligation, which is not yet instantiated for the product sector."
+independent_acceptance = "Standard permutation/orbit principles and connected-pairing machinery retain prior-work attribution. The two-resolution application and universal motif assembly remain candidate contributions; external acceptance and priority remain open."
+
+[[claim]]
+id = "CANONICAL-MATCHING-INDEPENDENT-REPLAY"
+status = "computed"
+statement = "Through r=3, every profile word has both occurrence inverses and the exact permutation fiber; canonical data agree with an independent endpoint-matching inventory. Accepted word counts 0,0,4,660 and rooted-input/trace counts 0,0,32,10560 agree exactly with complete product-adjacency cycle image sets, giving ordinary counts 0,0,2,528."
+authority = "experiments/canonical_matching.py"
+evidence = "conformance/canonical-matching.json; tests/test_canonical_matching.py; formal/MatchingCountControls.lean"
+formal_verification = "General cardinality proofs and small kernel controls are separate from the Python replay. Exploratory r=2 ground-kernel enumeration was killed with exit 137 and yielded no certificate; required kernel controls retain r=0,1 and symbolic fiber proofs. Full general product-trace transport remains open."
+independent_acceptance = "Independent finite agreement and general word-count proofs; no complete all-factor machine proof or external mathematical acceptance claimed. Seven previous receipts and the source pin are unchanged."
