@@ -70,7 +70,8 @@ diff -u conformance/repeated-edge.json /tmp/repeated-edge.json
 ```
 
 It distinguishes exact matching evaluations r=0..5 from independent adjacency
-DFS r=0..4. Five regression tests also check every labeled word through r=3,
+DFS r=0..4, plus three mixed twelve-cycle products isolating all four
+coefficients at that length. Five regression tests also check every labeled word through r=3,
 connectivity against endpoint intervals, original c8/c10 corpus agreement,
 coordinate permutations, inactive fibers and single-resolution failures.
 See `proof/repeated-edge-resolutions.md` for the all-length identity and

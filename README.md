@@ -19,7 +19,8 @@ with the wedge, square and paired-triangle identities, it completes a
 The new collision equivalence is Lean-certified for arbitrary finite traces;
 the matching-count translation and graph-count assembly remain prose.
 Independent adjacency DFS checks the repeated-edge family through length
-twelve; higher listed evaluations and novelty review remain separate.
+twelve and all four mixed-sector coefficients at length twelve; higher
+listed evaluations and novelty review remain separate.
 
 The [all-length wedge correction](proof/wedge-coarsening.md) now gives the
 working identity `T_(r+2)=4W_r+S_r`: coarsening two edge coordinates into a

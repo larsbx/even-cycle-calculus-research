@@ -10,7 +10,7 @@ from kernels.repeated_edge import (matchings, crossing_connected,
                                   near_top_coefficients, near_top_profiles)
 from kernels.eight_cycles import collision_free, shuffles, invariants
 from kernels.simple_projections import c10_support_four
-from experiments.repeated_edge import resolutions, word_connected
+from experiments.repeated_edge import resolutions, word_connected, mixed_cases
 from experiments.near_top import motif, profile_count, cases
 
 
@@ -94,6 +94,11 @@ class RepeatedEdge(unittest.TestCase):
         self.assertFalse(near_top_profiles([], 2))
         square = motif([(0, 1), (1, 2), (2, 3), (3, 0)], 4)
         self.assertEqual(near_top_profiles([invariants(square)], 2), Counter({(4,): 1}))
+        # Fresh adjacency DFS for these cases is mandatory in receipt replay;
+        # compare their complete motif inventory here without repeating that DFS.
+        for name, factors, profile, expected in mixed_cases():
+            self.assertEqual(near_top_profiles([invariants(g) for g in factors], 6)[profile],
+                             expected, name)
         # Each individual resolution overcounts genuine collisions.
         failures = set()
         for word in shuffles((4, 2, 2)):

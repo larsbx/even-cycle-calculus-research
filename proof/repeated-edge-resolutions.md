@@ -150,9 +150,20 @@ For example the resulting length-twelve formula is
     F_(4,2,2,2,2) = (108192e + 663168w + 2780928s) e e e e,
     F_(3,3,2,2,2) = 9337536 t t e e e.
 
-Only the repeated-edge coefficient of this twelve-cycle row has an independent
-product DFS check in this increment; the other coefficients are exact
-evaluations of the earlier general sector identities.
+Independent adjacency DFS also gives 879552 for the same repeated-coordinate
+profile in P3 square Q4, 5866368 in C4 square Q4, and 9337536 for the paired
+profile in K3 square K3 square Q3. P3 has two edges and one wedge; C4 has
+four edges, four wedges and one square. Thus these observations independently
+isolate W_4=879552-2A_4=663168 and
+S_4=5866368-4A_4-4W_4=2780928, while the paired product isolates B_3.
+These are finite corroboration of every coefficient in this row, separate
+from the all-length proofs.
+
+The DFS remains independent of motifs, matching diagrams and axis words.
+It prunes a step when it exhausts that coordinate's budget without returning
+the coordinate to its root value: no later step can repair that coordinate.
+This preserves exactly the closed walks under consideration. The mandatory
+replay checks all earlier receipt bytes again after this optimization.
 
 The receipt supplies explicit words accepted by only one resolution but
 rejected by the literal folded collision test. A first-resolution-only count

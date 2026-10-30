@@ -72,6 +72,44 @@
       "ordinary_cycles_by_adjacency_dfs": 108192
     }
   ],
+  "independent_mixed_c12_dfs": [
+    {
+      "case": "P3 square Q4",
+      "profile": [
+        4,
+        2,
+        2,
+        2,
+        2
+      ],
+      "ordinary_cycles_by_adjacency_dfs": 879552,
+      "ordinary_cycles_by_motif_formula": 879552
+    },
+    {
+      "case": "C4 square Q4",
+      "profile": [
+        4,
+        2,
+        2,
+        2,
+        2
+      ],
+      "ordinary_cycles_by_adjacency_dfs": 5866368,
+      "ordinary_cycles_by_motif_formula": 5866368
+    },
+    {
+      "case": "K3 square K3 square Q3",
+      "profile": [
+        3,
+        3,
+        2,
+        2,
+        2
+      ],
+      "ordinary_cycles_by_adjacency_dfs": 9337536,
+      "ordinary_cycles_by_motif_formula": 9337536
+    }
+  ],
   "complete_next_to_top_coefficients": [
     {
       "half_length": 2,

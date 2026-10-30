@@ -348,7 +348,7 @@ independent_acceptance = "Original c8 support-three strata and existing c10 supp
 [[claim]]
 id = "REPEATED-EDGE-FINITE-REGRESSIONS"
 status = "computed"
-statement = "J_r=0,0,2,110,3381,89782 and A_r=0,0,2,528,108192,24625920 for r=0..5. Every labeled word is independently collision-checked through r=3; product-adjacency DFS checks r=0..4. Both single-resolution shortcuts have explicit nonsimple counterexamples."
+statement = "J_r=0,0,2,110,3381,89782 and A_r=0,0,2,528,108192,24625920 for r=0..5. Every labeled word is independently collision-checked through r=3; product-adjacency DFS checks r=0..4. Three additional twelve-cycle products independently isolate W_4=663168, S_4=2780928 and B_3=9337536. Both single-resolution shortcuts have explicit nonsimple counterexamples."
 authority = "experiments/repeated_edge.py"
 evidence = "conformance/repeated-edge.json; tests/test_repeated_edge.py"
 formal_verification = "Four finite Lean controls certify related phase-level failures; displayed matching/DFS counts are Python finite arithmetic observations, not Lean numerical certificates."
