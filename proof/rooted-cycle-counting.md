@@ -41,12 +41,17 @@ releases its reduction workspace before the next row. The shared source
 `TenCycleBase.lean` proves the decomposition; `TenCycle.lean` imports and
 combines the opaque row certificates. This changes proof resource use,
 not the enumerated words or collision predicate.
+Five symbolic table equalities and `map_sum_table` perform the final
+substitution before taking finite sums. Local irreducibility annotations
+prevent elaborator matching from evaluating the ground row counts during
+that substitution. These annotations do not hide definitions from the
+proof kernel or add axioms.
 The rows use `decide +kernel`: reduction is performed by Lean's proof kernel,
 avoiding the redundant elaborator reduction. This is distinct from native
 evaluation and introduces no native-evaluation axiom.
 
 The eighty finite cell reductions and twenty row identities use exactly
-`propext`. The three
+`propext`, as do the five table equalities and `map_sum_table`. The three
 decomposition declarations and five combined coefficient declarations use
 exactly `propext/Quot.sound`. The source includes two further ground controls
 with no axioms:

@@ -229,7 +229,7 @@ twenty row identities and five complete raw coefficient identities. Exact
 multiplier arithmetic and root-dependent wedge divisibility are checked
 separately. See `proof/rooted-cycle-counting.md` for the formal boundaries.
 
-The audit procedure now checks 382 exact named declarations across 46 fresh
+The audit procedure now checks 388 exact named declarations across 46 fresh
 source builds, including the isolated coefficient modules. No native evaluation
 or added axiom is permitted. The local official compiler archive has the same
 verified digest as CI; the previously documented executable-path shim is used

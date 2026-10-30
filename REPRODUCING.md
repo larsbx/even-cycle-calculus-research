@@ -23,7 +23,7 @@ and recomputes all five receipts byte-for-byte. These include the symbolic
 coefficients, 144 small graph pairs and independent finite partition-lattice
 inversion check. It then runs the exact regression suite. The finite
 Lean step needs the version in `formal/lean-toolchain`; it uses Std only and
-compiles all 46 Lean sources and enforces 382 exact named axiom sets. Set
+compiles all 46 Lean sources and enforces 388 exact named axiom sets. Set
 `LEAN_BINARY` if the compiler is not on PATH. See `formal/README.md`.
 The printed JSON is deterministic;
 tool versions and execution date are recorded separately in `conformance/environment.json`.

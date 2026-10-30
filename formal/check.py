@@ -23,6 +23,9 @@ EXPECTED = {
         'countFrom_succ', 'split_4222', 'split_3322', 'edge_coefficient',
         'wedge_B_coefficient', 'wedge_C_coefficient', 'square_coefficient',
         'paired_triangle_coefficient')},
+    'ECC.TenCycle.map_sum_table': {'propext'},
+    **{f'ECC.TenCycle.{name}_table': {'propext'}
+       for name in ('edge', 'wedge_B', 'wedge_C', 'square', 'paired_triangle')},
     **{f'ECC.TenCycle.{name}_row_{i}': {'propext'}
        for name in ('edge', 'wedge_B', 'wedge_C', 'square', 'paired_triangle')
        for i in range(4)},
@@ -211,7 +214,7 @@ def main():
                 actual[name] = {a.strip() for a in axioms.split(',')} if axioms else set()
     if actual != EXPECTED:
         raise RuntimeError('Axiom audit differs: '+repr(actual))
-    print('PASS: 382 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
+    print('PASS: 388 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
 
 
 if __name__ == '__main__':

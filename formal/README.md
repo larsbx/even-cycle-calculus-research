@@ -10,6 +10,9 @@ checks the multiplier arithmetic and rooted wedge divisibility control.
 No native evaluation is used. The three decomposition and five combined
 coefficient declarations have exactly `propext/Quot.sound`; eighty ground
 cells and twenty rows use `propext`; two arithmetic controls use no axioms.
+Five symbolic table equalities and the generic map/sum transport also use
+`propext`, avoiding normalization of already-certified counts while combining
+the tables.
 
 `RootedCycle.lean` adds eighteen general finite-trace lemmas and four controls.
 It gives an explicit complete, duplicate-free list of 2m root/direction
@@ -23,7 +26,7 @@ remain separate. See [the proof note](../proof/rooted-cycle-counting.md).
 From the repository root, run `python3 formal/check.py` with that toolchain.
 Set `LEAN_BINARY` to an explicit compiler path when needed. This compiles all
 46 Lean sources, rebuilding all local imports in a temporary directory,
-and verifies 382 exact named axiom sets. It does not rely on a cached olean.
+and verifies 388 exact named axiom sets. It does not rely on a cached olean.
 CI downloads the exact official release archive and checks SHA-256
 `3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8`.
 
