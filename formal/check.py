@@ -10,6 +10,11 @@ LEAN = os.environ.get('LEAN_BINARY', 'lean')
 C10_ROWS = [name+str(i) for name in ('Edge', 'WedgeB', 'WedgeC', 'Square', 'PairedTriangle')
             for i in range(4)]
 EXPECTED = {
+    **{'ECC.RepeatedEdge.'+n: set() for n in (
+        'phase_collision', 'state_collision', 'trace_injective_iff')},
+    **{'ECC.RepeatedEdge.'+n: {'propext'} for n in (
+        'front_only_insufficient', 'outer_only_insufficient',
+        'endpoint_return', 'distinct_rest_prevents_collision')},
     **{'ECC.RootedCycle.'+n: {'propext', 'Quot.sound'} for n in (
         'forward_zero', 'backward_zero', 'index_zero', 'forward_injective',
         'backward_injective', 'index_injective', 'directions_distinct', 'next_val',
@@ -179,6 +184,7 @@ def main():
                      ('TenCycle.lean',),
                      ('-o', str(Path(build)/'CollisionBridge.olean'), 'CollisionBridge.lean'),
                      ('RootedCycle.lean',),
+                     ('RepeatedEdge.lean',),
                      ('CollisionControls.lean',),
                      ('-o', str(Path(build)/'CanonicalTrace.olean'), 'CanonicalTrace.lean'),
                      ('-o', str(Path(build)/'CanonicalControls.olean'), 'CanonicalControls.lean'),
@@ -214,7 +220,7 @@ def main():
                 actual[name] = {a.strip() for a in axioms.split(',')} if axioms else set()
     if actual != EXPECTED:
         raise RuntimeError('Axiom audit differs: '+repr(actual))
-    print('PASS: 388 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
+    print('PASS: 395 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
 
 
 if __name__ == '__main__':

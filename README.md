@@ -12,6 +12,15 @@ including odd projections and collision corrections. It is a **working** proof;
 external mathematical acceptance and full formalization remain open.
 The source-owned four-coordinate coefficient stays pinned and unchanged.
 
+The [two-resolution formula](proof/repeated-edge-resolutions.md) supplies the
+remaining repeated-edge coefficient as an exact finite matching sum. Together
+with the wedge, square and paired-triangle identities, it completes a
+**working all-length formula for support exactly k-1 at length 2k**.
+The new collision equivalence is Lean-certified for arbitrary finite traces;
+the matching-count translation and graph-count assembly remain prose.
+Independent adjacency DFS checks the repeated-edge family through length
+twelve; higher listed evaluations and novelty review remain separate.
+
 The [all-length wedge correction](proof/wedge-coarsening.md) now gives the
 working identity `T_(r+2)=4W_r+S_r`: coarsening two edge coordinates into a
 square computes the wedge coefficient from the source-owned top coefficient
@@ -47,7 +56,7 @@ assumptions. The [canonical extraction component](proof/canonical-coordinate-ext
 adds 15 general first-occurrence lemmas and three finite controls. It recovers
 coordinate equality classes by a bounded scan; compressed shuffle encoding
 and the full counting bijection remain open. Run `python3 formal/check.py`
-for all 238 declaration audits. The [ordinal compression component](proof/ordinal-rank-compression.md)
+for all 395 declaration audits. The [ordinal compression component](proof/ordinal-rank-compression.md)
 adds 20 general lemmas and three controls: representative labels are now
 bijective with `Fin r`, reconstruction is exact, and zero-first/append bounds
 match the enumerator. The [coordinate-event component](proof/coordinate-event-shuffle.md)
