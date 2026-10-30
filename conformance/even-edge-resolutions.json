@@ -1,0 +1,176 @@
+{
+  "scope": "working all-even-profile selected-edge sector, not all motifs in arbitrary factors",
+  "independent_profile_checks": [
+    {
+      "profile": [
+        4,
+        2,
+        2
+      ],
+      "unlabeled_accepted_partitions": 2,
+      "coefficient": 2,
+      "independent_adjacency_dfs": 2
+    },
+    {
+      "profile": [
+        4,
+        2,
+        2,
+        2
+      ],
+      "unlabeled_accepted_partitions": 110,
+      "coefficient": 528,
+      "independent_adjacency_dfs": 528
+    },
+    {
+      "profile": [
+        6,
+        2,
+        2,
+        2
+      ],
+      "unlabeled_accepted_partitions": 8,
+      "coefficient": 32,
+      "independent_adjacency_dfs": 32
+    },
+    {
+      "profile": [
+        4,
+        4,
+        2,
+        2
+      ],
+      "unlabeled_accepted_partitions": 306,
+      "coefficient": 816,
+      "independent_adjacency_dfs": 816
+    }
+  ],
+  "cube_specializations": [
+    {
+      "dimension": 3,
+      "length": 8,
+      "total": 6,
+      "strata": [
+        {
+          "steps": [
+            2,
+            2,
+            4
+          ],
+          "total": 6
+        }
+      ]
+    },
+    {
+      "dimension": 4,
+      "length": 8,
+      "total": 696,
+      "strata": [
+        {
+          "steps": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "total": 648
+        },
+        {
+          "steps": [
+            2,
+            2,
+            4
+          ],
+          "total": 48
+        }
+      ]
+    },
+    {
+      "dimension": 4,
+      "length": 10,
+      "total": 2112,
+      "strata": [
+        {
+          "steps": [
+            2,
+            2,
+            2,
+            4
+          ],
+          "total": 2112
+        }
+      ]
+    },
+    {
+      "dimension": 4,
+      "length": 12,
+      "total": 5024,
+      "strata": [
+        {
+          "steps": [
+            2,
+            2,
+            2,
+            6
+          ],
+          "total": 128
+        },
+        {
+          "steps": [
+            2,
+            2,
+            4,
+            4
+          ],
+          "total": 4896
+        }
+      ]
+    }
+  ],
+  "negative_controls": {
+    "diagonal_resolutions_only": {
+      "blocks": [
+        [
+          1,
+          6
+        ],
+        [
+          0,
+          2,
+          4,
+          8
+        ],
+        [
+          3,
+          5,
+          7,
+          9
+        ]
+      ],
+      "word": [
+        1,
+        0,
+        1,
+        2,
+        1,
+        2,
+        0,
+        2,
+        1,
+        2
+      ],
+      "choices_00_01_10_11": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "literal_folded_simple": false
+    },
+    "Q4_c12_top_support_only": 0,
+    "Q4_c12_top_and_next_support_only": 0,
+    "Q4_c12_actual": 5024,
+    "K3_square_K3_c8_selected_edge_sector": 0,
+    "K3_square_K3_c8_original_ordinary_total": 81
+  }
+}

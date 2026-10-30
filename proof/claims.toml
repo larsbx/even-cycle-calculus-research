@@ -353,3 +353,39 @@ authority = "experiments/repeated_edge.py"
 evidence = "conformance/repeated-edge.json; tests/test_repeated_edge.py"
 formal_verification = "Four finite Lean controls certify related phase-level failures; displayed matching/DFS counts are Python finite arithmetic observations, not Lean numerical certificates."
 independent_acceptance = "Finite corroboration only; r=5 lacks an independent product DFS observation. No claim of new numerical hypercube counts."
+
+[[claim]]
+id = "ALL-EVEN-EDGE-SIMULTANEOUS-RESOLUTIONS"
+status = "working"
+statement = "For every positive even profile D=(2m_a), replacing each occurrence block by either of its two alternating adjacent pairings gives: the selected-edge departure trace is injective iff every simultaneous resolution is injective, equivalently every resolved chord intersection graph is connected. If U(D) counts accepted unlabeled size-prescribed block partitions, the fixed labeled selected-edge motif coefficient is 2^q*(product n_d!)*U(D)/(2L), with inactive vertex fibers. Other factor motifs and odd projections are outside this sector."
+authority = "proof/even-edge-resolutions.md"
+evidence = "kernels/even_edge_resolutions.py; conformance/even-edge-resolutions.json"
+formal_verification = "General bounded parity-vector collision and constructive simultaneous-choice transport are formalized. General-m event-to-vector instantiation, connected matching characterization, block enumeration/cardinality and final graph-count transport remain prose."
+independent_acceptance = "Candidate translation; connected pairing machinery, top symbols and standard cube counts retain prior ownership. General mathematical acceptance and priority remain open."
+
+[[claim]]
+id = "FORMAL-EVEN-RESOLUTION-PHASE-CHOICES"
+status = "working"
+statement = "For every finite positive half-period, two alternating matching prefix vectors reflect endpoint parity and jointly detect every parity collision within the phase bound. For any finite collection of coordinates, a collision has an explicitly constructed simultaneous resolution witness; injectivity is equivalent to injectivity of every resolution."
+authority = "proof/even-edge-resolutions.md"
+evidence = "formal/EvenResolutionPhase.lean"
+formal_verification = "Eleven general declarations and the mixed-choice control have exactly propext/Quot.sound; the six-event vector control has no axioms; empty-vector and out-of-bound controls have exactly Quot.sound. No choice or native evaluation. Positivity is a modeling restriction and is not claimed logically minimal under both phase bounds."
+independent_acceptance = "Kernel-certified finite phase and choice component; not a numerical evaluator certificate or full all-graph counting theorem."
+
+[[claim]]
+id = "FORMAL-LITERAL-FOUR-EVENT-RESOLUTION"
+status = "working"
+statement = "Actual 0011 and 0110 resolutions of arbitrary finite Option(Fin r) words preserve length and prefixes. Under at most four distinguished events their Boolean replays satisfy the five-phase formulas and the exact collision/injectivity equivalence. Exactly four distinguished events and two events per other axis transport to two events in every resolved axis."
+authority = "proof/even-edge-resolutions.md"
+evidence = "formal/ResolvedWords.lean"
+formal_verification = "Sixteen general declarations and three controls, exact per-declaration no-axiom/propext/propext-Quot.sound audits. No placeholders, choice or native evaluation. Matching enumeration, motifs and final ordinary-cycle cardinalities remain outside this component."
+independent_acceptance = "Closes the previous four-event literal word-prefix/inventory gap. Does not close the general-m word-vector instantiation or external mathematical acceptance."
+
+[[claim]]
+id = "EVEN-EDGE-LOWER-SUPPORT-REGRESSIONS"
+status = "computed"
+statement = "Unlabeled accepted partition counts for (6,2,2,2) and (4,4,2,2) are 8 and 306, giving coefficients 32 and 816; independent product-adjacency DFS agrees. Q4 c12=4*32+6*816=5024, entirely below top and next support. Both constant resolution choices can accept a colliding word; a mixed choice rejects it. Ten finite word families, block inventories, earlier coefficients and original Q4 c8 strata are checked."
+authority = "experiments/even_edge_resolutions.py"
+evidence = "conformance/even-edge-resolutions.json; tests/test_even_edge_resolutions.py"
+formal_verification = "Finite word-vector controls are separate from the Python coefficient/DFS observations. The displayed counts are not Lean numerical certificates."
+independent_acceptance = "Finite corroboration; known cube totals are not claimed new. No full arbitrary-factor formula at these lower profiles is inferred."

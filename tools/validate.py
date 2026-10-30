@@ -23,5 +23,7 @@ histogram = subprocess.check_output([sys.executable, str(root/'experiments/parti
 assert histogram == (root/'conformance/partition-histogram.json').read_bytes(), 'Histogram-inversion receipt differs'
 repeated = subprocess.check_output([sys.executable, str(root/'experiments/repeated_edge.py')], cwd=root)
 assert repeated == (root/'conformance/repeated-edge.json').read_bytes(), 'Repeated-edge receipt differs'
+even_edges = subprocess.check_output([sys.executable, str(root/'experiments/even_edge_resolutions.py')], cwd=root)
+assert even_edges == (root/'conformance/even-edge-resolutions.json').read_bytes(), 'Even-edge resolution receipt differs'
 subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-v'], cwd=root, check=True)
-print('PASS: source pins, preserved statuses, all six exact receipts, and coefficient/graph regressions')
+print('PASS: source pins, preserved statuses, all seven exact receipts, and coefficient/graph regressions')

@@ -154,3 +154,13 @@ the working formula for support exactly k-1 in C_(2k). The three general
 collision lemmas are kernel-checked; matching enumeration, all-graph cardinality
 transport, independent mathematical acceptance and priority remain open. An
 efficient scalar recurrence for the joint-connected matching sum is also open.
+
+The [simultaneous pairing criterion](../proof/even-edge-resolutions.md) now
+supplies a working exact finite sum for every positive even profile in the
+selected-edge sector. Literal four-event prefix/inventory transport is
+formalized, along with general even-period phase vectors and explicit
+independent choice witnesses. The arbitrary-period event-vector bridge,
+matching connectivity/enumeration and graph-inventory cardinality composition
+remain formal obligations. Twelve-cycle Q4 coefficients 32 and 816 give an
+independent lower-support comparison beyond the previous k-1 sector; they do
+not determine the additional factor motifs at that support in general products.

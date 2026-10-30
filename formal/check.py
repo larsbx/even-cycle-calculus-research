@@ -10,6 +10,24 @@ LEAN = os.environ.get('LEAN_BINARY', 'lean')
 C10_ROWS = [name+str(i) for name in ('Edge', 'WedgeB', 'WedgeC', 'Square', 'PairedTriangle')
             for i in range(4)]
 EXPECTED = {
+    **{'ECC.ResolvedWords.'+n: {'propext', 'Quot.sound'} for n in (
+        'phase_collision', 'steps_take_le', 'folded_replay', 'split_replay',
+        'folded_prefix', 'resolved_prefix', 'word_collision', 'word_injective_iff')},
+    **{'ECC.ResolvedWords.'+n: {'propext'} for n in (
+        'resolve_length', 'resolve_take', 'steps_occurs', 'resolve_count_other',
+        'resolve_count_split', 'four_split_counts', 'four_step_inventory',
+        'literal_resolution_control')},
+    **{'ECC.ResolvedWords.'+n: set() for n in (
+        'phase_steps', 'budget_bound_control', 'departure_endpoint_control')},
+    **{'ECC.EvenResolutionPhase.'+n: {'propext', 'Quot.sound'} for n in (
+        'first_even', 'second_odd', 'first_odd_ne_even', 'second_odd_ne_even',
+        'first_reflects_parity', 'second_reflects_parity', 'phase_collision',
+        'resolution_reflects_collision', 'collision_has_resolution',
+        'collision_iff_exists_resolution', 'all_resolutions_injective_iff',
+        'diagonal_choices_insufficient')},
+    'ECC.EvenResolutionPhase.six_event_vectors': set(),
+    **{'ECC.EvenResolutionPhase.'+n: {'Quot.sound'} for n in (
+        'positive_half_period_needed', 'phase_bound_needed')},
     **{'ECC.RepeatedEdge.'+n: set() for n in (
         'phase_collision', 'state_collision', 'trace_injective_iff')},
     **{'ECC.RepeatedEdge.'+n: {'propext'} for n in (
@@ -184,7 +202,9 @@ def main():
                      ('TenCycle.lean',),
                      ('-o', str(Path(build)/'CollisionBridge.olean'), 'CollisionBridge.lean'),
                      ('RootedCycle.lean',),
-                     ('RepeatedEdge.lean',),
+                     ('-o', str(Path(build)/'RepeatedEdge.olean'), 'RepeatedEdge.lean'),
+                     ('ResolvedWords.lean',),
+                     ('EvenResolutionPhase.lean',),
                      ('CollisionControls.lean',),
                      ('-o', str(Path(build)/'CanonicalTrace.olean'), 'CanonicalTrace.lean'),
                      ('-o', str(Path(build)/'CanonicalControls.olean'), 'CanonicalControls.lean'),
@@ -220,7 +240,7 @@ def main():
                 actual[name] = {a.strip() for a in axioms.split(',')} if axioms else set()
     if actual != EXPECTED:
         raise RuntimeError('Axiom audit differs: '+repr(actual))
-    print('PASS: 395 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
+    print('PASS: 429 exact declaration audits; no placeholders, choice, or native-evaluation axioms')
 
 
 if __name__ == '__main__':

@@ -19,11 +19,11 @@ python3 formal/check.py
 For an existing checkout, set `GPR_SOURCE=/absolute/path/to/pinned/source`.
 Replay rejects another source HEAD or changed pinned input bytes.
 `tools/validate.py` parses the registry, checks preserved source statuses,
-and recomputes all six receipts byte-for-byte. These include the symbolic
+and recomputes all seven receipts byte-for-byte. These include the symbolic
 coefficients, 144 small graph pairs and independent finite partition-lattice
 inversion check. It then runs the exact regression suite. The finite
 Lean step needs the version in `formal/lean-toolchain`; it uses Std only and
-compiles all 47 Lean sources and enforces 395 exact named axiom sets. Set
+compiles all 49 Lean sources and enforces 429 exact named axiom sets. Set
 `LEAN_BINARY` if the compiler is not on PATH. See `formal/README.md`.
 The printed JSON is deterministic;
 tool versions and execution date are recorded separately in `conformance/environment.json`.
@@ -59,7 +59,7 @@ diff -u conformance/partition-inversion.json /tmp/direct-inversion.json
 
 This standard-library-only route counts weighted quotient maps by frontier
 dynamic programming. The histogram route additionally checks c10 and the raw
-projection coefficients. Both receipts are mandatory, and all 31 regressions
+projection coefficients. Both receipts are mandatory, and all 35 regressions
 run together. See `proof/partition-inversion.md` for the direct oracle's scope.
 
 The two-resolution receipt is independently replayable:
@@ -76,3 +76,20 @@ connectivity against endpoint intervals, original c8/c10 corpus agreement,
 coordinate permutations, inactive fibers and single-resolution failures.
 See `proof/repeated-edge-resolutions.md` for the all-length identity and
 precise formal limits. The seven new Lean audits cover the collision component.
+
+The simultaneous even-edge resolution receipt is replayed with:
+
+```sh
+python3 experiments/even_edge_resolutions.py > /tmp/even-edge-resolutions.json
+diff -u conformance/even-edge-resolutions.json /tmp/even-edge-resolutions.json
+```
+
+It checks four selected-edge profiles by independent product-adjacency DFS,
+recovers cube specializations through Q4 c12, preserves the original Q4 c8
+receipt and exhibits failure of the two constant resolution choices. Four
+new regressions compare every word in ten finite profile families with both
+a literal endpoint-parity trace and the old collision kernel; check block
+inventory, existing coefficients, scope and finite boundaries. All six prior
+receipts remain mandatory and unchanged. The 34 new formal declarations are
+components of the stated proof, not formal certification of the Python
+block-partition enumerator or a claim of mathematical novelty.

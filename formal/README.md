@@ -25,8 +25,8 @@ remain separate. See [the proof note](../proof/rooted-cycle-counting.md).
 `Shuffle.lean` uses only Lean/Std, pinned to `leanprover/lean4:v4.34.0-rc2`.
 From the repository root, run `python3 formal/check.py` with that toolchain.
 Set `LEAN_BINARY` to an explicit compiler path when needed. This compiles all
-47 Lean sources, rebuilding all local imports in a temporary directory,
-and verifies 395 exact named axiom sets. It does not rely on a cached olean.
+49 Lean sources, rebuilding all local imports in a temporary directory,
+and verifies 429 exact named axiom sets. It does not rely on a cached olean.
 CI downloads the exact official release archive and checks SHA-256
 `3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8`.
 
@@ -156,3 +156,14 @@ in these three declarations. Four finite controls have exactly `propext`.
 Word-prefix instantiation, connected matching enumeration, motif assembly and
 the all-graph cardinality quotient are prose components. See
 [the two-resolution scope](../proof/repeated-edge-resolutions.md).
+
+`ResolvedWords.lean` adds sixteen general declarations and three controls:
+literal 0011/0110 resolutions, exact take/length preservation, bounded prefix
+replays, pointwise collisions, injectivity and event-inventory transport.
+`EvenResolutionPhase.lean` adds eleven general statements and four controls:
+arbitrary finite positive half-periods, alternating-pair phase vectors,
+explicit coordinatewise witnessing choices and injectivity iff every
+simultaneous resolution is injective. No classical choice is used. The exact
+axiom sets are enforced per declaration by `check.py`. General-m event-vector
+instantiation, matching enumeration and final cardinality assembly remain
+prose. See [the full scope](../proof/even-edge-resolutions.md).
