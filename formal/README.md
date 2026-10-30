@@ -25,8 +25,8 @@ remain separate. See [the proof note](../proof/rooted-cycle-counting.md).
 `Shuffle.lean` uses only Lean/Std, pinned to `leanprover/lean4:v4.34.0-rc2`.
 From the repository root, run `python3 formal/check.py` with that toolchain.
 Set `LEAN_BINARY` to an explicit compiler path when needed. This compiles all
-46 Lean sources, rebuilding all local imports in a temporary directory,
-and verifies 388 exact named axiom sets. It does not rely on a cached olean.
+47 Lean sources, rebuilding all local imports in a temporary directory,
+and verifies 395 exact named axiom sets. It does not rely on a cached olean.
 CI downloads the exact official release archive and checks SHA-256
 `3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8`.
 
@@ -149,3 +149,10 @@ checks it through Pi_10; numerical C10 coefficients and the ordinary-cycle
 cardinality quotient remain outside this formal component. Six declarations
 have no axioms, five have exactly propext, and uniqueness has exactly Quot.sound.
 See `proof/partition-lattice-check.md` for computation and claim boundaries.
+
+`RepeatedEdge.lean` proves the five-phase collision identity, its product-state
+form and the arbitrary finite trace injectivity equivalence, with no axioms
+in these three declarations. Four finite controls have exactly `propext`.
+Word-prefix instantiation, connected matching enumeration, motif assembly and
+the all-graph cardinality quotient are prose components. See
+[the two-resolution scope](../proof/repeated-edge-resolutions.md).

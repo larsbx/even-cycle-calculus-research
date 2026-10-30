@@ -36,6 +36,11 @@ def profile_count(factors, profile):
             value = 0
             for w, a in adj[v]:
                 if remaining[a] and w > root and not (seen >> w & 1):
+                    # The last step in an axis must return that coordinate to
+                    # its root value: it cannot move again. Pure adjacency /
+                    # budget pruning, independent of motifs or word kernels.
+                    if remaining[a] == 1 and vertices[w][a] != vertices[root][a]:
+                        continue
                     rest = list(remaining)
                     rest[a] -= 1
                     value += dfs(w, rest, seen | 1 << w, w if first is None else first,

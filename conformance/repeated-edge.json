@@ -1,0 +1,188 @@
+{
+  "scope": "working general finite-sum identity; listed evaluations are finite observations",
+  "matching_sum": [
+    {
+      "edge_axes": 0,
+      "length": 4,
+      "diagrams_examined": 1,
+      "joint_connected_resolutions": 0,
+      "labeled_valid_axis_words": 0,
+      "ordinary_repeated_edge_coefficient": 0
+    },
+    {
+      "edge_axes": 1,
+      "length": 6,
+      "diagrams_examined": 15,
+      "joint_connected_resolutions": 0,
+      "labeled_valid_axis_words": 0,
+      "ordinary_repeated_edge_coefficient": 0
+    },
+    {
+      "edge_axes": 2,
+      "length": 8,
+      "diagrams_examined": 210,
+      "joint_connected_resolutions": 2,
+      "labeled_valid_axis_words": 4,
+      "ordinary_repeated_edge_coefficient": 2
+    },
+    {
+      "edge_axes": 3,
+      "length": 10,
+      "diagrams_examined": 3150,
+      "joint_connected_resolutions": 110,
+      "labeled_valid_axis_words": 660,
+      "ordinary_repeated_edge_coefficient": 528
+    },
+    {
+      "edge_axes": 4,
+      "length": 12,
+      "diagrams_examined": 51975,
+      "joint_connected_resolutions": 3381,
+      "labeled_valid_axis_words": 81144,
+      "ordinary_repeated_edge_coefficient": 108192
+    },
+    {
+      "edge_axes": 5,
+      "length": 14,
+      "diagrams_examined": 945945,
+      "joint_connected_resolutions": 89782,
+      "labeled_valid_axis_words": 10773840,
+      "ordinary_repeated_edge_coefficient": 24625920
+    }
+  ],
+  "independent_product_dfs": [
+    {
+      "edge_axes": 0,
+      "ordinary_cycles_by_adjacency_dfs": 0
+    },
+    {
+      "edge_axes": 1,
+      "ordinary_cycles_by_adjacency_dfs": 0
+    },
+    {
+      "edge_axes": 2,
+      "ordinary_cycles_by_adjacency_dfs": 2
+    },
+    {
+      "edge_axes": 3,
+      "ordinary_cycles_by_adjacency_dfs": 528
+    },
+    {
+      "edge_axes": 4,
+      "ordinary_cycles_by_adjacency_dfs": 108192
+    }
+  ],
+  "independent_mixed_c12_dfs": [
+    {
+      "case": "P3 square Q4",
+      "profile": [
+        4,
+        2,
+        2,
+        2,
+        2
+      ],
+      "ordinary_cycles_by_adjacency_dfs": 879552,
+      "ordinary_cycles_by_motif_formula": 879552
+    },
+    {
+      "case": "C4 square Q4",
+      "profile": [
+        4,
+        2,
+        2,
+        2,
+        2
+      ],
+      "ordinary_cycles_by_adjacency_dfs": 5866368,
+      "ordinary_cycles_by_motif_formula": 5866368
+    },
+    {
+      "case": "K3 square K3 square Q3",
+      "profile": [
+        3,
+        3,
+        2,
+        2,
+        2
+      ],
+      "ordinary_cycles_by_adjacency_dfs": 9337536,
+      "ordinary_cycles_by_motif_formula": 9337536
+    }
+  ],
+  "complete_next_to_top_coefficients": [
+    {
+      "half_length": 2,
+      "edge": 0,
+      "wedge": 0,
+      "square": 1
+    },
+    {
+      "half_length": 3,
+      "edge": 0,
+      "wedge": 1,
+      "square": 12,
+      "paired_triangle": 42
+    },
+    {
+      "half_length": 4,
+      "edge": 2,
+      "wedge": 60,
+      "square": 408,
+      "paired_triangle": 1404
+    },
+    {
+      "half_length": 5,
+      "edge": 528,
+      "wedge": 5256,
+      "square": 26592,
+      "paired_triangle": 90288
+    },
+    {
+      "half_length": 6,
+      "edge": 108192,
+      "wedge": 663168,
+      "square": 2780928,
+      "paired_triangle": 9337536
+    },
+    {
+      "half_length": 7,
+      "edge": 24625920,
+      "wedge": 114681600,
+      "square": 422138880,
+      "paired_triangle": 1404034560
+    }
+  ],
+  "negative_controls": {
+    "outer_only_accepts": {
+      "word": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        2,
+        1,
+        2
+      ],
+      "front_connected": false,
+      "outer_connected": true,
+      "folded_is_simple": false
+    },
+    "front_only_accepts": {
+      "word": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        2,
+        0,
+        2
+      ],
+      "front_connected": true,
+      "outer_connected": false,
+      "folded_is_simple": false
+    }
+  }
+}

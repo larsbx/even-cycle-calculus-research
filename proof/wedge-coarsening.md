@@ -108,8 +108,9 @@ copies, one wedge and no square, so the subtraction isolates W_r. Higher
 rows are exact recurrence evaluations, not independently enumerated graph
 observations. The r=0 wedge sector is empty, as the formula requires.
 
-This note does not determine the all-length repeated-edge coefficient in
-profile (4,2,...,2), nor the complete lower-support formulas for longer cycles.
+The separate [two-resolution continuation](repeated-edge-resolutions.md) now
+determines the all-length repeated-edge coefficient in profile (4,2,...,2).
+Complete formulas for still smaller support at longer lengths remain open.
 The coarsening bijection and identity (1) remain prose proofs, separate from
 the kernel c10 certificates and fixed-cycle representation lemmas.
 

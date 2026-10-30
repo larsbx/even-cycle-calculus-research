@@ -21,5 +21,7 @@ inversion = subprocess.check_output([sys.executable, str(root/'experiments/parti
 assert inversion == (root/'conformance/partition-inversion.json').read_bytes(), 'Direct quotient-inversion receipt differs'
 histogram = subprocess.check_output([sys.executable, str(root/'experiments/partition_histogram.py')], cwd=root)
 assert histogram == (root/'conformance/partition-histogram.json').read_bytes(), 'Histogram-inversion receipt differs'
+repeated = subprocess.check_output([sys.executable, str(root/'experiments/repeated_edge.py')], cwd=root)
+assert repeated == (root/'conformance/repeated-edge.json').read_bytes(), 'Repeated-edge receipt differs'
 subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-v'], cwd=root, check=True)
-print('PASS: source pins, preserved statuses, all five exact receipts, and coefficient/graph regressions')
+print('PASS: source pins, preserved statuses, all six exact receipts, and coefficient/graph regressions')

@@ -125,7 +125,7 @@ from the source-owned top coefficient and the simple-square sector. See
 [wedge-coarsening](../proof/wedge-coarsening.md). The new proof is a finite
 partition of ordinary cycles by their projected selected edges. Its all-r
 formalization and priority review remain open; the all-length repeated-edge
-coefficient is still undetermined here.
+coefficient is supplied by the subsequent two-resolution continuation.
 
 1. Broaden independent fixtures, preserve negative controls and exact conventions.
 2. Write a claim-specific proof or counterexample record; distinguish conjecture
@@ -147,3 +147,10 @@ hypothesis. Six regression tests preserve counting conventions. See
 [the check note](../proof/partition-lattice-check.md). No formula discrepancy
 was found; general graph cardinality formalization and expansion novelty
 review remain open.
+
+The [two-resolution continuation](../proof/repeated-edge-resolutions.md) now
+gives an exact finite matching sum for the repeated-edge coefficient, completing
+the working formula for support exactly k-1 in C_(2k). The three general
+collision lemmas are kernel-checked; matching enumeration, all-graph cardinality
+transport, independent mathematical acceptance and priority remain open. An
+efficient scalar recurrence for the joint-connected matching sum is also open.
