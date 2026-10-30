@@ -177,9 +177,10 @@ and the failure of unfiltered paired-triangle walks divided by20.
 arbitrary finite traces, using no axioms in these three declarations. Four
 finite controls (exact propext audit) certify that either single resolution
 can miss collisions, the full endpoint returns, and unequal remaining
-coordinates prevent a collision. This does **not** formalize the word-prefix
-instantiation, connected matching characterization/enumerator, selected-motif
-classification or all-graph cardinality quotient. They remain explicit prose
+coordinates prevent a collision. The subsequent [literal-word bridge](even-edge-resolutions.md) now formalizes
+the four-event word-prefix instantiation and exact inventory transport.
+Connected matching characterization/enumeration, selected-motif classification
+and the all-graph cardinality quotient remain prose components. They remain explicit prose
 components, not consequences of the seven declaration audits alone.
 
 Connected pairings and connected partitions are prior work: Franz Lehner,

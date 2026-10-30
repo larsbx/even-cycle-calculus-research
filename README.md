@@ -12,6 +12,16 @@ including odd projections and collision corrections. It is a **working** proof;
 external mathematical acceptance and full formalization remain open.
 The source-owned four-coordinate coefficient stays pinned and unchanged.
 
+The [simultaneous pairing continuation](proof/even-edge-resolutions.md) extends
+the resolution criterion to every positive even coordinate multiplicity when
+each coordinate projects to a single selected edge. All independent pairing
+choices must yield connected diagrams. Its exact finite coefficient formula
+recovers new-to-this-corpus twelve-cycle strata 32 and 816, independently
+checked on Q4. It supplies the complete selected-edge sector, with other
+factor motifs explicitly excluded. General phase/choice lemmas and the
+literal four-event word bridge are now Lean-certified; general enumeration,
+cardinality transport, priority and external review remain open.
+
 The [two-resolution formula](proof/repeated-edge-resolutions.md) supplies the
 remaining repeated-edge coefficient as an exact finite matching sum. Together
 with the wedge, square and paired-triangle identities, it completes a
@@ -57,7 +67,7 @@ assumptions. The [canonical extraction component](proof/canonical-coordinate-ext
 adds 15 general first-occurrence lemmas and three finite controls. It recovers
 coordinate equality classes by a bounded scan; compressed shuffle encoding
 and the full counting bijection remain open. Run `python3 formal/check.py`
-for all 395 declaration audits. The [ordinal compression component](proof/ordinal-rank-compression.md)
+for all 429 declaration audits. The [ordinal compression component](proof/ordinal-rank-compression.md)
 adds 20 general lemmas and three controls: representative labels are now
 bijective with `Fin r`, reconstruction is exact, and zero-first/append bounds
 match the enumerator. The [coordinate-event component](proof/coordinate-event-shuffle.md)
