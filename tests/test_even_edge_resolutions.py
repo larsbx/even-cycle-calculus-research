@@ -30,7 +30,7 @@ def blocks_from_word(word, profile):
 class EvenEdgeResolutions(unittest.TestCase):
     def test_partition_inventory_and_every_small_word(self):
         for p in ((4,), (2, 2), (4, 2), (6, 2), (4, 4), (2, 2, 2),
-                  (4, 2, 2), (6, 2, 2), (4, 4, 2), (4, 2, 2, 2)):
+                  (4, 2, 2), (6, 2, 2), (4, 4, 2), (4, 2, 2, 2), (6, 2, 2, 2)):
             canonical = tuple(sorted(p))
             blocks = list(block_partitions(canonical))
             labelings = prod(factorial(n) for n in Counter(p).values())

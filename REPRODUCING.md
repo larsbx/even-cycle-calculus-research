@@ -87,7 +87,7 @@ diff -u conformance/even-edge-resolutions.json /tmp/even-edge-resolutions.json
 It checks four selected-edge profiles by independent product-adjacency DFS,
 recovers cube specializations through Q4 c12, preserves the original Q4 c8
 receipt and exhibits failure of the two constant resolution choices. Four
-new regressions compare every word in ten finite profile families with both
+new regressions compare every word in eleven finite profile families with both
 a literal endpoint-parity trace and the old collision kernel; check block
 inventory, existing coefficients, scope and finite boundaries. All six prior
 receipts remain mandatory and unchanged. The 34 new formal declarations are

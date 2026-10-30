@@ -384,7 +384,7 @@ independent_acceptance = "Closes the previous four-event literal word-prefix/inv
 [[claim]]
 id = "EVEN-EDGE-LOWER-SUPPORT-REGRESSIONS"
 status = "computed"
-statement = "Unlabeled accepted partition counts for (6,2,2,2) and (4,4,2,2) are 8 and 306, giving coefficients 32 and 816; independent product-adjacency DFS agrees. Q4 c12=4*32+6*816=5024, entirely below top and next support. Both constant resolution choices can accept a colliding word; a mixed choice rejects it. Ten finite word families, block inventories, earlier coefficients and original Q4 c8 strata are checked."
+statement = "Unlabeled accepted partition counts for (6,2,2,2) and (4,4,2,2) are 8 and 306, giving coefficients 32 and 816; independent product-adjacency DFS agrees. Q4 c12=4*32+6*816=5024, entirely below top and next support. Both constant resolution choices can accept a colliding word; a mixed choice rejects it. Eleven finite word families, block inventories, earlier coefficients and original Q4 c8 strata are checked."
 authority = "experiments/even_edge_resolutions.py"
 evidence = "conformance/even-edge-resolutions.json; tests/test_even_edge_resolutions.py"
 formal_verification = "Finite word-vector controls are separate from the Python coefficient/DFS observations. The displayed counts are not Lean numerical certificates."
