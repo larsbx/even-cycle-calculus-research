@@ -103,8 +103,11 @@ priority and independent review are open, separate gates. The finite receipt
 and new interval-collision formal lemma do not close those gates.
 
 Next focused obligations are to independently review the component/gap
-bijection, certify the new c10 coefficient sums in the proof kernel, and
-formalize the finite ordinary-cycle quotient. The original c8 extraction
+bijection and assemble the finite ordinary-cycle inventory quotient. The
+c10 coefficient sums now have exact kernel certificates through isolated
+prefix rows. RootedCycle proves the fixed-cycle 2m representation factor,
+including symmetric adjacency preservation, but does not yet partition an
+arbitrary rooted graph-walk inventory into those classes. The original c8 extraction
 composition and motif-classification obligations remain active.
 
 The independent partition-lattice comparison is delivered in
@@ -115,6 +118,14 @@ identity with weighted quotient edges, not the shuffle kernel. It strengthens
 finite reproducibility without closing arbitrary-template inverses,
 product-cycle composition, motif classification, the formal orbit quotient,
 external mathematical review or novelty review.
+
+Coordinate coarsening now supplies a further working all-length result:
+`T_(r+2)=4W_r+S_r`, computing the wedge projection term in profile (4,2^r)
+from the source-owned top coefficient and the simple-square sector. See
+[wedge-coarsening](../proof/wedge-coarsening.md). The new proof is a finite
+partition of ordinary cycles by their projected selected edges. Its all-r
+formalization and priority review remain open; the all-length repeated-edge
+coefficient is still undetermined here.
 
 1. Broaden independent fixtures, preserve negative controls and exact conventions.
 2. Write a claim-specific proof or counterexample record; distinguish conjecture

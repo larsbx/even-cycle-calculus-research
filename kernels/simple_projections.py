@@ -66,6 +66,23 @@ def simple_projection_coefficient(profile):
     return value
 
 
+def wedge_projection_coefficient(edge_axes):
+    """Exact coefficient of one selected wedge and r selected edge projections.
+
+    Length is 2r+4, with four steps in the wedge coordinate and two in every
+    other active coordinate. This is the wedge term of the profile, not its
+    entire count. Grouping two edge axes into C4 gives top = 4*wedge + square;
+    see proof/wedge-coarsening.md. The top-sector theorem remains source-owned.
+    """
+    if type(edge_axes) is not int or edge_axes < 0:
+        raise ValueError('Expected a nonnegative integer number of edge axes')
+    top = simple_projection_coefficient((2,)*(edge_axes+2))
+    square = simple_projection_coefficient((4,)+(2,)*edge_axes)
+    value, remainder = divmod(top-square, 4)
+    assert value >= 0 and remainder == 0
+    return value
+
+
 def f4222(g, h, j, k):
     return (528*g['edge'] + 5256*g['wedge'] + 26592*g['square']) * prod(
         data['edge'] for data in (h, j, k))

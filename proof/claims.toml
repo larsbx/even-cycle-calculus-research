@@ -271,7 +271,7 @@ status = "working"
 statement = "All ten-cycle strata with exactly four active coordinates have the formulas F4222=(528e+5256w+26592s)*e*e*e and F3322=90288t*t*e*e, with all coordinate allocations and inactive vertex fibers. Other support sizes are not asserted here."
 authority = "proof/simple-projection-sectors.md"
 evidence = "kernels/simple_projections.py; conformance/near-top.json"
-formal_verification = "Existing general pattern/shuffle interfaces and the new general interval lemma are kernel-checked; the five new finite coefficient sums, motif identification and 20-to-1 quotient are not fully formalized."
+formal_verification = "The five raw coefficient sums and multiplier arithmetic are kernel-certified in TenCycle.lean through a proved finite prefix decomposition. RootedCycle.lean proves exactly 2m distinct root/direction representations of a fixed injective finite trace and symmetric cyclic-edge preservation. Full product-count assembly and motif identification remain separate."
 independent_acceptance = "Working proof plus independent adjacency DFS on specified products. General formula priority and independent mathematical review remain open."
 
 [[claim]]
@@ -299,3 +299,30 @@ authority = "proof/partition-lattice-check.md"
 evidence = "conformance/partition-histogram.json; experiments/partition_histogram.py; experiments/partition_walks.cpp; kernels/partition_lattice.py; tests/test_partition_histogram.py"
 formal_verification = "Twelve PartitionInversion declarations: six without axioms, five with propext, one with Quot.sound. finite_inversion has an explicit cancellation hypothesis. Actual partition enumeration, factorial weights, numerical c10 coefficients and full graph-level 2m cardinality are separate computational/prose components."
 independent_acceptance = "General partition inversion is prior work. Finite independent corroboration does not settle candidate factor-motif expansion priority or external mathematical acceptance."
+
+[[claim]]
+id = "FINITE-CYCLE-ROOT-DIRECTION-REPRESENTATIONS"
+status = "working"
+statement = "A fixed injective finite trace of length m>=3 has exactly 2m distinct rotation/reversal representations. Every representation stays injective, and symmetric cyclic adjacency is preserved. An explicit Fin(2m) parameterization gives complete list membership, length and no duplicates."
+authority = "proof/rooted-cycle-counting.md"
+evidence = "formal/RootedCycle.lean"
+formal_verification = "18 general Lean/Std declarations and four controls with exact propext/Quot.sound audits. This fixed-trace theorem does not yet assemble an arbitrary graph's ordinary-cycle orbit partition or transport coordinate-profile cardinalities."
+independent_acceptance = "Standard finite cycle-counting principle, formally verified here as a component of candidate motif formulas; no novelty claimed for the 2m factor."
+
+[[claim]]
+id = "C10-KERNEL-COEFFICIENT-CERTIFICATES"
+status = "computed"
+statement = "The literal length-ten word/collision kernel has counts 660,2562,4008,8310 for the four four-step patterns and 12540 for paired triangles. Exact arithmetic gives the motif coefficients 528,5256,26592,90288. Rooted wedge categories are not separately divisible by 20."
+authority = "proof/rooted-cycle-counting.md"
+evidence = "formal/TenCycle.lean"
+formal_verification = "Three prefix-decomposition lemmas connect eighty two-step prefix-cell certificates and twenty row identities to the literal kernel, yielding five complete coefficient certificates. Two arithmetic controls have no axioms. Kernel reduction only, with no native evaluation or external arithmetic oracle."
+independent_acceptance = "Ground kernel certificates, independent product DFS and partition-inversion receipts are separate corroboration; the full all-graph counting proof and expansion priority remain open."
+
+[[claim]]
+id = "ALL-LENGTH-WEDGE-COARSENING"
+status = "working"
+statement = "For every finite r>=0, grouping two edge coordinates into C4 gives T_(r+2)=4W_r+S_r. Hence the selected-wedge contribution to the ordinary cycle profile (4,2^r) is ((T_(r+2)-S_r)/4)*w(G)*product e(H_i), with unused vertex fibers. T retains source top-support ownership; S is the local simple-square sector."
+authority = "proof/wedge-coarsening.md"
+evidence = "kernels/simple_projections.py; tests/test_simple_projections.py"
+formal_verification = "The coarsening bijection is a prose proof. Kernel c8/c10 coefficients anchor r=2,3 separately; no all-r Lean theorem is claimed. Direct B/C sums check r=0..3 and independent product DFS isolates W_r for r=1..3. Higher displayed rows are finite recurrence evaluations only."
+independent_acceptance = "Candidate factor-motif contribution; priority and independent mathematical review remain open. This is not a new source top-symbol or connected-partition theorem."

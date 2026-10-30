@@ -12,6 +12,14 @@ including odd projections and collision corrections. It is a **working** proof;
 external mathematical acceptance and full formalization remain open.
 The source-owned four-coordinate coefficient stays pinned and unchanged.
 
+The [all-length wedge correction](proof/wedge-coarsening.md) now gives the
+working identity `T_(r+2)=4W_r+S_r`: coarsening two edge coordinates into a
+square computes the wedge coefficient from the source-owned top coefficient
+and the local simple-square sector. It recovers 60 and 5256 at lengths eight
+and ten and gives exact higher-length evaluations. Direct B/C sums and product
+DFS check the specified small cases. This candidate contribution has a prose
+proof; all-r formalization, independent review and priority remain open.
+
 The [all-length sector continuation](proof/simple-projection-sectors.md) translates
 the existing connected-partition transformation into exact simple-coordinate
 projection sectors. It yields a paired-triangle family and complete **working**
@@ -20,10 +28,16 @@ four-step projections. New coefficients are 528, 5256, 26592 and 90288;
 independent product-adjacency DFS checks eight specified strata. The note
 attributes prior work and separates candidate contributions from established
 specializations. Priority and external mathematical acceptance remain open.
-Run `python3 experiments/near_top.py` to replay
+The [kernel coefficient and root-count continuation](proof/rooted-cycle-counting.md)
+certifies all five c10 raw coefficients and their motif-multiplier arithmetic.
+For a fixed injective finite trace of length m>=3, its 2m rotation/reversal
+representations are now proved distinct, complete and edge-preserving under
+symmetric adjacency. The global graph-inventory quotient and full motif-count
+assembly remain open. Run `python3 experiments/near_top.py` to replay
 [the new receipt](conformance/near-top.json). Five general Lean lemmas and
 three finite controls certify the interval-collision component; the connected
-recurrence and c10 coefficient enumeration are not yet kernel-certified.
+recurrence is not yet kernel-certified. The continuation below certifies
+the c10 coefficient enumeration separately.
 
 The [formal collision bridge](proof/coordinate-collision-bridge.md) now proves
 eight general finite coordinate-decoding lemmas, including collision/support
