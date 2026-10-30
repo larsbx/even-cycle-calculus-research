@@ -101,7 +101,8 @@
       "cycles": 2,
       "all_near_top_cycles": 6,
       "rooted_quotient": 16,
-      "total_graph_cycles": 6
+      "total_graph_cycles": 6,
+      "selected_copy_classes": 3
     },
     {
       "case": "wedge",
@@ -114,7 +115,8 @@
       "cycles": 64,
       "all_near_top_cycles": 72,
       "rooted_quotient": 16,
-      "total_graph_cycles": 72
+      "total_graph_cycles": 72,
+      "selected_copy_classes": 7
     },
     {
       "case": "square",
@@ -127,7 +129,8 @@
       "cycles": 656,
       "all_near_top_cycles": 672,
       "rooted_quotient": 16,
-      "total_graph_cycles": 696
+      "total_graph_cycles": 696,
+      "selected_copy_classes": 17
     },
     {
       "case": "extra_host_edges",
@@ -140,7 +143,8 @@
       "cycles": 1956,
       "all_near_top_cycles": 1980,
       "rooted_quotient": 16,
-      "total_graph_cycles": 2100
+      "total_graph_cycles": 2100,
+      "selected_copy_classes": 33
     },
     {
       "case": "inactive_vertex_fiber",
@@ -154,7 +158,8 @@
       "cycles": 192,
       "all_near_top_cycles": 216,
       "rooted_quotient": 16,
-      "total_graph_cycles": 216
+      "total_graph_cycles": 216,
+      "selected_copy_classes": 21
     }
   ],
   "paired_triangle": [

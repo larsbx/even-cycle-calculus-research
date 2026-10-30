@@ -268,3 +268,10 @@ new regression controls enforce the hypotheses. Full fresh-replay/audit and
 hosted final-head results must be recorded separately; these component results
 do not establish a complete all-factor machine proof or external mathematical
 acceptance. The six earlier receipt files and source pin are unchanged.
+
+Local full finite replay passed all seven byte-exact receipts and all 39
+regressions. A subsequent strengthening of the independent checker verifies
+individual selected-copy classes (3,7,17,33,21 across its five product hosts)
+and confirms that K4 has three distinct ordinary four-cycles on the same vertex
+set. Its updated receipt and eight controls are replayed separately. The Lean
+sources and exact audit manifest are unchanged by this strengthening.

@@ -237,7 +237,10 @@ counter, axis-word generator, coefficient recurrence or product DFS.
 - Product adjacency paths enumerate every rooted traversal, then partition
   by rotation/reversal and verify that each orbit has size 2L. Edge, wedge,
   square, chorded K4 and an inactive three-vertex factor check all allocations
-  in their length-eight next-to-top sectors. Paired-triangle coefficients
+  in their length-eight next-to-top sectors. The checker also recovers each
+  selected projected motif and inactive assignment from every cycle and checks
+  its individual coefficient; 3,7,17,33,21 selected-copy classes occur in these
+  five hosts. Paired-triangle coefficients
   42 and 1404 are isolated independently at lengths six and eight.
 - Controls reject either single-resolution shortcut, counting the final return
   as a new vertex, using L instead of 2L, forgetting inactive fibers, dropping

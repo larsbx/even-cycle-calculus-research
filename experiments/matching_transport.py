@@ -193,7 +193,10 @@ def receipt():
     connectivity = []
     for n in range(1, 7):
         total = accepted = 0
+        seen_words = set()
         for w in double_words(n):
+            assert w not in seen_words
+            seen_words.add(w)
             c = connected_by_cuts(w)
             literal = injective(w, ((0, 1),)*n)
             assert c == literal == (whole_interval(w) is None), w
@@ -217,6 +220,7 @@ def receipt():
             total += 1
             if cf != co:
                 controls.setdefault('front_only' if cf else 'outer_only', dict(word=w, original=ok, front=cf, outer=co))
+        assert total == factorial(2*r+4)//(factorial(4)*2**r)
         assert set(fibers.values()) == {factorial(r)}
         assert all(v in (0, factorial(r)) for v in good.values())
         J = sum(v > 0 for v in good.values())
@@ -253,9 +257,36 @@ def receipt():
                     inv[a]['edge'] for a in active if a != distinguished)
         actual = +Counter({p: v for p, v in profiles.items() if sum(x > 0 for x in p) == k-1})
         assert actual == +all_predictions
+        selected_copies = Counter()
+        for path in orbits:
+            recovered = [set() for _ in factors]
+            budget = [0]*len(factors)
+            for i, u in enumerate(path):
+                v = path[(i+1)%len(path)]
+                changed = [a for a in range(len(factors)) if u[a] != v[a]]
+                assert len(changed) == 1
+                a = changed[0]
+                recovered[a].add(tuple(sorted((u[a], v[a]))))
+                budget[a] += 1
+            if sum(x > 0 for x in budget) != k-1:
+                continue
+            distinguished = budget.index(4)
+            es = recovered[distinguished]
+            verts = {x for e in es for x in e}
+            kind = {(2, 1): 'edge', (3, 2): 'wedge', (4, 4): 'square'}[(len(verts), len(es))]
+            for a in range(len(factors)):
+                if budget[a] == 2:
+                    assert len(recovered[a]) == 1
+                if budget[a] == 0:
+                    assert len({v[a] for v in path}) == 1
+            key = (tuple(budget), tuple(tuple(sorted(es)) for es in recovered),
+                   tuple(path[0][a] for a in range(len(factors)) if budget[a] == 0), kind)
+            selected_copies[key] += 1
+        assert all(v == coeff[r][key[-1]] for key, v in selected_copies.items())
         sectors.append(dict(case=name, length=2*r+4, selected_profile=profile,
                             cycles=predicted, all_near_top_cycles=sum(actual.values()),
-                            rooted_quotient=2*(2*r+4), total_graph_cycles=sum(profiles.values())))
+                            rooted_quotient=2*(2*r+4), total_graph_cycles=sum(profiles.values()),
+                            selected_copy_classes=len(selected_copies)))
     paired = []
     for s in range(2):
         L = 6+2*s

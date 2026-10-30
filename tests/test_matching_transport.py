@@ -1,6 +1,6 @@
 """Controls on the hypotheses of the new general proof interfaces."""
 import unittest
-from experiments.matching_transport import (E, S, graph_cycles, injective,
+from experiments.matching_transport import (E, S, K4, graph_cycles, injective,
     literal_trace, connected_by_cuts, whole_interval, matching_key, resolve)
 
 
@@ -49,6 +49,9 @@ class MatchingTransportControls(unittest.TestCase):
         profiles, orbits = graph_cycles([S], 4)
         self.assertEqual(profiles[(4,)], 1)
         self.assertEqual(list(orbits.values()), [8])
+        profiles, orbits = graph_cycles([K4], 4)
+        self.assertEqual(profiles[(4,)], 3)
+        self.assertEqual(set(orbits.values()), {8})
         profiles, orbits = graph_cycles([E, E], 4)
         self.assertEqual(profiles[(2, 2)], 1)
         self.assertEqual(list(orbits.values()), [8])
